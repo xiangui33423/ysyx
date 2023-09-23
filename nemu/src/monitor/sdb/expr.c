@@ -304,6 +304,6 @@ word_t expr(char *e, bool *success) {
   *success = 1;
   /* TODO: Insert codes to evaluate the expression. */
   uint32_t val;
-  val = eval(tokens[0],tokens[nr_token-1]);
+  val = eval(tokens[0],tokens[nr_token]);
   return val;
 }
