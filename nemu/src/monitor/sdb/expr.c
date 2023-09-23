@@ -278,7 +278,7 @@ uint32_t eval(Token* p,Token* q)
       op_tmp++;
     }
     val1 = eval(p,op-1);
-    val2 = eval(op,q);
+    val2 = eval(op+1,q);
 
     switch (op->type)
     {
