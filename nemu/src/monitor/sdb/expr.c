@@ -246,6 +246,8 @@ bool check_parentheses(Token *p,Token *q)
 
 uint32_t eval(Token* p,Token* q)
 {
+  Token *op,*op_tmp;
+  uint32_t val1,val2;
   if(p>q)
   {
     printf("failed!\n");
@@ -259,10 +261,37 @@ uint32_t eval(Token* p,Token* q)
   {
     return eval(p+1,q-1);
   }
-  else{
-    return 2;
+  else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
+  { 
+    op_tmp = p;
+    while(op_tmp<=q)
+    {
+      if (op_tmp->type == '+' || op_tmp->type == '-')
+      {
+        op = op_tmp;
+        break;
+      }
+      else if ((op_tmp->type == '*' || op_tmp->type == '/') && (op->type != '+' || op->type != '-'))
+      {
+        op = op_tmp;
+      }
+      op_tmp++;
+    }
+    val1 = eval(p,op-1);
+    val2 = eval(op+1,q);
+
+    switch (op->type)
+    {
+    case '+': return val1 + val2;
+    case '-': return val1 - val2;
+    case '*': return val1 * val2;
+    case '/': return val1 / val2;
+    default: 
+      printf("fail3\n");
+      assert(0);
+      break;
+    }
   }
-  return 0;
 }
 
 
@@ -274,6 +303,7 @@ word_t expr(char *e, bool *success) {
   }
   *success = 1;
   /* TODO: Insert codes to evaluate the expression. */
-  
-  return 0;
+  uint32_t val;
+  val = eval(tokens[0],tokens[nr_token-1]);
+  return val;
 }
