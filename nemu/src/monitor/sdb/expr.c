@@ -19,6 +19,7 @@
  * Type 'man regex' for more information about POSIX regex functions.
  */
 #include <regex.h>
+#include <string.h>
 
 enum {
   TK_NOTYPE = 256, TK_EQ,
@@ -75,6 +76,51 @@ typedef struct token {
 
 static Token tokens[2][32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
+
+typedef struct
+{
+	char data[32];
+	int top;
+}SqStack;
+
+bool StackEmpty(SqStack S)
+{
+	if (S.top == -1)   //栈空
+		return true;
+	else
+		return false;  //栈不空
+}
+
+bool Pop(SqStack* S, char* x)
+{
+	if (S->top == -1)              //栈空 不能执行出栈操作
+		return false;
+	x = &S->data[S->top];            //先出栈 指针再减1
+	S->top--;
+	return true;
+}
+
+bool Push(SqStack* S, char x)
+{
+	if (S->top == 32 - 1)      //栈满 不能执行入栈操作
+		return false;
+	S->top++;                      //指针先加1，再入栈
+	S->data[S->top] = x;
+	return true;
+}
+
+bool GetPop(SqStack S, char* x)
+{
+	if (S.top == -1)            //栈空报错
+		return false;
+	x = &S.data[S.top];          //用x存储栈顶元素
+	return true;
+}
+
+void initStack(SqStack* S)
+{
+	S->top = -1;   //初始化栈顶指针
+}
 
 
 static bool make_token(char *e) {
@@ -146,6 +192,8 @@ static bool make_token(char *e) {
       tag = ~tag;   
     }
 
+
+
     if (i == NR_REGEX) {
       printf("no match at position %d\n%s\n%*.s^\n", position, e, position, "");
       return false;
@@ -160,6 +208,39 @@ static bool make_token(char *e) {
 
 bool check_parentheses(Token *p,Token *q)
 {
+  SqStack s;
+  initStack(&s);
+  while (p<=q)
+  {
+    if (!strcmp(p->str,"("))
+    {
+      Push(&s,*p->str);
+      p++;
+    }
+    else 
+    {
+      char getpop;
+      GetPop(s,&getpop);
+      if (getpop == '(' && !strcmp(p->str,"("))
+      {
+        char pop;
+        Pop(&s,&pop);
+        p++;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    
+  }
+  if (StackEmpty(s))
+  {
+    return true;
+  }
+  else
+    return false;
+  
   return false;
 }
 
@@ -167,29 +248,32 @@ uint32_t eval(Token* p,Token* q)
 {
   if(p>q)
   {
-
+    printf("failed!\n");
+    assert(0);
   }
   else if(p == q){
-
+    char *end;
+    return strtol(p->str,&end,0);
   }
   else if(check_parentheses(p,q)==true)
   {
     return eval(p+1,q-1);
   }
   else{
-
+    return 2;
   }
   return 0;
 }
 
 
 word_t expr(char *e, bool *success) {
-  if (!make_token(e)) {
+  bool token = make_token(e);
+  if (!token) {
     *success = false;
     return 0;
   }
-  
+  *success = 1;
   /* TODO: Insert codes to evaluate the expression. */
-  // \TODO();
+  
   return 0;
 }
