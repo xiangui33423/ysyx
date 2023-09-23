@@ -74,7 +74,7 @@ typedef struct token {
   char str[32];
 } Token;
 
-static Token tokens[2][32] __attribute__((used)) = {};
+static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
 
 typedef struct
@@ -127,7 +127,6 @@ static bool make_token(char *e) {
   int position = 0;
   int i;
   regmatch_t pmatch;
-  int tag = 0;
   nr_token = 0;
 
   while (e[position] != '\0') {
@@ -147,51 +146,44 @@ static bool make_token(char *e) {
          */
         
         switch (rules[i].token_type) {
-          case '+': tokens[tag][nr_token].type = '+';  
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+          case '+': tokens[nr_token].type = '+';  
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
 
-          case '-': tokens[tag][nr_token].type = '-';   
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+          case '-': tokens[nr_token].type = '-';   
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
-          case '*': tokens[tag][nr_token].type = '*';
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+          case '*': tokens[nr_token].type = '*';
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
-          case '/': tokens[tag][nr_token].type = '/'; 
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+          case '/': tokens[nr_token].type = '/'; 
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
           case TK_NUM_DEC:
-                    tokens[tag][nr_token].type = TK_NUM_DEC; 
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    tokens[nr_token].type = TK_NUM_DEC; 
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
           case TK_NUM_HEX:
-                    tokens[tag][nr_token].type = TK_NUM_HEX; 
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    tokens[nr_token].type = TK_NUM_HEX; 
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
           case '(':
-                    tokens[tag][nr_token].type = '('; 
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    tokens[nr_token].type = '('; 
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
           case ')':
-                    tokens[tag][nr_token].type = ')'; 
-                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    tokens[nr_token].type = ')'; 
+                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
           case ' ': break;
           default: 
             
             break;
         }
-        printf("%d,%s\n",nr_token-1,tokens[tag][nr_token-1].str);
+        printf("%d,%s\n",nr_token-1,tokens[nr_token-1].str);
         break;
       }
     }
-
-    if (nr_token == 32)
-    {
-      nr_token = 0;
-      tag = ~tag;   
-    }
-
 
 
     if (i == NR_REGEX) {
@@ -304,6 +296,6 @@ word_t expr(char *e, bool *success) {
   *success = 1;
   /* TODO: Insert codes to evaluate the expression. */
   uint32_t val;
-  val = eval(tokens[0],tokens[nr_token-1]);
+  val = eval(tokens,tokens+nr_token-1);
   return val;
 }
