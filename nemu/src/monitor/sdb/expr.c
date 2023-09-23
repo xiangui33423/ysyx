@@ -14,7 +14,7 @@
 ***************************************************************************************/
 
 #include <isa.h>
-
+#include <stdbool.h>
 /* We use the POSIX regex functions to process regular expressions.
  * Type 'man regex' for more information about POSIX regex functions.
  */
@@ -22,9 +22,8 @@
 
 enum {
   TK_NOTYPE = 256, TK_EQ,
-
+  TK_NUM_DEC,TK_NUM_HEX,
   /* TODO: Add more token types */
-
 };
 
 static struct rule {
@@ -39,6 +38,13 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
+  {"\\-", '-'},         // minus
+  {"\\*", '*'},         // multiplication
+  {"\\/", '/'},         // division
+  {"\\(", '('},
+  {"\\)", ')'},
+  {"[0-9]+", TK_NUM_DEC},
+  {"0x[0-9]+",TK_NUM_HEX},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -67,14 +73,15 @@ typedef struct token {
   char str[32];
 } Token;
 
-static Token tokens[32] __attribute__((used)) = {};
+static Token tokens[2][32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
+
 
 static bool make_token(char *e) {
   int position = 0;
   int i;
   regmatch_t pmatch;
-
+  int tag = 0;
   nr_token = 0;
 
   while (e[position] != '\0') {
@@ -88,18 +95,55 @@ static bool make_token(char *e) {
             i, rules[i].regex, position, substr_len, substr_len, substr_start);
 
         position += substr_len;
-
         /* TODO: Now a new token is recognized with rules[i]. Add codes
          * to record the token in the array `tokens'. For certain types
          * of tokens, some extra actions should be performed.
          */
-
+        
         switch (rules[i].token_type) {
-          default: TODO();
-        }
+          case '+': tokens[tag][nr_token].type = '+';  
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
 
+          case '-': tokens[tag][nr_token].type = '-';   
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case '*': tokens[tag][nr_token].type = '*';
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case '/': tokens[tag][nr_token].type = '/'; 
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case TK_NUM_DEC:
+                    tokens[tag][nr_token].type = TK_NUM_DEC; 
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case TK_NUM_HEX:
+                    tokens[tag][nr_token].type = TK_NUM_HEX; 
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case '(':
+                    tokens[tag][nr_token].type = '('; 
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case ')':
+                    tokens[tag][nr_token].type = ')'; 
+                    strncpy(tokens[tag][nr_token++].str, substr_start, substr_len);
+                    break;
+          case ' ': break;
+          default: 
+            
+            break;
+        }
+        printf("%d,%s\n",nr_token-1,tokens[tag][nr_token-1].str);
         break;
       }
+    }
+
+    if (nr_token == 32)
+    {
+      nr_token = 0;
+      tag = ~tag;   
     }
 
     if (i == NR_REGEX) {
@@ -112,14 +156,39 @@ static bool make_token(char *e) {
 }
 
 
+
+
+bool check_parentheses(Token *p,Token *q)
+{
+  return false;
+}
+
+uint32_t eval(Token* p,Token* q)
+{
+  if(p>q)
+  {
+
+  }
+  else if(p == q){
+
+  }
+  else if(check_parentheses(p,q)==true)
+  {
+    return eval(p+1,q-1);
+  }
+  else{
+
+  }
+  return 0;
+}
+
+
 word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
     return 0;
   }
-
   /* TODO: Insert codes to evaluate the expression. */
-  TODO();
-
+  // \TODO();
   return 0;
 }

@@ -22,9 +22,15 @@ const char *regs[] = {
   "a6", "a7", "s2", "s3", "s4", "s5", "s6", "s7",
   "s8", "s9", "s10", "s11", "t3", "t4", "t5", "t6"
 };
-
+#define ISA_REG_LENGTH ARRLEN(regs)
 void isa_reg_display() {
+  int i;
+  for(i = 0; i < ISA_REG_LENGTH; i++)
+  {
+    printf("%s: 0x%08x  %08d\n",reg_name(i), gpr(i), gpr(i));
+  }
 }
+
 
 word_t isa_reg_str2val(const char *s, bool *success) {
   return 0;

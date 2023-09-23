@@ -18,6 +18,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
+#include <memory/paddr.h>
 
 static int is_batch_mode = false;
 
@@ -54,6 +55,48 @@ static int cmd_q(char *args) {
 
 static int cmd_help(char *args);
 
+static int cmd_si(char *args){
+  int n;
+  
+  n = strtol(args, NULL, 10);
+
+  if (n == 0)
+    cpu_exec(1);
+  else
+    cpu_exec(n);
+
+  return 0;
+}
+
+static int cmd_info(char *args){
+  if(*args == 'r')
+  {
+    isa_reg_display();
+  }
+  return 0;
+}
+
+static int cmd_x(char *args)
+{
+  int n, addr;
+  
+  char *pEnd;
+  n = strtol(args, &pEnd, 10);
+  addr = strtol(pEnd, NULL, 0);
+  int i;
+  for(i = 0; i < n;i++)
+  {
+    printf("0x%x: %d\n",addr+i ,paddr_read(addr+i,4));
+  }
+  return 0;
+}
+
+static int cmd_p(char *args){
+  bool success;
+  expr(args, &success);
+  return 0;
+}
+
 static struct {
   const char *name;
   const char *description;
@@ -64,6 +107,10 @@ static struct {
   { "q", "Exit NEMU", cmd_q },
 
   /* TODO: Add more commands */
+  { "si", "Let the program pause execution after stepping N instructions,When N is not given, the default is 1", cmd_si},
+  { "info", "Print register status", cmd_info},
+  { "x", "Evaluate the value of the expression EXPR, use the result as the starting memory address, and output N consecutive 4 bytes in hexadecimal form", cmd_x},
+  { "p", "Evaluate the value of the expression EXPR, which is supported by EXPR. For operations, see the expression exaluation section in debugging", cmd_p},
 
 };
 
