@@ -128,7 +128,6 @@ static bool make_token(char *e) {
   int i;
   regmatch_t pmatch;
   nr_token = 0;
-  int min_f = 0;
   while (e[position] != '\0') {
     /* Try all rules one by one. */
     for (i = 0; i < NR_REGEX; i ++) {
@@ -150,17 +149,9 @@ static bool make_token(char *e) {
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
 
-          case '-': if (e[position] <= '9' && e[position] >= '0' && min_f == 0)
-                    {
-                      min_f = 1;
-                      break;
-                    }
-                    else{
-                      tokens[nr_token].type = '-';   
+          case '-':   tokens[nr_token].type = '-';   
                       strncpy(tokens[nr_token++].str, substr_start, substr_len);
-                      break; 
-                    }
-                    
+                      break;                    
           case '*': tokens[nr_token].type = '*';
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
@@ -173,18 +164,8 @@ static bool make_token(char *e) {
                     break;
           case TK_NUM_HEX:
                     tokens[nr_token].type = TK_NUM_HEX; 
-                    if (min_f == 1)
-                    {
-                      //char* tmp;
                       strncpy(tokens[nr_token++].str, substr_start, substr_len);
-                      printf("%s\n",tokens[nr_token].str);
-                      sprintf(tokens[nr_token].str,"-%s",tokens[nr_token].str);
-                      min_f = 0;
                       break;
-                    }
-                    else
-                      strncpy(tokens[nr_token++].str, substr_start, substr_len);
-                    break;
           case '(':
                     tokens[nr_token].type = '('; 
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
