@@ -312,7 +312,7 @@ word_t expr(char *e, bool *success) {
   }
   *success = 1;
   /* TODO: Insert codes to evaluate the expression. */
-  uint32_t val;
+  int32_t val;
   val = eval(tokens,tokens+nr_token-1);
   printf("%d",val);
   return val;
