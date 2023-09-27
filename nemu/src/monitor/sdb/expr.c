@@ -253,8 +253,6 @@ uint32_t eval(Token* p,Token* q)
     {
       return -strtol(p->str,&end,0);
     }
-    
-
     return strtol(p->str,&end,0);
   }
   else if(check_parentheses(p,q)==true)
