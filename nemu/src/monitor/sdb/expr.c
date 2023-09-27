@@ -253,10 +253,10 @@ bool check_parentheses(Token *p,Token *q)
   return false;
 }
 
-uint32_t eval(Token* p,Token* q)
+int32_t eval(Token* p,Token* q)
 {
   Token *op,*op_tmp;
-  uint32_t val1,val2;
+  int32_t val1,val2;
   if(p>q)
   {
     printf("failed!\n");
