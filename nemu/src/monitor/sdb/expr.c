@@ -238,7 +238,7 @@ bool check_parentheses(Token *p,Token *q)
 uint32_t eval(Token* p,Token* q)
 {
   Token *op,*op_tmp;
-  uint32_t val1,val2;
+  int32_t val1,val2;
   if(p>q)
   {
     printf("failed!\n");
@@ -255,12 +255,27 @@ uint32_t eval(Token* p,Token* q)
   else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
   { 
     op_tmp = p;
+    bool flag = false;
+
+    //确定主操作符位置
     while(op_tmp<=q)
     {
-      if (op_tmp->type == '+' || op_tmp->type == '-')
+      if (op_tmp->type == '+')
       {
         op = op_tmp;
         break;
+      }
+      else if(op_tmp->type == '-')
+      {
+        if((op_tmp-1)->type == TK_NUM_DEC)
+        {
+          op = op_tmp;
+          break;
+        }
+        else
+        {
+          flag = true;
+        }
       }
       else if ((op_tmp->type == '*' || op_tmp->type == '/') && (op->type != '+' || op->type != '-'))
       {
@@ -268,8 +283,16 @@ uint32_t eval(Token* p,Token* q)
       }
       op_tmp++;
     }
+
+    //分别计算等式两边的值
     val1 = eval(p,op-1);
-    val2 = eval(op+1,q);
+    if (flag == true)
+    {
+      flag = false;
+      val2 = -eval(op+1,q);
+    }
+    else
+      val2 = eval(op+1,q);
 
     switch (op->type)
     {
