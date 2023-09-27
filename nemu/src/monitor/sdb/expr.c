@@ -176,8 +176,11 @@ static bool make_token(char *e) {
                     if (min_f == 1)
                     {
                       char* tmp;
-                      sprintf(tmp,"-%s",substr_start);
-                      strncpy(tokens[nr_token++].str, tmp, substr_len+1);
+                      char *tmp_str;
+                      tmp_str = "-";
+                      strncpy(tmp, substr_start, substr_len);
+                      strcat(tmp_str,tmp);
+                      strncpy(tokens[nr_token++].str, tmp_str, substr_len+1);
                       min_f = 0;
                       break;
                     }
@@ -253,10 +256,10 @@ bool check_parentheses(Token *p,Token *q)
   return false;
 }
 
-int32_t eval(Token* p,Token* q)
+uint32_t eval(Token* p,Token* q)
 {
   Token *op,*op_tmp;
-  int32_t val1,val2;
+  uint32_t val1,val2;
   if(p>q)
   {
     printf("failed!\n");
@@ -312,8 +315,7 @@ word_t expr(char *e, bool *success) {
   }
   *success = 1;
   /* TODO: Insert codes to evaluate the expression. */
-  int32_t val;
+  uint32_t val;
   val = eval(tokens,tokens+nr_token-1);
-  printf("%d",val);
   return val;
 }
