@@ -23,7 +23,8 @@
 
 enum {
   TK_NOTYPE = 256, TK_EQ,
-  TK_NUM_DEC,TK_NUM_HEX,
+  TK_NUM_DEC/*十进制*/,TK_NUM_HEX/*十六进制*/,
+  TK_NUM_NEG /*负数*/,
   /* TODO: Add more token types */
 };
 
@@ -165,6 +166,7 @@ static bool make_token(char *e) {
           case TK_NUM_HEX:
                     tokens[nr_token].type = TK_NUM_HEX; 
                       strncpy(tokens[nr_token++].str, substr_start, substr_len);
+
                       break;
           case '(':
                     tokens[nr_token].type = '('; 
@@ -238,14 +240,21 @@ bool check_parentheses(Token *p,Token *q)
 uint32_t eval(Token* p,Token* q)
 {
   Token *op,*op_tmp;
-  int32_t val1,val2;
+  uint32_t val1,val2;
   if(p>q)
   {
     printf("failed!\n");
     assert(0);
   }
   else if(p == q){
+
     char *end;
+    if ((p-1)->type == TK_NUM_NEG)
+    {
+      return -strtol(p->str,&end,0);
+    }
+    
+
     return strtol(p->str,&end,0);
   }
   else if(check_parentheses(p,q)==true)
@@ -255,45 +264,22 @@ uint32_t eval(Token* p,Token* q)
   else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
   { 
     op_tmp = p;
-    bool flag = false;
-
-    
     while(op_tmp<=q)
-    { 
-      //确定主操作符位置
-      if (op_tmp->type == '+')
+    {
+      //寻找主操作符
+      if (op_tmp->type == '+' || op_tmp->type == '-')
       {
         op = op_tmp;
         break;
-      }
-      else if(op_tmp->type == '-')
-      {
-        if((op_tmp-1)->type == TK_NUM_DEC)
-        {
-          op = op_tmp;
-          break;
-        }
-        else
-        {
-          flag = true;
-        }
       }
       else if ((op_tmp->type == '*' || op_tmp->type == '/') && (op->type != '+' || op->type != '-'))
       {
         op = op_tmp;
       }
-      op_tmp++; //寻找下一个主操作符
+      op_tmp++;
     }
-
-    //分别计算等式两边的值
     val1 = eval(p,op-1);
-    if (flag == true)
-    {
-      flag = false;
-      val2 = -eval(op+1,q);
-    }
-    else
-      val2 = eval(op+1,q);
+    val2 = eval(op+1,q);
 
     switch (op->type)
     {
@@ -317,9 +303,18 @@ word_t expr(char *e, bool *success) {
     return 0;
   }
   *success = 1;
+  int i;
   /* TODO: Insert codes to evaluate the expression. */
-  uint32_t val;
+  for(i = 0; i < nr_token; i++)
+  {
+    //只做了加减法的负数匹配
+    if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-')  )
+    {
+      tokens[i].type = TK_NUM_NEG;
+    }
+    
+  }
+  int32_t val;
   val = eval(tokens,tokens+nr_token-1);
-  printf("%d",val);
   return val;
 }
