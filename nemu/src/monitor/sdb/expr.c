@@ -257,9 +257,10 @@ uint32_t eval(Token* p,Token* q)
     op_tmp = p;
     bool flag = false;
 
-    //确定主操作符位置
+    
     while(op_tmp<=q)
-    {
+    { 
+      //确定主操作符位置
       if (op_tmp->type == '+')
       {
         op = op_tmp;
@@ -281,7 +282,7 @@ uint32_t eval(Token* p,Token* q)
       {
         op = op_tmp;
       }
-      op_tmp++;
+      op_tmp++; //寻找下一个主操作符
     }
 
     //分别计算等式两边的值
