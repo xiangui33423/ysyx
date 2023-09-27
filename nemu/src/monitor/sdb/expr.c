@@ -177,6 +177,7 @@ static bool make_token(char *e) {
                     {
                       //char* tmp;
                       strncpy(tokens[nr_token++].str, substr_start, substr_len);
+                      printf("%s\n",tokens[nr_token].str);
                       sprintf(tokens[nr_token].str,"-%s",tokens[nr_token].str);
                       min_f = 0;
                       break;
