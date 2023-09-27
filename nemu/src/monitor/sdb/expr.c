@@ -175,12 +175,9 @@ static bool make_token(char *e) {
                     tokens[nr_token].type = TK_NUM_HEX; 
                     if (min_f == 1)
                     {
-                      char* tmp;
-                      char *tmp_str;
-                      tmp_str = "-";
-                      strncpy(tmp, substr_start, substr_len);
-                      strcat(tmp_str,tmp);
-                      strncpy(tokens[nr_token++].str, tmp_str, substr_len+1);
+                      //char* tmp;
+                      strncpy(tokens[nr_token++].str, substr_start, substr_len);
+                      sprintf(tokens[nr_token].str,"-%s",tokens[nr_token].str);
                       min_f = 0;
                       break;
                     }
@@ -317,5 +314,6 @@ word_t expr(char *e, bool *success) {
   /* TODO: Insert codes to evaluate the expression. */
   uint32_t val;
   val = eval(tokens,tokens+nr_token-1);
+  printf("%d",val);
   return val;
 }
