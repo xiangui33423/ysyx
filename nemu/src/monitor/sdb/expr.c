@@ -218,8 +218,8 @@ bool check_parentheses(Token *p,Token *q)
       {
         char pop;
         Pop(&s,&pop);
-        p++;
       }
+      p++;
     }
     
   }
