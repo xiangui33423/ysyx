@@ -202,6 +202,7 @@ static bool make_token(char *e) {
 bool check_parentheses(Token *p,Token *q)
 {
   int a,b;
+  a = b = 0;
   Token *c;
   c = p;
   while (c<=q)
