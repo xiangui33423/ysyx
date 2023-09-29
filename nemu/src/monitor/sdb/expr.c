@@ -120,7 +120,7 @@ bool GetPop(SqStack S, char* x)
 
 void initStack(SqStack* S)
 {
-	S->top = 1;   //初始化栈顶指针
+	(*S).top = 1;   //初始化栈顶指针
 }
 
 
