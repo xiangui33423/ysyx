@@ -242,6 +242,9 @@ uint32_t eval(Token* p,Token* q)
   char *end;
   Token *op,*op_tmp;
   uint32_t val1,val2;
+  bool kuohao = false;
+  kuohao = check_parentheses(p,q);
+  printf("%d",kuohao);
   if(p>q)
   {
     printf("failed!\n");
@@ -260,7 +263,7 @@ uint32_t eval(Token* p,Token* q)
       return -a;
     }
   }
-  else if(check_parentheses(p,q)==true)
+  else if(kuohao==true)
   {
     return eval(p+1,q-1);
   }
