@@ -256,6 +256,7 @@ int32_t eval(Token* p,Token* q)
   {
     if ((p-1)->type == TK_NUM_NEG)
     {
+      int a = strtol(p->str,&end,0);
       return -strtol(p->str,&end,0);
     }
   }
