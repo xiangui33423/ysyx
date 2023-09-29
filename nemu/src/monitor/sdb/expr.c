@@ -241,7 +241,7 @@ uint32_t eval(Token* p,Token* q)
 {
   char *end;
   Token *op,*op_tmp;
-  int32_t val1,val2;
+  uint32_t val1,val2;
   if(p>q)
   {
     printf("failed!\n");
