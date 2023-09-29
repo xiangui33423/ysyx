@@ -278,6 +278,7 @@ uint32_t eval(Token* p,Token* q)
       else if ((op_tmp->type == '*' || op_tmp->type == '/') && (op->type != '+' || op->type != '-'))
       {
         op = op_tmp;
+        break;
       }
       op_tmp++;
     }
