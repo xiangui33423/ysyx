@@ -216,7 +216,6 @@ bool check_parentheses(Token *p,Token *q)
     return true;
   }
   return false;
-  
 }
 
 uint32_t eval(Token* p,Token* q)
@@ -226,18 +225,16 @@ uint32_t eval(Token* p,Token* q)
   uint32_t val1,val2;
   bool kuohao = false;
   kuohao = check_parentheses(p,q);
-  printf("%d\n",kuohao);
+  // printf("%d\n",kuohao);
   if(p>q)
   {
     printf("failed!\n");
     assert(0);
   }
   else if(p == q){
-
-
     return strtol(p->str,&end,0);
   }
-  else if(p+1 == q)
+  else if(p+1 == q)//对二义性做处理
   {
     if (p->type == TK_NUM_NEG)
     {

@@ -19,6 +19,7 @@
 #include <time.h>
 #include <assert.h>
 #include <string.h>
+#include <time.h>
 
 // this should be enough
 static char buf[65536] = {};
@@ -31,8 +32,55 @@ static char *code_format =
 "  return 0; "
 "}";
 
+//生成比n小的随机数
+uint32_t choose(uint32_t n)
+{
+  uint32_t a;
+  a = rand()%n + 1;
+  return a;
+}
+
+static int cnt = 0;
+
+void gen_num()
+{
+  char a;
+  a = (char)(rand()%(39-30+1) + 30);
+  buf[cnt] = a;
+  cnt++;
+}
+
+void gen(char x)
+{
+  if(x == '(')
+    buf[cnt] = '(';
+  else if(x == ')')
+    buf[cnt] = ')';
+}
+
+void gen_rand_expr()
+{
+
+}
+
+void gen_rand_op()
+{}
+
 static void gen_rand_expr() {
-  buf[0] = '\0';
+  switch (choose(65536))
+  {
+  case 0: gen_num();
+          break;
+  case 1: gen('(');
+          gen_rand_expr();
+          gen(')');
+    break;
+  default:gen_rand_expr();
+          gen_rand_op();
+          gen_rand_expr();
+          
+    break;
+  }
 }
 
 int main(int argc, char *argv[]) {
