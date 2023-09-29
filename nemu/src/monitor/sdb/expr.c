@@ -214,7 +214,7 @@ bool check_parentheses(Token *p,Token *q)
     {
       char getpop;
       GetPop(s,&getpop);
-      if (getpop == '(' && !strcmp(p->str,"("))
+      if (getpop == '(' && !strcmp(p->str,")"))
       {
         char pop;
         Pop(&s,&pop);
