@@ -237,7 +237,7 @@ bool check_parentheses(Token *p,Token *q)
   return false;
 }
 
-int32_t eval(Token* p,Token* q)
+uint32_t eval(Token* p,Token* q)
 {
   char *end;
   Token *op,*op_tmp;
