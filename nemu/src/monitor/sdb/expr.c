@@ -254,11 +254,10 @@ int32_t eval(Token* p,Token* q)
   }
   else if(p+1 == q)
   {
-    if ((p-1)->type == TK_NUM_NEG)
+    if (p->type == TK_NUM_NEG)
     {
-      int a;
-      a = strtol(p->str,&end,0);
-      return -strtol(p->str,&end,0);
+      int a = strtol(q->str,&end,0);
+      return -a;
     }
   }
   else if(check_parentheses(p,q)==true)
