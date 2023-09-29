@@ -317,7 +317,7 @@ word_t expr(char *e, bool *success) {
     }
     
   }
-  int32_t val;
+  uint32_t val;
   val = eval(tokens,tokens+nr_token-1);
   printf("val:%d\n",val);
   return val;
