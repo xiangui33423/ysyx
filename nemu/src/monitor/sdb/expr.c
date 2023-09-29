@@ -220,10 +220,6 @@ bool check_parentheses(Token *p,Token *q)
         Pop(&s,&pop);
         p++;
       }
-      else
-      {
-        return false;
-      }
     }
     
   }
