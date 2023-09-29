@@ -239,6 +239,7 @@ bool check_parentheses(Token *p,Token *q)
 
 int32_t eval(Token* p,Token* q)
 {
+  char *end;
   Token *op,*op_tmp;
   int32_t val1,val2;
   if(p>q)
@@ -248,12 +249,15 @@ int32_t eval(Token* p,Token* q)
   }
   else if(p == q){
 
-    char *end;
+
+    return strtol(p->str,&end,0);
+  }
+  else if(p+1 == q)
+  {
     if ((p-1)->type == TK_NUM_NEG)
     {
       return -strtol(p->str,&end,0);
     }
-    return strtol(p->str,&end,0);
   }
   else if(check_parentheses(p,q)==true)
   {
