@@ -201,7 +201,7 @@ static bool make_token(char *e) {
 
 bool check_parentheses(Token *p,Token *q)
 {
-  SqStack s;
+  SqStack s = {'\0',-1};
   initStack(&s);
   while (p<=q)
   {
