@@ -201,36 +201,20 @@ static bool make_token(char *e) {
 
 bool check_parentheses(Token *p,Token *q)
 {
-  SqStack s = {'\0',-1};
-  initStack(&s);
-  while (p<=q)
+  int a,b;
+  Token *c;
+  c = p;
+  while (c<=q)
   {
-    if (!strcmp(p->str,"("))
-    {
-      Push(&s,*p->str);
-      p++;
-    }
-    else 
-    {
-      char getpop;
-      GetPop(s,&getpop);
-      if (getpop == '(' && !strcmp(p->str,")"))
-      {
-        char pop;
-        Pop(&s,&pop);
-      }
-      p++;
-    }
-    
+    if(p->type == '(') a++;
+    if(p->type == ')') b++;
   }
-  if (StackEmpty(s))
+  if (a == b)
   {
     return true;
   }
-  else
-    return false;
-  
   return false;
+  
 }
 
 uint32_t eval(Token* p,Token* q)
