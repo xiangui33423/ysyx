@@ -206,8 +206,9 @@ bool check_parentheses(Token *p,Token *q)
   c = p;
   while (c<=q)
   {
-    if(p->type == '(') a++;
-    if(p->type == ')') b++;
+    if(c->type == '(') a++;
+    if(c->type == ')') b++;
+    c++;
   }
   if (a == b)
   {
