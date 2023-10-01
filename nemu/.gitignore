@@ -10,7 +10,7 @@
 !README.md
 !Kconfig
 !scripts/
-!build/
+!build/*
 include/config
 include/generated
 
