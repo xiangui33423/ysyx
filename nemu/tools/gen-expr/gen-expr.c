@@ -42,7 +42,7 @@ uint32_t choose(uint32_t n)
 
 static int cnt = 0;
 
-void gen_num()
+static void gen_num()
 {
   char a;
   a = (char)(rand()%(39-30+1) + 30);
@@ -50,21 +50,21 @@ void gen_num()
   cnt++;
 }
 
-void gen(char x)
+static void gen(char x)
 {
   if(x == '(')
     buf[cnt] = '(';
   else if(x == ')')
     buf[cnt] = ')';
+  cnt++;
 }
 
-void gen_rand_expr()
+static void gen_rand_op()
 {
+  uint32_t n;
+  n = choose(4);
 
 }
-
-void gen_rand_op()
-{}
 
 static void gen_rand_expr() {
   switch (choose(65536))
