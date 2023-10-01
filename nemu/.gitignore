@@ -9,6 +9,8 @@
 !.config
 !README.md
 !Kconfig
+!scripts/
+!build/
 include/config
 include/generated
 
