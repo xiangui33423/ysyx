@@ -110,7 +110,7 @@ static int cmd_w(char *args)
   head->NO = no++;
   head->expr = expr(args, &success);
   head->expr_str = args;
-  printf("%d",head->NO);
+  printf("breakpoint %d at %s",head->NO,args);
   return 0;
 }
 
