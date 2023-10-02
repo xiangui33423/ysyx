@@ -22,9 +22,9 @@
 #include <string.h>
 
 enum {
-  TK_NOTYPE = 256, TK_EQ,
+  TK_NOTYPE = 256, TK_EQ,TK_NEQ,TK_ADD,
   TK_NUM_DEC/*十进制*/,TK_NUM_HEX/*十六进制*/,
-  TK_NUM_NEG /*负数*/,
+  TK_NUM_NEG /*负数*/,TK_NUM_REG/*reg*/,
   /* TODO: Add more token types */
 };
 
@@ -40,6 +40,8 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
+  {"!=", TK_NEQ}, 
+  {"&&", TK_ADD},
   {"\\-", '-'},         // minus
   {"\\*", '*'},         // multiplication
   {"\\/", '/'},         // division
@@ -47,6 +49,7 @@ static struct rule {
   {"\\)", ')'},
   {"[0-9]+", TK_NUM_DEC},
   {"0x[0-9]+",TK_NUM_HEX},
+  {"$[0-9]+",TK_NUM_REG},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -77,52 +80,6 @@ typedef struct token {
 
 static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
-
-typedef struct
-{
-	char data[32];
-	int top;
-}SqStack;
-
-bool StackEmpty(SqStack S)
-{
-	if (S.top == -1)   //栈空
-		return true;
-	else
-		return false;  //栈不空
-}
-
-bool Pop(SqStack* S, char* x)
-{
-	if (S->top == -1)              //栈空 不能执行出栈操作
-		return false;
-	x = &S->data[S->top];            //先出栈 指针再减1
-	S->top--;
-	return true;
-}
-
-bool Push(SqStack* S, char x)
-{
-	if (S->top == 32 - 1)      //栈满 不能执行入栈操作
-		return false;
-	S->top++;                      //指针先加1，再入栈
-	S->data[S->top] = x;
-	return true;
-}
-
-bool GetPop(SqStack S, char* x)
-{
-	if (S.top == -1)            //栈空报错
-		return false;
-	x = &S.data[S.top];          //用x存储栈顶元素
-	return true;
-}
-
-void initStack(SqStack* S)
-{
-	(*S).top = -1;   //初始化栈顶指针
-}
-
 
 static bool make_token(char *e) {
   int position = 0;
