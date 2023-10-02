@@ -212,7 +212,7 @@ uint32_t eval(Token* p,Token* q)
       return -a;
     }
   }
-  else if(kuohao==true)
+  else if(kuohao==true && p->type == '(' && q->type == ')')
   {
     return eval(p+1,q-1);
   }
