@@ -94,11 +94,11 @@ static int cmd_x(char *args)
   }
   return 0;
 }
-
+static int no = 0;
 static int cmd_p(char *args){
   bool success = true;
   int a;
-  a=expr(args, &success);
+  a=expr(args, &success); 
   printf("success:%d\n",success);
   return a;
 }
@@ -107,7 +107,9 @@ static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  head->NO = cmd_p(args);
+  head->NO = no++;
+  head->expr = expr(args, &success);
+  head->expr_str = args;
   printf("%d",head->NO);
   return 0;
 }

@@ -24,7 +24,8 @@ typedef struct watchpoint {
   struct watchpoint *next;
 
   /* TODO: Add more members if necessary */
-
+  word_t expr;
+  char* expr_str;
 } WP;
 
 static WP wp_pool[NR_WP] = {};
