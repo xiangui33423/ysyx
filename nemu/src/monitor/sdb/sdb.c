@@ -106,7 +106,7 @@ static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  head->NO = expr(args,&success);
+  head->NO = (int)expr(args,&success);
   printf("%d",head->NO);
   return success;
 }
