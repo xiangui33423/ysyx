@@ -107,7 +107,7 @@ static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  memcpy(&head->NO,&no,sizeof(int));
+  memcpy(head,&no,sizeof(int));
   no++;
   head->expr = expr(args, &success);
   head->expr_str = args;
