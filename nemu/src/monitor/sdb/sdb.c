@@ -106,7 +106,9 @@ static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  head->expr = expr(args, &success);
+  word_t tmp;
+  tmp = expr(args, &success);
+  memcpy(&(head->expr),&tmp,sizeof(word_t));
   head->expr_str = args;
   printf("breakpoint %d at %s",head->NO,args);
   return 0;
