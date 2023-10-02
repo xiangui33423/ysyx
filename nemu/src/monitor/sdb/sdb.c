@@ -94,7 +94,6 @@ static int cmd_x(char *args)
   }
   return 0;
 }
-int no = 0;
 static int cmd_p(char *args){
   bool success = true;
   int a;
@@ -107,8 +106,6 @@ static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  memcpy(head,&no,sizeof(int));
-  no++;
   head->expr = expr(args, &success);
   head->expr_str = args;
   printf("breakpoint %d at %s",head->NO,args);
