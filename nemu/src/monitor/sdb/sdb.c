@@ -27,7 +27,7 @@ static int is_batch_mode = false;
 
 void init_regex();
 void init_wp_pool();
-void new_wp();
+WP* new_wp(char* args,word_t expr);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -106,10 +106,8 @@ static int cmd_p(char *args){
 static int cmd_w(char *args)
 {
   bool success;
-  new_wp();
-  wp_pool[head->NO].expr = expr(args, &success);
+  new_wp(args,expr(args, &success));
   // strcpy(wp_pool[0].expr_str, args);
-  printf("breakpoint 0 at %s",args);
   return 0;
 }
 

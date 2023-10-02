@@ -30,7 +30,7 @@ void init_wp_pool() {
 
 /* TODO: Implement the functionality of watchpoint */
 
-WP* new_wp()
+WP* new_wp(char* args,word_t expr)
 {
   if(!free_)
   {
@@ -38,13 +38,20 @@ WP* new_wp()
   }
   WP* node;
   node = free_;
-  memcpy(&(node->NO),&(free_->NO),sizeof(int));
   free_ = free_->next;
-
-  node->next = head;
-  head = node;
-  memcpy(&(head->NO),&(node->NO),sizeof(int));
-  printf("no:%d\n",head->NO);
+  node->expr = expr;
+  strcpy(node->expr_str,args);
+  
+  node->next = NULL;
+  if (head==NULL) 
+  {
+    head = node;
+  }
+  else 
+  {
+    node->next=head;
+    head=node;
+  }
   return node;
 }
 
