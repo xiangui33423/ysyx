@@ -49,8 +49,8 @@ static struct rule {
   {"\\/", '/'},         // division
   {"\\(", '('},
   {"\\)", ')'},
-  {"[0-9]+", TK_NUM_DEC},
   {"0x[0-9]+",TK_NUM_HEX},
+  {"[0-9]+", TK_NUM_DEC},  
   {"$[0-9]+",TK_NUM_REG},
 };
 
