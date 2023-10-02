@@ -11,3 +11,9 @@
 [1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[1] = "\+" at position 4 with len 1: +[0m
 [1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[10] = "[0-9]+" at position 5 with len 1: 2[0m
 [1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[9] = "\)" at position 6 with len 1: )[0m
+[1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[10] = "[0-9]+" at position 0 with len 1: 1[0m
+[1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[2] = "==" at position 1 with len 2: ==[0m
+[1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[10] = "[0-9]+" at position 3 with len 1: 1[0m
+[1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[10] = "[0-9]+" at position 0 with len 1: 1[0m
+[1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[2] = "==" at position 1 with len 2: ==[0m
+[1;34m[src/monitor/sdb/expr.c:97 make_token] match rules[10] = "[0-9]+" at position 3 with len 1: 2[0m
