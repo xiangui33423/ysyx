@@ -44,6 +44,7 @@ WP* new_wp()
   node->next = head;
   head = node;
   memcpy(&(head->NO),&(node->NO),sizeof(int));
+  printf("no:%d\n",head->NO);
   return node;
 }
 
