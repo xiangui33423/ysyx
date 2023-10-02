@@ -29,7 +29,7 @@ void init_wp_pool() {
 }
 
 /* TODO: Implement the functionality of watchpoint */
-
+ #define _CRT_SECURE_NO_WARNINGS
 WP* new_wp(char* args,word_t expr)
 {
   if(!free_)
