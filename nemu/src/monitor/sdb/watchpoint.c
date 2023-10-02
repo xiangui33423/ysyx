@@ -43,7 +43,7 @@ WP* new_wp()
 
   node->next = head;
   head = node;
-
+  memcpy(&(head->NO),&(node->NO),sizeof(int));
   return node;
 }
 
