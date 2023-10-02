@@ -20,12 +20,13 @@
  */
 #include <regex.h>
 #include <string.h>
+#include <memory/vaddr.h>
 
 enum {
   TK_NOTYPE = 256, TK_EQ,TK_NEQ,TK_ADD,
   TK_NUM_DEC/*十进制*/,TK_NUM_HEX/*十六进制*/,
   TK_NUM_NEG /*负数*/,TK_NUM_REG/*reg*/,
-  TK_NUM_ADDR/*address*/,
+  TK_GET_ADDR/*address*/,
   /* TODO: Add more token types */
 };
 
@@ -215,6 +216,13 @@ uint32_t eval(Token* p,Token* q)
       int a = strtol(q->str,&end,0);
       return -a;
     }
+    if (p->type == TK_GET_ADDR)
+    {
+      int n;
+      n = strtol(q->str, NULL, 0);
+      return vaddr_read(n, 4);
+    }
+    
   }
   else if(kuohao==true && p->type == '(' && q->type == ')')
   {
@@ -259,6 +267,7 @@ uint32_t eval(Token* p,Token* q)
     case TK_ADD: return val1 && val2;
     case TK_EQ: return val1 == val2;
     case TK_NEQ: return val1 != val2;
+
     default: 
       printf("fail3\n");
       assert(0);
@@ -283,6 +292,10 @@ word_t expr(char *e, bool *success) {
     if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-')  )
     {
       tokens[i].type = TK_NUM_NEG;
+    }
+    if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type == TK_NUM_DEC))
+    {
+      tokens[i].type = TK_GET_ADDR;
     }
     
   }
