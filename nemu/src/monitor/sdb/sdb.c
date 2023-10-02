@@ -99,6 +99,10 @@ static int cmd_p(char *args){
   return 0;
 }
 
+static int cmd_w(char *args)
+{
+  return 0;
+}
 
 static struct {
   const char *name;
@@ -114,7 +118,7 @@ static struct {
   { "info", "Print register status", cmd_info},
   { "x", "Evaluate the value of the expression EXPR, use the result as the starting memory address, and output N consecutive 4 bytes in hexadecimal form", cmd_x},
   { "p", "Evaluate the value of the expression EXPR, which is supported by EXPR. For operations, see the expression exaluation section in debugging", cmd_p},
-
+  { "w", "When the value of the expression EXPR changes, program execution is suspended", cmd_w},
 };
 
 #define NR_CMD ARRLEN(cmd_table)
