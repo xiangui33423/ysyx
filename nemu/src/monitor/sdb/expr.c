@@ -25,6 +25,7 @@ enum {
   TK_NOTYPE = 256, TK_EQ,TK_NEQ,TK_ADD,
   TK_NUM_DEC/*十进制*/,TK_NUM_HEX/*十六进制*/,
   TK_NUM_NEG /*负数*/,TK_NUM_REG/*reg*/,
+  TK_NUM_ADDR/*address*/,
   /* TODO: Add more token types */
 };
 
@@ -214,11 +215,20 @@ uint32_t eval(Token* p,Token* q)
         op = op_tmp;
         break;
       }
-      else if ((op_tmp->type == '*' || op_tmp->type == '/') && (op->type != '+' || op->type != '-'))
+      else if ((op_tmp->type == '*' || op_tmp->type == '/'))
+      {
+        op = op_tmp;
+        break;
+      }else if(op_tmp->type == TK_ADD)
+      {
+        op = op_tmp;
+        break;
+      }else if (op_tmp->type == TK_EQ || op_tmp->type == TK_NEQ)
       {
         op = op_tmp;
         break;
       }
+      
       op_tmp++;
     }
     val1 = eval(p,op-1);
@@ -230,6 +240,9 @@ uint32_t eval(Token* p,Token* q)
     case '-': return val1 - val2;
     case '*': return val1 * val2;
     case '/': return val1 / val2;
+    case TK_ADD: return val1 && val2;
+    case TK_EQ: return val1 == val2;
+    case TK_NEQ: return val1 != val2;
     default: 
       printf("fail3\n");
       assert(0);
