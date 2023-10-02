@@ -97,18 +97,19 @@ static int cmd_x(char *args)
 
 static int cmd_p(char *args){
   bool success = true;
-  expr(args, &success);
+  int a;
+  a=expr(args, &success);
   printf("success:%d\n",success);
-  return 0;
+  return a;
 }
 
 static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  head->NO = (int)expr(args,&success);
+  head->NO = cmd_p(args);
   printf("%d",head->NO);
-  return success;
+  return 0;
 }
 
 static struct {
