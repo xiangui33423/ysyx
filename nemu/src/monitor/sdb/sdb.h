@@ -17,6 +17,7 @@
 #define __SDB_H__
 
 #include <common.h>
+#include <string.h>
 
 #define NR_WP 32
 typedef struct watchpoint {
