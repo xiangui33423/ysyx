@@ -36,7 +36,7 @@ static char *code_format =
 uint32_t choose(uint32_t n)
 {
   uint32_t a;
-  a = rand()%n + 1;
+  a = rand()%n;
   return a;
 }
 
@@ -44,9 +44,15 @@ static int cnt = 0;
 
 static void gen_num()
 {
-  char a;
-  a = (char)(rand()%(39-30+1) + 30);
-  buf[cnt] = a;
+  int i = choose(65535);
+  if (*(buf+cnt-1)== '/')
+  {
+      while(!i)
+      {
+        i = choose(65535);
+      }
+  }
+  sprintf(buf+cnt,"%d",i);
   cnt++;
 }
 
@@ -63,11 +69,32 @@ static void gen_rand_op()
 {
   uint32_t n;
   n = choose(4);
-
+  switch (n)
+  {
+  case 0:
+    sprintf(buf+cnt,"%c",'+');
+    break;
+  case 1:
+    sprintf(buf+cnt,"%c",'-');
+    break;
+  case 2:
+    sprintf(buf+cnt,"%c",'*');
+    break;
+  case 3:
+    sprintf(buf+cnt,"%c",'/');
+  default:
+    break;
+  }
+  cnt++;
 }
 
 static void gen_rand_expr() {
-  switch (choose(65536))
+  int i = choose(3);
+
+  if(cnt>20)
+    i = 0;
+
+  switch (i)
   {
   case 0: gen_num();
           break;
@@ -90,6 +117,7 @@ int main(int argc, char *argv[]) {
   if (argc > 1) {
     sscanf(argv[1], "%d", &loop);
   }
+
   int i;
   for (i = 0; i < loop; i ++) {
     gen_rand_expr();
