@@ -20,16 +20,9 @@
 #include "sdb.h"
 #include <memory/paddr.h>
 
-typedef struct watchpoint {
-  int NO;
-  struct watchpoint *next;
 
-  /* TODO: Add more members if necessary */
-
-} WP;
 
 static int is_batch_mode = false;
-extern WP*head;
 
 void init_regex();
 void init_wp_pool();
@@ -111,9 +104,10 @@ static int cmd_p(char *args){
 
 static int cmd_w(char *args)
 {
+  bool success;
   new_wp();
-  
-  return 0;
+  head->NO = expr(args,&success);
+  return success;
 }
 
 static struct {
