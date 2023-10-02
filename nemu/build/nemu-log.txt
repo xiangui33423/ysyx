@@ -4,3 +4,8 @@
 [1;34m[src/monitor/monitor.c:28 welcome] Trace: [1;32mON[0m[0m
 [1;34m[src/monitor/monitor.c:29 welcome] If trace is enabled, a log file will be generated to record the trace. This may lead to a large log file. If it is not necessary, you can disable it in menuconfig[0m
 [1;34m[src/monitor/monitor.c:32 welcome] Build time: 18:57:14, Oct  2 2023[0m
+[1;34m[src/monitor/sdb/expr.c:98 make_token] match rules[6] = "\*" at position 0 with len 1: *[0m
+[1;34m[src/monitor/sdb/expr.c:98 make_token] match rules[10] = "0x[0-9]+" at position 1 with len 6: 0x2000[0m
+[1;34m[src/cpu/cpu-exec.c:93 statistic] host time spent = 0 us[0m
+[1;34m[src/cpu/cpu-exec.c:94 statistic] total guest instructions = 0[0m
+[1;34m[src/cpu/cpu-exec.c:96 statistic] Finish running in less than 1 us and can not calculate the simulation frequency[0m
