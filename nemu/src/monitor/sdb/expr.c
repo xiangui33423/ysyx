@@ -41,7 +41,7 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
-  {"!=", TK_NEQ}, 
+  {"\\!=", TK_NEQ}, 
   {"&&", TK_ADD},
   {"\\-", '-'},         // minus
   {"\\*", '*'},         // multiplication
