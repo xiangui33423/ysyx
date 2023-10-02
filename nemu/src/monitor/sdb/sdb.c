@@ -107,8 +107,8 @@ static int cmd_w(char *args)
 {
   bool success;
   new_wp();
-  wp_pool[0].expr = expr(args, &success);
-  strcpy(wp_pool[0].expr_str, args);
+  wp_pool[head->NO].expr = expr(args, &success);
+  // strcpy(wp_pool[0].expr_str, args);
   printf("breakpoint 0 at %s",args);
   return 0;
 }

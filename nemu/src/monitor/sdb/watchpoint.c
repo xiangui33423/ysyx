@@ -38,7 +38,9 @@ WP* new_wp()
   }
   WP* node;
   node = free_;
+  memcpy(&(node->NO),&(free_->NO),sizeof(int));
   free_ = free_->next;
+
   node->next = head;
   head = node;
 
