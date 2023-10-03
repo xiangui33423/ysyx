@@ -80,7 +80,12 @@ static int cmd_info(char *args){
 
   if(*args == 'w')
   {
-
+    WP* tmp;
+    while(tmp != NULL)
+    {
+      printf("%02d\t%10s\t%-10u\n",tmp->NO,tmp->expr,tmp->res);
+      tmp = tmp->next;
+    }
   }
   return 0;
 }
@@ -112,6 +117,16 @@ static int cmd_w(char *args)
   if(args == NULL) return 0;
   if(!(i=new_wp(args))) printf("the number of watch point is out of bound!\n");
   printf("watchpoint %d:%s\n",i,args);
+  return 0;
+}
+
+static int cmd_d(char* args)
+{
+  if (args == NULL)
+  {
+    return 0;
+  }
+  free_wp(atoi(args));
   return 0;
 }
 
