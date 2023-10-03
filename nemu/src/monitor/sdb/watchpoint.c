@@ -17,14 +17,13 @@
 
 char* strcpy(char *strDest, const char* strSrc)
 {
-    char *p=NULL;
-    if(strDest == NULL || strSrc == NULL)
-    {
-        return NULL;
-    }
-    p = strDest;
-    while((*strDest++ = *strSrc ++) != '\0');
-    return p;
+ 	while (*strSrc != '\0')
+	{
+		*strDest = *strSrc;
+		strDest++;
+		strSrc++;
+	}
+
 }
 
 void init_wp_pool() {
