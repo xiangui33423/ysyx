@@ -28,13 +28,14 @@ char* strcpy(char *strDest, const char* strSrc)
 }
 
 
-void my_strcpy(char* dest, char* sou)
+int getStrLen(const char* str)
 {
-  assert(dest && sou);
-	while (*dest++=*sou++)
-	{
-		;
-	}
+    int len = 0;
+    while( *str ++ != '\0')
+    {
+        len ++;
+    }
+    return len;
 }
 
 void init_wp_pool() {
@@ -62,7 +63,8 @@ WP* new_wp(char* args,word_t expr)
   node = free_;
   free_ = free_->next;
   node->expr = expr;
-  my_strcpy(node->expr_str,args);
+
+  memcpy(node->expr_str,args,getStrLen(args));
   node->next = NULL;
   if (head==NULL) 
   {
