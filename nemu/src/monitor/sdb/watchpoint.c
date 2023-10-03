@@ -30,6 +30,7 @@ char* strcpy(char *strDest, const char* strSrc)
 
 void my_strcpy(char* dest, char* sou)
 {
+  assert(dest && sou);
 	while (*dest++=*sou++)
 	{
 		;
