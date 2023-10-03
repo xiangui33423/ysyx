@@ -73,12 +73,12 @@ static int cmd_si(char *args){
 }
 
 static int cmd_info(char *args){
-  if(*args == 'r')
+  if(!strcmp(args,"r"))
   {
     isa_reg_display();
   }
 
-  if(*args == 'w')
+  if(!strcmp(args,"w"))
   {
     WP* tmp = head;
     while(tmp != NULL)
