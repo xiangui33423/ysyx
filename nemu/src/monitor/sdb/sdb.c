@@ -80,7 +80,7 @@ static int cmd_info(char *args){
 
   if(*args == 'w')
   {
-    WP* tmp;
+    WP* tmp = head;
     while(tmp != NULL)
     {
       printf("%02d\t%10s\t%-10u\n",tmp->NO,tmp->expr,tmp->res);
