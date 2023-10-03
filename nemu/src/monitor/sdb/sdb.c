@@ -77,8 +77,7 @@ static int cmd_info(char *args){
   {
     isa_reg_display();
   }
-
-  if(!strcmp(args,"w"))
+  else
   {
     WP* tmp = head;
     while(tmp != NULL)
@@ -87,6 +86,7 @@ static int cmd_info(char *args){
       tmp = tmp->next;
     }
   }
+
   return 0;
 }
 
