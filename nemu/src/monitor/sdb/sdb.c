@@ -104,11 +104,8 @@ static int cmd_p(char *args){
 
 static int cmd_w(char *args)
 {
-  bool success;
-
-  new_wp(args,expr(args, &success));
-  // strcpy(wp_pool[0].expr_str, args);
-  printf("%d %s %d\n",head->NO,head->expr,head->res);
+  if(args == NULL) return 0;
+  if(!new_wp(args)) printf("the number of watch point is out of bound!\n");
   return 0;
 }
 

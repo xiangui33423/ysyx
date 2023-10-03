@@ -28,10 +28,12 @@ void init_wp_pool() {
   free_ = wp_pool;
 }
 
+static int nr_wp_used = 0;
 /* TODO: Implement the functionality of watchpoint */
- #define _CRT_SECURE_NO_WARNINGS
-WP* new_wp(char* args,word_t expr)
+bool new_wp(char* args)
 {
+if(nr_wp_used >= NR_WP) return false;
+
   if(!free_)
   {
     assert(0);
@@ -39,55 +41,57 @@ WP* new_wp(char* args,word_t expr)
   WP* node;
   node = free_;
   free_ = free_->next;
-  node->res = expr;
-  strncpy(node->expr,args,strlen(args));
-  node->next = NULL;
+
   if (head==NULL) 
   {
     head = node;
+    head->next = NULL;
+    strcpy(head->expr,args);
+    node->res = 0;
   }
   else 
   {
-    node->next=head;
-    head=node;
+    WP* tmp = head;
+    while(tmp->next != NULL)
+      tmp = tmp->next;
+    tmp->next = node;
+    node->next = NULL;
+    strcpy(node->expr,args);
+    node->res = 0;
   }
-  return node;
+  nr_wp_used++;
+  return true;
 }
 
-void free_wp(WP* wp)
+void free_wp(int n)
 {
-  if(!wp)
-    return;
-  
-  int i,j;
-  WP* tmp = head;
-  //find wp where 
-  for(i = 0;tmp;tmp=tmp->next,i++)
+  if(nr_wp_used<=0) return;
+
+  WP* wp_to_free = NULL;
+  if(head->NO == n)
   {
-    if (tmp == wp)
-    {
-      break;
-    }
-  }
-  
-  //delete wp
-  if (!tmp)
-  {
-    return;
-  }
-  if(i==0)
+    wp_to_free = head;
     head = head->next;
-  else{
-    tmp = head;
-    for ( j = 0; j < i-1; j++)
+    wp_to_free->next = NULL;
+  }
+  else
+  {
+    WP* tmp = head;
+    while (tmp->next != NULL)
     {
-      tmp=tmp->next;
+      if(tmp->next->NO == n)
+      {
+        wp_to_free = tmp->next;
+        tmp->next = wp_to_free->next;
+        wp_to_free->next = NULL;
+        break;
+      }
+      tmp = tmp->next;
     }
-
-    tmp->next = (tmp->next)->next;
+    if (tmp->next == NULL) return;
   }
 
-  wp->next = free_;
-  free_ = wp;
+  wp_to_free->next = free_;
+  nr_wp_used--;
 }
 

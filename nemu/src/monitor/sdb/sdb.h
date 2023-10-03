@@ -34,6 +34,6 @@ static WP wp_pool[NR_WP] = {};
 static WP *head = NULL, *free_ = NULL;
 
 word_t expr(char *e, bool *success);
-WP* new_wp(char* args,word_t expr);
+bool new_wp(char* args);
 
 #endif
