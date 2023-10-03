@@ -17,13 +17,23 @@
 
 char* strcpy(char *strDest, const char* strSrc)
 {
- 	while (*strSrc != '\0')
+    char *p=NULL;
+    if(strDest == NULL || strSrc == NULL)
+    {
+        return NULL;
+    }
+    p = strDest;
+    while((*strDest++ = *strSrc ++) != '\0');
+    return p;
+}
+
+
+void my_strcpy(char* dest, char* sou)
+{
+	while (*dest++=*sou++)
 	{
-		*strDest = *strSrc;
-		strDest++;
-		strSrc++;
+		;
 	}
-  return strDest;
 }
 
 void init_wp_pool() {
@@ -51,7 +61,7 @@ WP* new_wp(char* args,word_t expr)
   node = free_;
   free_ = free_->next;
   node->expr = expr;
-  strcpy(node->expr_str,args);
+  my_strcpy(node->expr_str,args);
   node->next = NULL;
   if (head==NULL) 
   {
