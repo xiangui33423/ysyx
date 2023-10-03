@@ -15,36 +15,13 @@
 
 #include "sdb.h"
 
-char* strcpy(char *strDest, const char* strSrc)
-{
-    char *p=NULL;
-    if(strDest == NULL || strSrc == NULL)
-    {
-        return NULL;
-    }
-    p = strDest;
-    while((*strDest++ = *strSrc ++) != '\0');
-    return p;
-}
-
-
-int getStrLen(const char* str)
-{
-    int len = 0;
-    while( *str ++ != '\0')
-    {
-        len ++;
-    }
-    return len;
-}
-
 void init_wp_pool() {
   int i;
   for (i = 0; i < NR_WP; i ++) {
     wp_pool[i].NO = i;
     wp_pool[i].next = (i == NR_WP - 1 ? NULL : &wp_pool[i + 1]);
-    wp_pool[i].expr = 1;
-    wp_pool[i].expr_str = "\0";
+    wp_pool[i].res = 1;
+    wp_pool[i].expr[0] = '\0';
   }
 
   head = NULL;
@@ -62,9 +39,9 @@ WP* new_wp(char* args,word_t expr)
   WP* node;
   node = free_;
   free_ = free_->next;
-  node->expr = expr;
+  node->res = expr;
 
-  strncpy(node->expr_str,args,getStrLen(args));
+  strncpy(node->expr,args,strlen(args));
   node->next = NULL;
   if (head==NULL) 
   {
