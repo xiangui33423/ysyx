@@ -80,7 +80,7 @@ static int cmd_info(char *args){
 
   if(*args == 'w')
   {
-    
+
   }
   return 0;
 }
@@ -106,11 +106,12 @@ static int cmd_p(char *args){
   printf("success:%d\n",success);
   return a;
 }
-
 static int cmd_w(char *args)
 {
+  int i;
   if(args == NULL) return 0;
-  if(!new_wp(args)) printf("the number of watch point is out of bound!\n");
+  if(!(i=new_wp(args))) printf("the number of watch point is out of bound!\n");
+  printf("watchpoint %d:%s\n",i,args);
   return 0;
 }
 

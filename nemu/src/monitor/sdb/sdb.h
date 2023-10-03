@@ -33,7 +33,8 @@ typedef struct watchpoint {
 static WP wp_pool[NR_WP] = {};
 static WP *head = NULL, *free_ = NULL;
 
+
 word_t expr(char *e, bool *success);
-bool new_wp(char* args);
+int new_wp(char* args);
 
 #endif

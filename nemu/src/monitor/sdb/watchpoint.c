@@ -30,7 +30,7 @@ void init_wp_pool() {
 
 static int nr_wp_used = 0;
 /* TODO: Implement the functionality of watchpoint */
-bool new_wp(char* args)
+int new_wp(char* args)
 {
 if(nr_wp_used >= NR_WP) return false;
 
@@ -60,7 +60,7 @@ if(nr_wp_used >= NR_WP) return false;
     node->res = 0;
   }
   nr_wp_used++;
-  return true;
+  return nr_wp_used;
 }
 
 void free_wp(int n)
