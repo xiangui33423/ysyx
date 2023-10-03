@@ -77,6 +77,11 @@ static int cmd_info(char *args){
   {
     isa_reg_display();
   }
+
+  if(*args == 'w')
+  {
+    
+  }
   return 0;
 }
 
