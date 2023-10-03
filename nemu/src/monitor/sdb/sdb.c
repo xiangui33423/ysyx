@@ -79,12 +79,7 @@ static int cmd_info(char *args){
   }
   else
   {
-    WP* tmp = head;
-    while(tmp != NULL)
-    {
-      printf("%02d\t%10s\t%-10u\n",tmp->NO,tmp->expr,tmp->res);
-      tmp = tmp->next;
-    }
+    traverse_wp();
   }
 
   return 0;

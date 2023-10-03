@@ -63,6 +63,15 @@ if(nr_wp_used >= NR_WP) return false;
   return nr_wp_used;
 }
 
+void traverse_wp(){
+  WP *itr = head;
+  while(itr != NULL){
+    printf("%02d\t%10s\t%-10u\n",itr->NO,itr->expr,itr->res);
+    itr = itr->next;
+  }
+}
+
+
 void free_wp(int n)
 {
   if(nr_wp_used<=0) return;
