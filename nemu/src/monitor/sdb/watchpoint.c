@@ -40,7 +40,6 @@ WP* new_wp(char* args,word_t expr)
   node = free_;
   free_ = free_->next;
   node->res = expr;
-
   strncpy(node->expr,args,strlen(args));
   node->next = NULL;
   if (head==NULL) 
