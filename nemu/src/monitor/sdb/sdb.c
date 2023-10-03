@@ -145,6 +145,7 @@ static struct {
   { "x", "Evaluate the value of the expression EXPR, use the result as the starting memory address, and output N consecutive 4 bytes in hexadecimal form", cmd_x},
   { "p", "Evaluate the value of the expression EXPR, which is supported by EXPR. For operations, see the expression exaluation section in debugging", cmd_p},
   { "w", "When the value of the expression EXPR changes, program execution is suspended", cmd_w},
+  { "d", "delete watchpoint", cmd_d},
 };
 
 #define NR_CMD ARRLEN(cmd_table)
