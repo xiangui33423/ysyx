@@ -64,7 +64,7 @@ WP* new_wp(char* args,word_t expr)
   free_ = free_->next;
   node->expr = expr;
 
-  memcpy(node->expr_str,args,getStrLen(args));
+  strncpy(node->expr_str,args,getStrLen(args));
   node->next = NULL;
   if (head==NULL) 
   {
