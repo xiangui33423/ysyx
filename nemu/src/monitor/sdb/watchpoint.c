@@ -23,7 +23,7 @@ char* strcpy(char *strDest, const char* strSrc)
 		strDest++;
 		strSrc++;
 	}
-
+  return strDest;
 }
 
 void init_wp_pool() {
