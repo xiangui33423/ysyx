@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/xg-lab/verilator/**"
+            ],
+            "defines": [],
+            "cppStandard": "c++11",
+            "cStandard": "c99"
+        }
+    ],
+    "version": 4
+}
