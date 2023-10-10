@@ -1,13 +1,13 @@
 module rom (
     input        clk,
     input        rst_n,
-    input  [3:0] addr,
+    input  [4:0] addr,
     output [7:0] seg   
 );
 
-    reg [7:0] rom[3:0];
+    reg [7:0] rom[16:0];
     integer i;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
       if(!rst_n)
         begin
           rom[0] <= 8'b1111_1100;
@@ -26,6 +26,7 @@ module rom (
           rom[13]<= 8'b1111_1100;
           rom[14]<= 8'b1001_1110;
           rom[15]<= 8'b1000_1110;
+          rom[16]<= 8'b0000_0000;
         end
         else begin
           for (i = 0;i < 16 ;i = i + 1) begin
@@ -34,4 +35,6 @@ module rom (
         end
     end
 
+    assign seg = rst_n ? rom[addr] : 0;
+    
 endmodule //rom
