@@ -38,5 +38,6 @@ word_t expr(char *e, bool *success);
 int new_wp(char* args);
 void free_wp(int n);
 void traverse_wp();
+char* rl_gets();
 
 #endif

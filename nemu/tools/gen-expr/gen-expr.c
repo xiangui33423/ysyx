@@ -22,8 +22,8 @@
 #include <time.h>
 
 // this should be enough
-static char buf[65536] = {};
-static char code_buf[65536 + 128] = {}; // a little larger than `buf`
+static char buf[60000] = "\0";
+static char code_buf[65536] = {}; // a little larger than `buf`
 static char *code_format =
 "#include <stdio.h>\n"
 "int main() { "
@@ -42,29 +42,6 @@ uint32_t choose(uint32_t n)
 
 static int cnt = 0;
 
-static void gen_num()
-{
-  int i = choose(65535);
-  if (*(buf+cnt-1)== '/')
-  {
-      while(!i)
-      {
-        i = choose(65535);
-      }
-  }
-  sprintf(buf+cnt,"%d",i);
-  cnt++;
-}
-
-static void gen(char x)
-{
-  if(x == '(')
-    buf[cnt] = '(';
-  else if(x == ')')
-    buf[cnt] = ')';
-  cnt++;
-}
-
 static void gen_rand_op()
 {
   uint32_t n;
@@ -82,32 +59,55 @@ static void gen_rand_op()
     break;
   case 3:
     sprintf(buf+cnt,"%c",'/');
-  default:
+    break;
+  default:sprintf(buf+cnt,"%c",'+');
     break;
   }
   cnt++;
 }
 
+
+static void gen_num()
+{
+  int i = choose(65535);
+  if(buf[cnt-1] == ')') return;
+  if (buf[cnt-1]== '/')
+  {
+      while(!i)
+      {
+        i = choose(65535);
+      }
+  }
+  sprintf(buf+cnt,"%d",i);
+  while ((buf[cnt]))
+  {
+    cnt++;
+  }
+  
+}
+
+static void gen(char x)
+{
+  sprintf(buf+cnt,"%c",x);
+  cnt++;
+}
+
+
 static void gen_rand_expr() {
   int i = choose(3);
 
-  if(cnt>20)
-    i = 0;
 
-  switch (i)
-  {
-  case 0: gen_num();
-          break;
-  case 1: gen('(');
-          gen_rand_expr();
-          gen(')');
-    break;
-  default:gen_rand_expr();
-          gen_rand_op();
-          gen_rand_expr();
-          
-    break;
-  }
+    switch (i)
+      {
+      case 0: gen_num();break;
+
+      case 1: gen('(');gen_rand_expr();gen(')');break;
+
+      default:gen_rand_expr();
+              gen_rand_op();
+              gen_rand_expr();
+              break;
+      }
 }
 
 int main(int argc, char *argv[]) {
@@ -120,6 +120,7 @@ int main(int argc, char *argv[]) {
 
   int i;
   for (i = 0; i < loop; i ++) {
+    buf[0] = '\0';
     gen_rand_expr();
 
     sprintf(code_buf, code_format, buf);
@@ -136,9 +137,13 @@ int main(int argc, char *argv[]) {
     assert(fp != NULL);
 
     int result;
-    ret = fscanf(fp, "%d", &result);
+    ret = fscanf(fp, " %d", &result);
     pclose(fp);
-
+    	if (ret != 1) {
+			// waste a single loop, generate a new one.
+			--i;
+			continue;
+		}
     printf("%d %s\n", result, buf);
   }
   return 0;
