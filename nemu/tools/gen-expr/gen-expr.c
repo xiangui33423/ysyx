@@ -22,7 +22,7 @@
 #include <time.h>
 
 // this should be enough
-static char buf[60000] = "\0";
+static char buf[60000] = {};
 static char code_buf[65536] = {}; // a little larger than `buf`
 static char *code_format =
 "#include <stdio.h>\n"
@@ -30,7 +30,7 @@ static char *code_format =
 "  unsigned result = %s; "
 "  printf(\"%%u\", result); "
 "  return 0; "
-"}";
+"}\n";
 
 //生成比n小的随机数
 uint32_t choose(uint32_t n)
@@ -69,13 +69,12 @@ static void gen_rand_op()
 
 static void gen_num()
 {
-  int i = choose(65535);
-  if(buf[cnt-1] == ')') return;
+  int i = choose(1000);
   if (buf[cnt-1]== '/')
   {
       while(!i)
       {
-        i = choose(65535);
+        i = choose(1000);
       }
   }
   sprintf(buf+cnt,"%d",i);
@@ -96,8 +95,8 @@ static void gen(char x)
 static void gen_rand_expr() {
   int i = choose(3);
 
-
-    switch (i)
+    if(cnt>20) i=0;
+    switch (choose(3))
       {
       case 0: gen_num();break;
 
@@ -120,16 +119,16 @@ int main(int argc, char *argv[]) {
 
   int i;
   for (i = 0; i < loop; i ++) {
-    buf[0] = '\0';
+    
     gen_rand_expr();
 
     sprintf(code_buf, code_format, buf);
-
     FILE *fp = fopen("/tmp/.code.c", "w");
     assert(fp != NULL);
     fputs(code_buf, fp);
     fclose(fp);
-
+    strcpy(buf,"");
+    cnt = 0;
     int ret = system("gcc /tmp/.code.c -o /tmp/.expr");
     if (ret != 0) continue;
 
@@ -137,7 +136,7 @@ int main(int argc, char *argv[]) {
     assert(fp != NULL);
 
     int result;
-    ret = fscanf(fp, " %d", &result);
+    ret = fscanf(fp, "%d", &result);
     pclose(fp);
     	if (ret != 1) {
 			// waste a single loop, generate a new one.
@@ -145,6 +144,7 @@ int main(int argc, char *argv[]) {
 			continue;
 		}
     printf("%d %s\n", result, buf);
+
   }
   return 0;
 }
