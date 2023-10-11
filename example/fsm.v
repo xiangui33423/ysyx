@@ -23,7 +23,7 @@ module fsm (
         end
     end
 
-    always @(next_state or en) begin
+    always @(next_state) begin
         case(current_state)
             IDLE: if(data != 'h0F && en) next_state = ON;
                   else next_state = IDLE;

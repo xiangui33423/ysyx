@@ -15,7 +15,7 @@ module top (
 
     keyboard u_keyboard(
         .clk(clk),
-        .rst_n(rst_n),
+        .rst_n(~rst_n),
         .ps2_data(ps2_data),
         .ps2_clk(ps2_clk),
         .out(data),
@@ -24,7 +24,7 @@ module top (
     
     produce u_produce(
         .clk(clk),
-        .rst_n(rst_n),
+        .rst_n(~rst_n),
         .en(en),
         .data(data),
         .counter1(counter1),
