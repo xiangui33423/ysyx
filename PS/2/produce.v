@@ -31,11 +31,13 @@ module produce (
           tmp <= data;
           if(last_state == 0 && state == 3'd1)
             counter <= counter + 8'd1;
-
         end
     end
-    wire [4:0]addr1 = {data != 0 && data != 'hF0 && buffer != 'hF0} ?  {1'd0,data[3:0]} : 5'd16;
-    wire [4:0]addr2 = {data != 0 && data != 'hF0 && buffer != 'hF0} ?  {1'd0,data[7:4]} : 5'd16;
+
+    
+
+    wire [4:0]addr1 = {data != 0 && data != 'hF0 && buffer != 'hF0 && en} ?  {1'd0,data[3:0]} : 5'd16;
+    wire [4:0]addr2 = {data != 0 && data != 'hF0 && buffer != 'hF0 && en} ?  {1'd0,data[7:4]} : 5'd16;
 
     rom u_rom_counter1(.clk(clk),
               .rst_n(rst_n),
@@ -68,6 +70,7 @@ module produce (
     rom_ascii u_ascii(
       .clk(clk),
       .rst_n(rst_n),
+      .en(en),
       .data(data),
       .seg1(key1),
       .seg2(key2)

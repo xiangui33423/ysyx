@@ -1,0 +1,122 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55a058c2e4d0 .scope module, "keyboard" "keyboard" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /INPUT 1 "rst_n"
+    .port_info 2 /INPUT 1 "ps2_data"
+    .port_info 3 /INPUT 1 "ps2_clk"
+    .port_info 4 /OUTPUT 8 "out"
+    .port_info 5 /OUTPUT 1 "en"
+L_0x55a058c7ace0 .functor NOT 1, L_0x55a058c7ac10, C4<0>, C4<0>, C4<0>;
+L_0x55a058c7ada0 .functor AND 1, L_0x55a058c7ab70, L_0x55a058c7ace0, C4<1>, C4<1>;
+L_0x55a058c7aeb0 .functor BUFZ 8, v0x55a058c7a450_0, C4<00000000>, C4<00000000>, C4<00000000>;
+v0x55a058c2e650_0 .net *"_s1", 0 0, L_0x55a058c7ab70;  1 drivers
+v0x55a058c79fe0_0 .net *"_s3", 0 0, L_0x55a058c7ac10;  1 drivers
+v0x55a058c7a0c0_0 .net *"_s4", 0 0, L_0x55a058c7ace0;  1 drivers
+v0x55a058c7a180_0 .var "buffer", 9 0;
+o0x7f50d056e0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a058c7a260_0 .net "clk", 0 0, o0x7f50d056e0d8;  0 drivers
+v0x55a058c7a370_0 .var "count", 3 0;
+v0x55a058c7a450_0 .var "data", 7 0;
+v0x55a058c7a530_0 .var "en", 0 0;
+v0x55a058c7a5f0_0 .net "out", 7 0, L_0x55a058c7aeb0;  1 drivers
+o0x7f50d056e1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a058c7a6d0_0 .net "ps2_clk", 0 0, o0x7f50d056e1c8;  0 drivers
+v0x55a058c7a790_0 .var "ps2_clk_sync", 2 0;
+o0x7f50d056e228 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a058c7a870_0 .net "ps2_data", 0 0, o0x7f50d056e228;  0 drivers
+o0x7f50d056e258 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55a058c7a930_0 .net "rst_n", 0 0, o0x7f50d056e258;  0 drivers
+v0x55a058c7a9f0_0 .net "sampling", 0 0, L_0x55a058c7ada0;  1 drivers
+E_0x55a058c2ec90 .event posedge, v0x55a058c7a260_0;
+L_0x55a058c7ab70 .part v0x55a058c7a790_0, 2, 1;
+L_0x55a058c7ac10 .part v0x55a058c7a790_0, 1, 1;
+    .scope S_0x55a058c2e4d0;
+T_0 ;
+    %wait E_0x55a058c2ec90;
+    %load/vec4 v0x55a058c7a790_0;
+    %parti/s 2, 0, 2;
+    %load/vec4 v0x55a058c7a6d0_0;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0x55a058c7a790_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x55a058c2e4d0;
+T_1 ;
+    %wait E_0x55a058c2ec90;
+    %load/vec4 v0x55a058c7a930_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 10;
+    %assign/vec4 v0x55a058c7a180_0, 0;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0x55a058c7a370_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55a058c7a530_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0x55a058c7a9f0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.2, 8;
+    %load/vec4 v0x55a058c7a370_0;
+    %cmpi/e 10, 0, 4;
+    %jmp/0xz  T_1.4, 4;
+    %load/vec4 v0x55a058c7a180_0;
+    %parti/s 1, 0, 2;
+    %pad/u 32;
+    %pushi/vec4 0, 0, 32;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %load/vec4 v0x55a058c7a870_0;
+    %and;
+    %load/vec4 v0x55a058c7a180_0;
+    %parti/s 9, 1, 2;
+    %xor/r;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.6, 8;
+    %load/vec4 v0x55a058c7a180_0;
+    %parti/s 8, 1, 2;
+    %assign/vec4 v0x55a058c7a450_0, 0;
+    %vpi_call 2 34 "$display", "receive %x", &PV<v0x55a058c7a180_0, 1, 8> {0 0 0};
+    %load/vec4 v0x55a058c7a450_0;
+    %pad/u 32;
+    %cmpi/ne 240, 0, 32;
+    %jmp/0xz  T_1.8, 4;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x55a058c7a530_0, 0;
+    %jmp T_1.9;
+T_1.8 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55a058c7a530_0, 0;
+T_1.9 ;
+T_1.6 ;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0x55a058c7a370_0, 0;
+    %jmp T_1.5;
+T_1.4 ;
+    %load/vec4 v0x55a058c7a870_0;
+    %ix/load 5, 0, 0;
+    %ix/getv 4, v0x55a058c7a370_0;
+    %assign/vec4/off/d v0x55a058c7a180_0, 4, 5;
+    %load/vec4 v0x55a058c7a370_0;
+    %addi 1, 0, 4;
+    %assign/vec4 v0x55a058c7a370_0, 0;
+T_1.5 ;
+T_1.2 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "keyboard.v";

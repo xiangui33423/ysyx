@@ -1,21 +1,26 @@
-fsm:
-	verilator --trace --build --cc fsm.v  --exe sim_fsm.cpp 
-	./obj_dir/Vfsm
-	gtkwave wave.vcd
+# fsm:
+# 	verilator --trace --build --cc fsm.v  --exe sim_fsm.cpp 
+# 	./obj_dir/Vfsm
+# 	gtkwave wave.vcd
 
 keyboard:
 	verilator --trace --build --cc keyboard.v  --exe sim_keyboard.cpp 
 	./obj_dir/Vkeyboard
 	gtkwave wave.vcd
 
-produce:
-	verilator --trace --build --top-module produce --cc produce.v fsm.v rom.v --exe sim_fsm.cpp 
-	./obj_dir/Vproduce
-	gtkwave wave.vcd
+# produce:
+# 	verilator --trace --build --top-module produce --cc produce.v fsm.v rom.v --exe sim_fsm.cpp 
+# 	./obj_dir/Vproduce
+# 	gtkwave wave.vcd
 
-ascii:
-	verilator --trace --build --top-module rom_ascii --cc rom_ascii.v rom.v --exe sim_ascii.cpp 
-	./obj_dir/Vrom_ascii
+# ascii:
+# 	verilator --trace --build --top-module rom_ascii --cc rom_ascii.v rom.v --exe sim_ascii.cpp 
+# 	./obj_dir/Vrom_ascii
+# 	gtkwave wave.vcd
+
+top:
+	verilator --trace --build --top-module top --cc top.v rom_ascii.v rom.v keyboard.v produce.v fsm.v --exe sim_top.cpp 
+	./obj_dir/Vtop
 	gtkwave wave.vcd
 
 TOPNAME = top
@@ -24,7 +29,7 @@ INC_PATH ?=
 
 VERILATOR = verilator
 VERILATOR_CFLAGS += -MMD --build -cc  \
-				-O3 --x-assign fast --x-initial fast --noassert
+				-O3 --x-assign fast --x-initial fast --noassert --trace
 
 BUILD_DIR = ./build
 OBJ_DIR = $(BUILD_DIR)/obj_dir
@@ -50,6 +55,7 @@ include $(NVBOARD_HOME)/scripts/nvboard.mk
 # rules for verilator
 INCFLAGS = $(addprefix -I, $(INC_PATH))
 CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
+LDFLAGS += -lSDL2 -lSDL2_image
 
 $(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
 	@rm -rf $(OBJ_DIR)

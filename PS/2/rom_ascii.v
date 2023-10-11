@@ -2,6 +2,7 @@ module rom_ascii(
     input        clk,
     input        rst_n,
     input  [7:0] data,
+    input en,
     output [7:0] seg1,
     output [7:0] seg2
 );
@@ -91,8 +92,8 @@ module rom_ascii(
         end
     end
 
-    wire [4:0] addr1 = {data != 0 && data != 'hF0 && buffer != 'hF0} ?  {1'd0,lut_out[3:0]} : 5'd16;
-    wire [4:0] addr2 = {data != 0 && data != 'hF0 && buffer != 'hF0} ?  {1'd0,lut_out[7:4]} : 5'd16;
+    wire [4:0] addr1 = {data != 0 && data != 'hF0 && buffer != 'hF0 && en} ?  {1'd0,lut_out[3:0]} : 5'd16;
+    wire [4:0] addr2 = {data != 0 && data != 'hF0 && buffer != 'hF0 && en} ?  {1'd0,lut_out[7:4]} : 5'd16;
     rom u_rom1(
         .clk(clk),
         .rst_n(rst_n),
