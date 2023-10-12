@@ -51,7 +51,7 @@ static struct rule {
   {"\\)", ')'},
   {"0x[0-9,a-f,A-F]+",TK_NUM_HEX},
   {"[0-9]+", TK_NUM_DEC},  
-  {"\\$[$rsgta][ap0-9] | \\$s1[0-1]",TK_NUM_REG},
+  {"\\$[$rsgta][ap0-9] | \\$[s][1][0-1]",TK_NUM_REG},
 };
 
 #define NR_REGEX ARRLEN(rules)
