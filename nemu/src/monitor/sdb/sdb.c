@@ -94,7 +94,7 @@ static int cmd_x(char *args)
   n = strtol(args, &pEnd, 10);
   addr = strtol(pEnd, NULL, 0);
   int i;
-  for(i = 0; i < n;i++)
+  for(i = 0; i < n;i+=4)
   {
     printf("0x%x: %d\n",addr+i ,paddr_read(addr+i,4));
   }
