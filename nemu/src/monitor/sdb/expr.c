@@ -51,7 +51,7 @@ static struct rule {
   {"\\)", ')'},
   {"0x[0-9]+",TK_NUM_HEX},
   {"[0-9]+", TK_NUM_DEC},  
-  {"$[0-9]+",TK_NUM_REG},
+  {"$**",TK_NUM_REG},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -222,7 +222,6 @@ uint32_t eval(Token* p,Token* q)
       n = strtol(q->str, NULL, 0);
       return vaddr_read(n, 4);
     }
-    
   }
   else if(kuohao==true && p->type == '(' && q->type == ')')
   {
