@@ -84,6 +84,7 @@ static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
 
 static bool make_token(char *e) {
+  memset(tokens,0,32);
   int position = 0;
   int i,tmp;
   regmatch_t pmatch;
@@ -103,8 +104,6 @@ static bool make_token(char *e) {
          * to record the token in the array `tokens'. For certain types
          * of tokens, some extra actions should be performed.
          */
-        strcpy(tokens[nr_token].str,"");
-        memset(tokens[nr_token].str,32,0);
         switch (rules[i].token_type) {
           case '+': tokens[nr_token].type = '+';  
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
