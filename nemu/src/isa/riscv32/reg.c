@@ -28,7 +28,7 @@ void isa_reg_display() {
   int i;
   for(i = 0; i < ISA_REG_LENGTH; i++)
   {
-    printf("%s: 0x%08x  %08d\n",reg_name(i), gpr(i), gpr(i));
+    printf("%s: 0x%08x  %08u\n",reg_name(i), gpr(i), gpr(i));
   }
 }
 
