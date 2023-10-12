@@ -85,7 +85,7 @@ static int nr_token __attribute__((used))  = 0;
 
 static bool make_token(char *e) {
   int position = 0;
-  int i;
+  int i,tmp;
   regmatch_t pmatch;
   nr_token = 0;
   while (e[position] != '\0') {
@@ -124,8 +124,9 @@ static bool make_token(char *e) {
                     break;
           case TK_NUM_HEX:
                     tokens[nr_token].type = TK_NUM_HEX;
-                      strncpy((tokens[nr_token++].str), substr_start+2, substr_len-2);
-                      break;
+                    tmp = strtol(substr_start,NULL,0);
+                    sprintf(tokens[nr_token++].str,"%d",tmp);
+                    break;
           case '(':
                     tokens[nr_token].type = '('; 
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
