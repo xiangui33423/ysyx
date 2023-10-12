@@ -149,7 +149,7 @@ static bool make_token(char *e) {
                     break;     
           case TK_NUM_REG:
                     tokens[nr_token].type = TK_NUM_REG; 
-                    strncpy(tokens[nr_token++].str, substr_start, substr_len);
+                    strncpy(tokens[nr_token++].str, substr_start+1, substr_len-1);
                     break;                                      
           case ' ': break;
           default: 
