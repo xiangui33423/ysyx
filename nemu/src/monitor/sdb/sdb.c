@@ -96,7 +96,7 @@ static int cmd_x(char *args)
   int i;
   for(i = 0; i < n;i++)
   {
-    printf("0x%x: %d\n",addr+4*i ,paddr_read(addr+4*i,4));
+    printf("0x%x: %8d  %8x\n",addr+4*i ,paddr_read(addr+4*i,4),paddr_read(addr+4*i,4));
   }
   return 0;
 }
