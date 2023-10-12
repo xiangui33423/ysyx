@@ -34,6 +34,6 @@ void isa_reg_display() {
 
 word_t isa_reg_str2val(const char *s) {
   int i = 0;
-  while (strcmp(s,*regs) && i<ISA_REG_LENGTH)  i++;
+  while (strcmp(s,regs[i]) && i<ISA_REG_LENGTH)  i++;
   return gpr(i);
 }
