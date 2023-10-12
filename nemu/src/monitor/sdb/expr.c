@@ -206,8 +206,7 @@ uint32_t eval(Token* p,Token* q)
     assert(0);
   }
   else if(p == q){
-    bool success;
-    if(p->type == TK_NUM_REG) return isa_reg_str2val(p->str, &success);
+    if(p->type == TK_NUM_REG) return isa_reg_str2val(p->str);
     return strtol(p->str,&end,0);
   }
   else if(p+1 == q)//对二义性做处理
