@@ -42,7 +42,7 @@ if(nr_wp_used >= NR_WP) return false;
   node = free_;
   free_ = free_->next;
 
-  if (head==NULL) 
+  if (head==NULL) //空链表
   {
     head = node;
     head->next = NULL;

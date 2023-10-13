@@ -170,15 +170,13 @@ static bool make_token(char *e) {
   return true;
 }
 
-
-
-
 bool check_parentheses(Token *p,Token *q)
 {
   int a,b;
   a = b = 0;
   Token *c;
   c = p;
+
   while (c<=q)
   {
     if(c->type == '(') a++;
@@ -199,6 +197,7 @@ uint32_t eval(Token* p,Token* q)
   uint32_t val1,val2;
   bool kuohao = false;
   kuohao = check_parentheses(p,q);
+
   // printf("%d\n",kuohao);
   if(p>q)
   {
@@ -206,7 +205,9 @@ uint32_t eval(Token* p,Token* q)
     assert(0);
   }
   else if(p == q){
-    if(p->type == TK_NUM_REG) return isa_reg_str2val(p->str);
+
+    if(p->type == TK_NUM_REG) //对地址进行处理
+      return isa_reg_str2val(p->str);
     return strtol(p->str,&end,0);
   }
   else if(p+1 == q)//对二义性做处理
@@ -287,8 +288,8 @@ word_t expr(char *e, bool *success) {
   /* TODO: Insert codes to evaluate the expression. */
   for(i = 0; i < nr_token; i++)
   {
-    //只做了加减法的负数匹配
-    if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-')  )
+    //只做了加减法和取地址的负数匹配
+    if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-'))
     {
       tokens[i].type = TK_NUM_NEG;
     }
