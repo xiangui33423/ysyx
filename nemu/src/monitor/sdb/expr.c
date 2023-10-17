@@ -289,11 +289,11 @@ word_t expr(char *e, bool *success) {
   for(i = 0; i < nr_token; i++)
   {
     //只做了加减法和取地址的负数匹配
-    if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-'))
+    if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-' || tokens[i-1].type == '('))
     {
       tokens[i].type = TK_NUM_NEG;
     }
-    if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type != TK_NUM_DEC))
+    if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type != TK_NUM_DEC || tokens[i-1].type == '('))
     {
       tokens[i].type = TK_GET_ADDR;
     }
