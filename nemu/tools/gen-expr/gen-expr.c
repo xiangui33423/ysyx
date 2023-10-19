@@ -69,12 +69,12 @@ static void gen_rand_op()
 
 static void gen_num()
 {
-  int i = choose(1000);
+  int i = choose(100);
   if (buf[cnt-1]== '/')
   {
       while(!i)
       {
-        i = choose(1000);
+        i = choose(100);
       }
   }
   sprintf(buf+cnt,"%d",i);
@@ -96,7 +96,7 @@ static void gen_rand_expr() {
   int i = choose(3);
 
     if(cnt>20) i=0;
-    switch (choose(3))
+    switch (i)
       {
       case 0: gen_num();break;
 
