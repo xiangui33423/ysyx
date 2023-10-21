@@ -204,6 +204,7 @@ uint32_t eval(Token* p,Token* q)
   bool kuohao = false;
   kuohao = check_parentheses(p,q);
   (*op).type = TK_NOTYPE;
+  strcpy(op->str,"");
   // printf("%d\n",kuohao);
   if(p>q)
   {
