@@ -241,9 +241,9 @@ uint32_t eval(Token* p,Token* q)
       return vaddr_read(n, 4);
     }
   }
-  else if(KH.kuohao==true && p->type == '(')
+  else if(KH.kuohao==true && p->type == '(' && q->type == ')')
   {
-    return eval(p+1,KH.q-1);
+    return eval(p+1,q-1);
   }
   else if(KH.kuohao == false)
   {
@@ -256,6 +256,11 @@ uint32_t eval(Token* p,Token* q)
     while(op_tmp<=q)
     {
       //寻找主操作符
+      if(op_tmp->type == '(')
+      {
+        op_tmp = KH.q + 1;
+        break;
+      }
       if (op_tmp->type == '+' || op_tmp->type == '-')
       {
         op = op_tmp;
