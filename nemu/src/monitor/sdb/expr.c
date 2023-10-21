@@ -237,7 +237,7 @@ uint32_t eval(Token* p,Token* q)
   else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
   { 
     op_tmp = p;
-    while(op_tmp<=q)
+    while(op_tmp<q)
     {
       //寻找主操作符
       if(op_tmp->type == '(')
