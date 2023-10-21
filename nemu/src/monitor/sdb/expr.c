@@ -178,14 +178,14 @@ typedef struct kh
 
 kh KH;
 
-kh *check_parentheses(Token *p,Token *q)
+kh check_parentheses(Token *p,Token *q)
 {
   int a,b;
   a = b = 0;
   Token *c;
   c = p;
   Token *tmp;
-  kh *KH;
+  kh KH;
   while (c<=q)
   {
     if(c->type == '(') a++;
@@ -198,12 +198,11 @@ kh *check_parentheses(Token *p,Token *q)
   }
   if (a == b)
   {
-    KH->kuohao = true;
-    KH->q = tmp;
+    KH.kuohao = true;
+    KH.q = tmp;
     return KH;
   }
-  KH->kuohao = false;
-  KH->q = 0;
+  KH.kuohao = false;
   return KH;
 }
 
@@ -212,8 +211,8 @@ uint32_t eval(Token* p,Token* q)
   char *end;
   Token *op,*op_tmp;
   uint32_t val1,val2;
-  kh *KH;
-  KH->kuohao = false;
+  kh KH;
+  KH.kuohao = false;
   // bool kuohao = false;
   KH = check_parentheses(p,q);
 
@@ -243,11 +242,11 @@ uint32_t eval(Token* p,Token* q)
       return vaddr_read(n, 4);
     }
   }
-  else if(KH->kuohao==true && p->type == '(')
+  else if(KH.kuohao==true && p->type == '(')
   {
-    return eval(p+1,KH->q-1);
+    return eval(p+1,KH.q-1);
   }
-  else if(KH->kuohao == false)
+  else if(KH.kuohao == false)
   {
     printf("kuohao error");
     assert(0);
