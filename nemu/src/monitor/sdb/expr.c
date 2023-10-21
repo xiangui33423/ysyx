@@ -26,7 +26,7 @@ enum {
   TK_NOTYPE = 256, TK_EQ,TK_NEQ,TK_ADD,
   TK_NUM_DEC/*十进制*/,TK_NUM_HEX/*十六进制*/,
   TK_NUM_NEG /*负数*/,TK_NUM_REG/*reg*/,
-  TK_GET_ADDR/*address*/,
+  TK_GET_ADDR/*address*/,TK_chen,TK_chu,TK_plus,TK_minus,
   /* TODO: Add more token types */
 };
 
@@ -40,13 +40,13 @@ static struct rule {
    */
 
   {" +", TK_NOTYPE},    // spaces
-  {"\\+", '+'},         // plus
+  {"\\+", TK_plus},         // plus
   {"==", TK_EQ},        // equal
   {"\\!=", TK_NEQ}, 
   {"&&", TK_ADD},
-  {"\\-", '-'},         // minus
-  {"\\*", '*'},         // multiplication
-  {"\\/", '/'},         // division
+  {"\\-", TK_minus},         // minus
+  {"\\*", TK_chen},         // multiplication
+  {"\\/", TK_chu},         // division
   {"\\(", '('},
   {"\\)", ')'},
   {"0x[0-9,a-f,A-F]+",TK_NUM_HEX},
@@ -254,17 +254,18 @@ uint32_t eval(Token* p,Token* q)
         }
       }
 
-      if (op_tmp->type == '+' || op_tmp->type == '-')
+      if (op_tmp->type == TK_plus || op_tmp->type == TK_minus)
       {
         op = op_tmp;
         break;
       }
-      else if (op_tmp->type == '*' || op_tmp->type == '/')
+      else if (op_tmp->type == TK_chu || op_tmp->type == TK_chen)
       {
-        op = op_tmp;
-        break;
+        if(op_tmp->type > op->type)
+          op = op_tmp;
       }else if(op_tmp->type == TK_ADD)
       {
+        
         op = op_tmp;
         break;
       }else if (op_tmp->type == TK_EQ || op_tmp->type == TK_NEQ)
@@ -280,10 +281,10 @@ uint32_t eval(Token* p,Token* q)
 
     switch (op->type)
     {
-    case '+': return val1 + val2;
-    case '-': return val1 - val2;
-    case '*': return val1 * val2;
-    case '/': return val1 / val2;
+    case TK_plus: return val1 + val2;
+    case TK_minus: return val1 - val2;
+    case TK_chen: return val1 * val2;
+    case TK_chu: return val1 / val2;
     case TK_ADD: return val1 && val2;
     case TK_EQ: return val1 == val2;
     case TK_NEQ: return val1 != val2;
@@ -309,11 +310,11 @@ word_t expr(char *e, bool *success) {
   for(i = 0; i < nr_token; i++)
   {
     //只做了加减法和取地址的负数匹配
-    if (tokens[i].type == '-' &&(i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-' || tokens[i-1].type == '('))
+    if (tokens[i].type == TK_minus &&(i == 0 || tokens[i-1].type == TK_plus || tokens[i-1].type == TK_minus || tokens[i-1].type == '('))
     {
       tokens[i].type = TK_NUM_NEG;
     }
-    if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type != TK_NUM_DEC || tokens[i-1].type == '('))
+    if (tokens[i].type == TK_chen && (i == 0 || tokens[i - 1].type != TK_NUM_DEC || tokens[i-1].type == '('))
     {
       tokens[i].type = TK_GET_ADDR;
     }
