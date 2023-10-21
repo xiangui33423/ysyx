@@ -180,7 +180,7 @@ typedef struct kh
 bool check_parentheses(Token *p,Token *q)
 {
   int a,b;
-  a = b = 0;
+  a = b=0;
   Token *c;
   c = p;
   Token *tmp;
@@ -195,7 +195,7 @@ bool check_parentheses(Token *p,Token *q)
     } 
     c++;
   }
-  if (a == b)
+  if (a == b && b != 0)
   {
     KH.kuohao = true;
     KH.q = tmp;
