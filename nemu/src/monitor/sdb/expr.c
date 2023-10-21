@@ -203,7 +203,7 @@ uint32_t eval(Token* p,Token* q)
   uint32_t val1,val2;
   bool kuohao = false;
   kuohao = check_parentheses(p,q);
-
+  op ->type = 0;
   // printf("%d\n",kuohao);
   if(p>q)
   {
