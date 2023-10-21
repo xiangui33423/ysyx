@@ -283,8 +283,12 @@ uint32_t eval(Token* p,Token* q)
     switch (op->type)
     {
     case TK_plus: 
+    if(op != NULL)
+    {
       free(op);
       op = NULL;
+    }
+      
       val =  val1 + val2;
     case TK_minus: 
       return val1 - val2;
