@@ -105,16 +105,16 @@ static bool make_token(char *e) {
          * of tokens, some extra actions should be performed.
          */
         switch (rules[i].token_type) {
-          case '+': tokens[nr_token].type = '+';  
+          case TK_plus: tokens[nr_token].type = TK_plus;  
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
-          case '-':   tokens[nr_token].type = '-';   
+          case TK_minus:   tokens[nr_token].type = TK_minus;   
                       strncpy(tokens[nr_token++].str, substr_start, substr_len);
                       break;                    
-          case '*': tokens[nr_token].type = '*';
+          case TK_chen: tokens[nr_token].type = TK_chen;
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
-          case '/': tokens[nr_token].type = '/'; 
+          case TK_chu: tokens[nr_token].type = TK_chu; 
                     strncpy(tokens[nr_token++].str, substr_start, substr_len);
                     break;
           case TK_NUM_DEC:
