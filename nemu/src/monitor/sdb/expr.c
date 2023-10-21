@@ -170,11 +170,6 @@ static bool make_token(char *e) {
   return true;
 }
 
-typedef struct kh
-{
- bool kuohao;
- Token* q;
-}kh;
 
 
 bool check_parentheses(Token *p,Token *q)
@@ -184,7 +179,6 @@ bool check_parentheses(Token *p,Token *q)
   Token *c;
   c = p;
   Token *tmp;
-  kh KH;
   while (c<=q)
   {
     if(c->type == '(') a++;
@@ -197,11 +191,8 @@ bool check_parentheses(Token *p,Token *q)
   }
   if (a == b && b != 0)
   {
-    KH.kuohao = true;
-    KH.q = tmp;
     return true;
   }
-  KH.kuohao = false;
   return false;
 }
 
