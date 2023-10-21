@@ -246,6 +246,11 @@ uint32_t eval(Token* p,Token* q)
   {
     return eval(p+1,KH.q-1);
   }
+  else if(KH.kuohao == false)
+  {
+    printf("kuohao error");
+    assert(0);
+  }
   else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
   { 
     op_tmp = p;
