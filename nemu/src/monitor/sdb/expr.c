@@ -170,24 +170,40 @@ static bool make_token(char *e) {
   return true;
 }
 
-bool check_parentheses(Token *p,Token *q)
+typedef struct kh
+{
+ bool kuohao;
+ Token* q;
+}kh;
+
+kh KH;
+
+kh check_parentheses(Token *p,Token *q)
 {
   int a,b;
   a = b = 0;
   Token *c;
   c = p;
-
+  Token *tmp;
+  kh KH;
   while (c<=q)
   {
     if(c->type == '(') a++;
-    if(c->type == ')') b++;
+    if(c->type == ')')
+    {
+      b++;
+      tmp = c;
+    } 
     c++;
   }
   if (a == b)
   {
-    return true;
+    KH.kuohao = true;
+    KH.q = tmp;
+    return KH;
   }
-  return false;
+  KH.kuohao = false;
+  return KH;
 }
 
 uint32_t eval(Token* p,Token* q)
@@ -195,8 +211,10 @@ uint32_t eval(Token* p,Token* q)
   char *end;
   Token *op,*op_tmp;
   uint32_t val1,val2;
-  bool kuohao = false;
-  kuohao = check_parentheses(p,q);
+  kh KH;
+  KH.kuohao = false;
+  // bool kuohao = false;
+  KH = check_parentheses(p,q);
 
   // printf("%d\n",kuohao);
   if(p>q)
@@ -224,9 +242,9 @@ uint32_t eval(Token* p,Token* q)
       return vaddr_read(n, 4);
     }
   }
-  else if(kuohao==true && p->type == '(' && q->type == ')')
+  else if(KH.kuohao==true && p->type == '(' /*&& q->type == ')'*/)
   {
-    return eval(p+1,q-1);
+    return eval(p+1,KH.q-1);
   }
   else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
   { 
