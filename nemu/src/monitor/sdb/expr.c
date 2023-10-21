@@ -258,11 +258,14 @@ uint32_t eval(Token* p,Token* q)
       {
         tmp = op_tmp;
         while(tmp <= q)
-        if(tmp->type == ')')
         {
-          op_tmp = tmp;
+          if(tmp->type == ')')
+          {
+            op_tmp = tmp;
+          }
+          tmp++;
         }
-        tmp++;
+        
       }
       if (op_tmp->type == '+' || op_tmp->type == '-')
       {
