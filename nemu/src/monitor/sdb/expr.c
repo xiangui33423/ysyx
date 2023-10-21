@@ -265,7 +265,6 @@ uint32_t eval(Token* p,Token* q)
           op = op_tmp;
       }else if(op_tmp->type == TK_ADD)
       {
-        
         op = op_tmp;
         break;
       }else if (op_tmp->type == TK_EQ || op_tmp->type == TK_NEQ)
