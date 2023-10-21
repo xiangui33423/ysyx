@@ -283,11 +283,7 @@ uint32_t eval(Token* p,Token* q)
     switch (op->type)
     {
     case TK_plus: 
-    if(op != NULL)
-    {
-      free(op);
-      op = NULL;
-    }
+
       
       val =  val1 + val2;
       break;
@@ -308,6 +304,11 @@ uint32_t eval(Token* p,Token* q)
       printf("fail3\n");
       assert(0);
       break;
+    }
+    if(op != NULL)
+    {
+      free(op);
+      op = NULL;
     }
     return val;
   }
