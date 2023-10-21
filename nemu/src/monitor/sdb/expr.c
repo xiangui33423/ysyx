@@ -247,7 +247,7 @@ uint32_t eval(Token* p,Token* q)
   }
   else if(KH.kuohao == false)
   {
-    printf("kuohao error");
+    printf("kuohao error\n");
     assert(0);
   }
   else /*思路：先找出来所有的加减，然后在用eval递归一次，最后计算乘除*/
