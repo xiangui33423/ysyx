@@ -176,7 +176,6 @@ typedef struct kh
  Token* q;
 }kh;
 
-kh KH;
 
 kh check_parentheses(Token *p,Token *q)
 {
