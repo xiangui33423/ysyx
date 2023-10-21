@@ -203,6 +203,7 @@ uint32_t eval(Token* p,Token* q)
   uint32_t val1,val2;
   bool kuohao = false;
   kuohao = check_parentheses(p,q);
+  op = (Token*)malloc(sizeof(Token));
   (*op).type = TK_NOTYPE;
   strcpy(op->str,"");
   // printf("%d\n",kuohao);
