@@ -289,19 +289,14 @@ uint32_t eval(Token* p,Token* q)
       free(op);
       return val1 - val2;
     case TK_chen: 
-      free(op);
       return val1 * val2;
     case TK_chu:
-      free(op);
       return val1 / val2;
     case TK_ADD: 
-      free(op);
       return val1 && val2;
     case TK_EQ: 
-      free(op);
       return val1 == val2;
     case TK_NEQ: 
-      free(op);
       return val1 != val2;
 
     default: 
