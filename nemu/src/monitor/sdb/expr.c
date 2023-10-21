@@ -203,6 +203,7 @@ kh check_parentheses(Token *p,Token *q)
     return KH;
   }
   KH.kuohao = false;
+  KH.q = 0;
   return KH;
 }
 
