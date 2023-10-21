@@ -282,13 +282,27 @@ uint32_t eval(Token* p,Token* q)
 
     switch (op->type)
     {
-    case TK_plus: return val1 + val2;
-    case TK_minus: return val1 - val2;
-    case TK_chen: return val1 * val2;
-    case TK_chu: return val1 / val2;
-    case TK_ADD: return val1 && val2;
-    case TK_EQ: return val1 == val2;
-    case TK_NEQ: return val1 != val2;
+    case TK_plus: 
+      free(op);
+      return val1 + val2;
+    case TK_minus: 
+      free(op);
+      return val1 - val2;
+    case TK_chen: 
+      free(op);
+      return val1 * val2;
+    case TK_chu:
+      free(op);
+      return val1 / val2;
+    case TK_ADD: 
+      free(op);
+      return val1 && val2;
+    case TK_EQ: 
+      free(op);
+      return val1 == val2;
+    case TK_NEQ: 
+      free(op);
+      return val1 != val2;
 
     default: 
       printf("fail3\n");
