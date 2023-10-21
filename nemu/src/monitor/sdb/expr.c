@@ -279,13 +279,13 @@ uint32_t eval(Token* p,Token* q)
     }
     val1 = eval(p,op-1);
     val2 = eval(op+1,q);
-
+    uint32_t val;
     switch (op->type)
     {
     case TK_plus: 
       free(op);
       op = NULL;
-      return val1 + val2;
+      val =  val1 + val2;
     case TK_minus: 
       return val1 - val2;
     case TK_chen: 
@@ -304,6 +304,7 @@ uint32_t eval(Token* p,Token* q)
       assert(0);
       break;
     }
+    return val;
   }
 }
 
