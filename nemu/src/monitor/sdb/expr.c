@@ -177,7 +177,7 @@ typedef struct kh
 }kh;
 
 
-kh check_parentheses(Token *p,Token *q)
+bool check_parentheses(Token *p,Token *q)
 {
   int a,b;
   a = b = 0;
@@ -199,21 +199,19 @@ kh check_parentheses(Token *p,Token *q)
   {
     KH.kuohao = true;
     KH.q = tmp;
-    return KH;
+    return true;
   }
   KH.kuohao = false;
-  return KH;
+  return false;
 }
 
 uint32_t eval(Token* p,Token* q)
 {
   char *end;
-  Token *op,*op_tmp;
+  Token *op,*op_tmp, *tmp;
   uint32_t val1,val2;
-  kh KH;
-  KH.kuohao = false;
-  // bool kuohao = false;
-  KH = check_parentheses(p,q);
+  bool kuohao = false;
+  kuohao = check_parentheses(p,q);
 
   // printf("%d\n",kuohao);
   if(p>q)
@@ -241,11 +239,11 @@ uint32_t eval(Token* p,Token* q)
       return vaddr_read(n, 4);
     }
   }
-  else if(KH.kuohao==true && p->type == '(' && q->type == ')')
+  else if(kuohao==true && p->type == '(' && q->type == ')')
   {
     return eval(p+1,q-1);
   }
-  else if(KH.kuohao == false)
+  else if(kuohao == false)
   {
     printf("kuohao error\n");
     assert(0);
@@ -258,7 +256,13 @@ uint32_t eval(Token* p,Token* q)
       //寻找主操作符
       if(op_tmp->type == '(')
       {
-        op_tmp = KH.q;
+        tmp = op_tmp;
+        while(tmp <= q)
+        if(tmp->type == ')')
+        {
+          op_tmp = tmp;
+        }
+        tmp++;
       }
       if (op_tmp->type == '+' || op_tmp->type == '-')
       {
