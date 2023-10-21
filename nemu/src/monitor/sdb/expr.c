@@ -242,7 +242,7 @@ uint32_t eval(Token* p,Token* q)
       return vaddr_read(n, 4);
     }
   }
-  else if(KH.kuohao==true && p->type == '(' /*&& q->type == ')'*/)
+  else if(KH.kuohao==true && p->type == '(')
   {
     return eval(p+1,KH.q-1);
   }
