@@ -258,7 +258,7 @@ uint32_t eval(Token* p,Token* q)
       //寻找主操作符
       if(op_tmp->type == '(')
       {
-        op = KH.q + 1;
+        op_tmp = KH.q;
         break;
       }
       if (op_tmp->type == '+' || op_tmp->type == '-')
