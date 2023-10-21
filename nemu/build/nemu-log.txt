@@ -6,5 +6,5 @@
 [1;34m[src/monitor/monitor.c:32 welcome] Build time: 14:11:02, Oct 13 2023[0m
 [1;34m[src/monitor/sdb/expr.c:99 make_token] match rules[8] = "\(" at position 0 with len 1: ([0m
 [1;34m[src/monitor/sdb/expr.c:99 make_token] match rules[8] = "\(" at position 1 with len 1: ([0m
-[1;34m[src/monitor/sdb/expr.c:99 make_token] match rules[11] = "[0-9]+" at position 2 with len 2: 56[0m
+[1;34m[src/monitor/sdb/expr.c:99 make_token] match rules[11] = "[0-9]+" at position 2 with len 2: 50[0m
 [1;34m[src/monitor/sdb/expr.c:99 make_token] match rules[9] = "\)" at position 4 with len 1: )[0m
