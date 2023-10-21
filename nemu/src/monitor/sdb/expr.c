@@ -286,7 +286,7 @@ uint32_t eval(Token* p,Token* q)
     case TK_plus: 
 
       
-      val =  val1 + val2;
+      return  val1 + val2;
       break;
     case TK_minus: 
       return val1 - val2;
