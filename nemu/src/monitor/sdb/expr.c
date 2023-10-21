@@ -262,11 +262,12 @@ uint32_t eval(Token* p,Token* q)
           if(tmp->type == ')')
           {
             op_tmp = tmp;
+            break;
           }
           tmp++;
         }
       }
-      
+
       if (op_tmp->type == '+' || op_tmp->type == '-')
       {
         op = op_tmp;
