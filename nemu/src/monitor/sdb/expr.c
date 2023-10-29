@@ -340,6 +340,6 @@ word_t expr(char *e, bool *success) {
   }
   uint32_t val;
   val = eval(tokens,tokens+nr_token-1);
-  printf("val:%d\n",val);
+  printf("val:%d %x\n",val,val);
   return val;
 }
