@@ -62,12 +62,14 @@ static int cmd_help(char *args);
 static int cmd_si(char *args){
   int n;
   
-  n = strtol(args, NULL, 10);
-
   if (!args)
     cpu_exec(1);
   else
+  {
+    n = strtol(args, NULL, 10);
     cpu_exec(n);
+  }
+    
 
   return 0;
 }
