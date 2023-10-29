@@ -24,7 +24,7 @@
 
 enum {
   TYPE_I=0,TYPE_U, TYPE_S,
-  TYPE_N, TYPE_J,// none
+  TYPE_N, TYPE_J, TYPE_R,// none
 };
 
 #define src1R() do { *src1 = R(rs1); } while (0)
@@ -44,6 +44,7 @@ static void decode_operand(Decode *s, int *rd, word_t *src1, word_t *src2, word_
     case TYPE_U:                   immU(); break;
     case TYPE_S: src1R(); src2R(); immS(); break;
     case TYPE_J:                   immJ(); break;
+    case TYPE_R: src1R(); src2R();         break;
   }
 }
 
