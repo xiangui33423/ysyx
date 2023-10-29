@@ -44,7 +44,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   bool success = false;
   bool has_print_head = false;
   WP* tmp = NULL;
-  tmp = head;
+  *tmp = *head;
   while (tmp != NULL)
   {
     word_t res = expr(tmp->expr,&success);
