@@ -64,7 +64,7 @@ static int cmd_si(char *args){
   
   n = strtol(args, NULL, 10);
 
-  if (args)
+  if (!args)
     cpu_exec(1);
   else
     cpu_exec(n);
