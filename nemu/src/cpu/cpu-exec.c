@@ -43,7 +43,8 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_WATCHPOINT
   bool success = false;
   bool has_print_head = false;
-  WP* tmp = head;
+  WP* tmp = NULL;
+  tmp = head;
   while (tmp != NULL)
   {
     word_t res = expr(tmp->expr,&success);
