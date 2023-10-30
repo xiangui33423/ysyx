@@ -39,7 +39,6 @@ static struct rule {
    * Pay attention to the precedence level of different rules.
    */
 
-
   {" +", TK_NOTYPE},    // spaces
   {"\\+", TK_plus},         // plus
   {"==", TK_EQ},        // equal
