@@ -44,7 +44,8 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_WATCHPOINT
   bool success = false;
   bool has_print_head = false;
-  WP* tmp = head;
+  WP* tmp =malloc(sizeof(WP));
+  tmp =  head;
   // *tmp = *head;
   // printf("tmp:%p\nhead:%p\n",tmp,head);
   while (tmp != NULL)
