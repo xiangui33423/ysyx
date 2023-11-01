@@ -30,6 +30,7 @@ CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
 static bool g_print_step = false;
+static char ringbuf[17][128];
 
 void device_update();
 
@@ -97,6 +98,9 @@ static void exec_once(Decode *s, vaddr_t pc) {
 #else
   p[0] = '\0'; // the upstream llvm does not support loongarch32r
 #endif
+#endif
+
+#ifdef CONFIG_IRINGBUF
 #endif
 }
 
