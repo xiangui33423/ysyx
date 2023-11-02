@@ -124,7 +124,7 @@ bool watch_all()
         has_print_head = true;
       }
 
-      printf("%-6d\t%-20s\t%-14x\t%-14x\n",tmp->NO,tmp->expr,res,tmp->res);
+      printf("%-6d\t%-20s\t0x%-14x\t0x%-14x\n",tmp->NO,tmp->expr,res,tmp->res);
       tmp->res = res;
       return true;
     }
