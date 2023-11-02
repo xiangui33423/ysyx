@@ -39,5 +39,6 @@ int new_wp(char* args);
 void free_wp(int n);
 void traverse_wp();
 char* rl_gets();
+bool watch_all();
 
 #endif

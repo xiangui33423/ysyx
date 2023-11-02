@@ -104,3 +104,32 @@ void free_wp(int n)
   nr_wp_used--;
 }
 
+bool watch_all()
+{
+  bool success = false;
+  bool has_print_head = false;
+  WP* tmp;
+  tmp = head;
+  // *tmp = *head;
+  // printf("tmp:%p\nhead:%p\n",tmp,head);
+  while (tmp != NULL)
+  {
+    word_t res = expr(tmp->expr,&success);
+    if(!success) printf("The expression of watch point %d is invalid!\n",tmp->NO);
+    else if (res != tmp->res)
+    {
+      if(!has_print_head)
+      {
+        printf("%-6s\t%-20s\t%-14s\t%-14s\n", "Number", "Expression", "New Value", "Old Value");
+        has_print_head = true;
+      }
+
+      printf("%-6d\t%-20s\t%-14u\t%-14u\n",tmp->NO,tmp->expr,res,tmp->res);
+      tmp->res = res;
+      return true;
+    }
+    tmp = tmp->next;
+  }
+
+  return false;
+}
