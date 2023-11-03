@@ -42,32 +42,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   IFDEF(CONFIG_DIFFTEST, difftest_step(_this->pc, dnpc));
 
 #ifdef CONFIG_WATCHPOINT
-  // bool success = false;
-  // bool has_print_head = false;
-  // WP* tmp;
-  // tmp = head;
-  // // *tmp = *head;
-  // // printf("tmp:%p\nhead:%p\n",tmp,head);
-  // while (tmp != NULL)
-  // {
-  //   word_t res = expr(tmp->expr,&success);
-  //   if(!success) printf("The expression of watch point %d is invalid!\n",tmp->NO);
-  //   else if (res != tmp->res)
-  //   {
-  //     if(!has_print_head)
-  //     {
-  //       printf("%-6s\t%-20s\t%-14s\t%-14s\n", "Number", "Expression", "New Value", "Old Value");
-  //       has_print_head = true;
-  //     }
-
-  //     printf("%-6d\t%-20s\t%-14u\t%-14u\n",tmp->NO,tmp->expr,res,tmp->res);
-  //     tmp->res = res;
-  //     nemu_state.state = NEMU_STOP;
-  //   }
-  //   tmp = tmp->next;
-  // }
   if(watch_all() == true) nemu_state.state = NEMU_STOP;
-
 #endif
 
 }
@@ -100,9 +75,6 @@ static void exec_once(Decode *s, vaddr_t pc) {
 #else
   p[0] = '\0'; // the upstream llvm does not support loongarch32r
 #endif
-#endif
-
-#ifdef CONFIG_IRINGBUF
 #endif
 }
 
@@ -150,7 +122,7 @@ void cpu_exec(uint64_t n) {
 
   switch (nemu_state.state) {
     case NEMU_RUNNING: nemu_state.state = NEMU_STOP; break;
-
+    case NEMU_START : cpu.pc = 0x80000000; break;
     case NEMU_END: case NEMU_ABORT:
       Log("nemu: %s at pc = " FMT_WORD,
           (nemu_state.state == NEMU_ABORT ? ANSI_FMT("ABORT", ANSI_FG_RED) :

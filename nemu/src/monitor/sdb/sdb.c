@@ -74,6 +74,7 @@ static int cmd_si(char *args){
   return 0;
 }
 
+
 static int cmd_info(char *args){
   if(!strcmp(args,"r"))
   {
@@ -115,6 +116,12 @@ static int cmd_w(char *args)
   if(args == NULL) return 0;
   if(!(i=new_wp(args))) printf("the number of watch point is out of bound!\n");
   printf("watchpoint %d:%s\n",i,args);
+  return 0;
+}
+
+static int cmd_re(char *args)
+{
+  nemu_state.state = NEMU_START;
   return 0;
 }
 
