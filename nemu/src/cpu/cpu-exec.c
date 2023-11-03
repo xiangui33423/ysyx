@@ -49,9 +49,9 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
     sprintf(ringbuf[tail],"--->%s", _this->logbuf);
     for(i = head ;i !=tail; i = (i + 1)%16)
     {
-      printf("%s\n",ringbuf[i]);
+      printf("    %s\n",ringbuf[i]);
     }
-    printf("%s",ringbuf[tail]);
+    printf("%s\n",ringbuf[tail]);
   }
   else 
   {
