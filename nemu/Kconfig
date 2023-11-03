@@ -151,6 +151,11 @@ config ITRACE_COND
   string "Only trace instructions when the condition is true"
   default "true"
 
+config IRINGBUF
+  depends on ITRACE
+  bool "Trace the scene of the error"
+  default y
+
 config WATCHPOINT
   bool "watchpoint"
   default 0
