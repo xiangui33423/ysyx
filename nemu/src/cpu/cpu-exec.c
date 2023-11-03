@@ -46,16 +46,16 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   int i;
   if(nemu_state.state == NEMU_ABORT)
   {
-    sprintf(ringbuf[tail],"--->%s\n", _this->logbuf);
+    sprintf(ringbuf[tail],"--->%s", _this->logbuf);
     for(i = head ;i !=tail; i = (i + 1)%16)
     {
-      printf("%s",ringbuf[i]);
+      printf("%s\n",ringbuf[i]);
     }
     printf("%s",ringbuf[tail]);
   }
   else 
   {
-    sprintf(ringbuf[tail],"%s\n", _this->logbuf);
+    sprintf(ringbuf[tail],"%s", _this->logbuf);
     tail = (tail + 1) % 16;  
     if(tail == head) head++;
   }
