@@ -119,12 +119,6 @@ static int cmd_w(char *args)
   return 0;
 }
 
-static int cmd_re(char *args)
-{
-  nemu_state.state = NEMU_START;
-  return 0;
-}
-
 static int cmd_d(char* args)
 {
   if (args == NULL)
@@ -151,7 +145,6 @@ static struct {
   { "p", "Evaluate the value of the expression EXPR, which is supported by EXPR. For operations, see the expression exaluation section in debugging", cmd_p},
   { "w", "When the value of the expression EXPR changes, program execution is suspended", cmd_w},
   { "d", "delete watchpoint", cmd_d},
-  { "re", "restart", cmd_re},
 };
 
 #define NR_CMD ARRLEN(cmd_table)
