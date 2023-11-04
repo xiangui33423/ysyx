@@ -24,7 +24,7 @@ bool isa_difftest_checkregs(CPU_state *ref_r, vaddr_t pc) {
   {
     if(ref_r->gpr[i] != gpr(i))
     {
-      printf("error regs:%s   0x%08x\n",reg_name(i),ref_r->gpr[i]);
+      printf("error regs:%s   0x%08x   correct is 0x%08x\n",reg_name(i),gpr(i),ref_r->gpr[i]);
       return false;
     }
   }
