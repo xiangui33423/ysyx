@@ -17,11 +17,10 @@
 #include <cpu/difftest.h>
 #include "../local-include/reg.h"
 
-extern bool gdb_getregs(union isa_gdb_regs *);
+
 
 bool isa_difftest_checkregs(CPU_state *ref_r, vaddr_t pc) {
-  union isa_gdb_regs spike_r;
-  gdb_getregs(&spike_r);
+  
   return false;
 }
 
