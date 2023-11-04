@@ -47,7 +47,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   if(nemu_state.state == NEMU_ABORT)
   {
     sprintf(ringbuf[tail],"--->%s", _this->logbuf);
-    for(i = head ;i !=tail; i = (i + 1)%16)
+    for(i = head ;i !=tail; i = (i + 1)%17)
     {
       printf("    %s\n",ringbuf[i]);
     }
@@ -56,8 +56,8 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   else 
   {
     sprintf(ringbuf[tail],"%s", _this->logbuf);
-    tail = (tail + 1) % 16;  
-    if((tail+1)%16 == head) head++;
+    tail = (tail + 1) % 17;  
+    if((tail+1)%17 == head) head++;
   }
 #endif
 
