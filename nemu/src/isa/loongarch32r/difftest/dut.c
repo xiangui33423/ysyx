@@ -18,6 +18,8 @@
 #include "../local-include/reg.h"
 
 bool isa_difftest_checkregs(CPU_state *ref_r, vaddr_t pc) {
+  union spike_r;
+  gdb_getregs(&spike_r);
   return false;
 }
 
