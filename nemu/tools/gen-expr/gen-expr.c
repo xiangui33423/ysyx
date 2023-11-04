@@ -138,11 +138,7 @@ int main(int argc, char *argv[]) {
     int result;
     ret = fscanf(fp, "%d", &result);
     pclose(fp);
-    // 	if (ret != 1) {
-		// 	// waste a single loop, generate a new one.
-		// 	--i;
-		// 	continue;
-		// }
+
     printf("%d %s\n", result, buf);
 
   }

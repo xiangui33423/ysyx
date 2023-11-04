@@ -203,17 +203,12 @@ uint32_t eval(Token* p,Token* q)
   uint32_t val1,val2;
   bool kuohao = false;
   kuohao = check_parentheses(p,q);
-  // op = (Token*)malloc(sizeof(Token));
-  // (*op).type = TK_NOTYPE;
-  // strcpy(op->str,"");
-  // printf("%d\n",kuohao);
   if(p>q)
   {
     printf("failed!\n");
     assert(0);
   }
   else if(p == q){
-
     if(p->type == TK_NUM_REG) //对地址进行处理
       return isa_reg_str2val(p->str);
     return strtol(p->str,&end,0);
@@ -283,34 +278,18 @@ uint32_t eval(Token* p,Token* q)
     uint32_t val;
     switch (op->type)
     {
-    case TK_plus: 
-
-      
-      return  val1 + val2;
-      break;
-    case TK_minus: 
-      return val1 - val2;
-    case TK_chen: 
-      return val1 * val2;
-    case TK_chu:
-      return val1 / val2;
-    case TK_ADD: 
-      return val1 && val2;
-    case TK_EQ: 
-      return val1 == val2;
-    case TK_NEQ: 
-      return val1 != val2;
-
+    case TK_plus:  return  val1 + val2;
+    case TK_minus: return val1 - val2;
+    case TK_chen:  return val1 * val2;
+    case TK_chu:   return val1 / val2;
+    case TK_ADD:   return val1 && val2;
+    case TK_EQ:    return val1 == val2;
+    case TK_NEQ:   return val1 != val2;
     default: 
       printf("fail3\n");
       assert(0);
       break;
     }
-    // if(op != NULL)
-    // {
-    //   free(op);
-    //   op = NULL;
-    // }
     return val;
   }
 }
