@@ -6,7 +6,7 @@ module ysyx_23060096_npc (
 );
 
 //========IF=======
-
+ysyx_23060096_Reg u_pc_reg #(32,0) (clk,rstn,pc+32'd4,pc);
 
 
 endmodule //ysyx_23060096_NPC
