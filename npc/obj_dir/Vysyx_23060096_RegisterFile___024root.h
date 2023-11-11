@@ -31,7 +31,7 @@ VL_MODULE(Vysyx_23060096_RegisterFile___024root) {
 
     // LOCAL SIGNALS
     IData/*31:0*/ ysyx_23060096_RegisterFile__DOT__i;
-    VlUnpacked<IData/*31:0*/, 5> ysyx_23060096_RegisterFile__DOT__rf;
+    VlUnpacked<IData/*31:0*/, 17> ysyx_23060096_RegisterFile__DOT__rf;
 
     // LOCAL VARIABLES
     CData/*0:0*/ __Vclklast__TOP__clk;
