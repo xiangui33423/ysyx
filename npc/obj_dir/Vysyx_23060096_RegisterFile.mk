@@ -41,12 +41,11 @@ VM_USER_LDLIBS = \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \
-	RegisterFile \
-	main \
+	ysyx_23060096_RegisterFile \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	csrc \
+	/home/xiangui/ysyx-workbench/npc/csrc \
 
 
 ### Default rules...
@@ -58,9 +57,7 @@ include $(VERILATOR_ROOT)/include/verilated.mk
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-RegisterFile.o: csrc/RegisterFile.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-main.o: csrc/main.cpp
+ysyx_23060096_RegisterFile.o: /home/xiangui/ysyx-workbench/npc/csrc/ysyx_23060096_RegisterFile.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)
