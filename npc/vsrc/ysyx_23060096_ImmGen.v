@@ -14,7 +14,7 @@ module ysyx_23060096_ImmGen (
 
 assign immI = {{20{inst[24]}},inst[23:12]};
 assign immU = {inst[24:5], 12'b0};
-assign immS = {{20{inst[24]}}, inst[24:15], inst[4:0]};
+assign immS = {{20{inst[24]}}, inst[24:18], inst[4:0]};
 assign immB = {{20{inst[24]}}, inst[0], inst[23:18], inst[4:1], 1'b0};
 assign immJ = {{12{inst[24]}}, inst[12:5], inst[13], inst[23:14], 1'b0};
 
