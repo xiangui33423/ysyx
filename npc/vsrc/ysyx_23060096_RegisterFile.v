@@ -26,6 +26,6 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 32, DATA_WIDTH = 5) (
   assign busA = rf[Ra];
   assign busB = rf[Rb];
   
-  $monitor("busA:0x%8x   busB:0x%8x",busA,busB);
+  //$display("busA:0x%8x   busB:0x%8x",busA,busB);
   
 endmodule
