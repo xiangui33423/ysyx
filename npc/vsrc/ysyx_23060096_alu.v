@@ -14,9 +14,9 @@ module ysyx_23060096_alu (
     reg [3:0] sub;
     reg [3:0] add;
 
-    adder u_add(.A(A),.B(B),.op(0),.result(add),.zero(zero_add),.carry(carry),.overflow(overflow));
-    adder u_sub(.A(A),.B(B),.op(1),.result(sub),.zero(zero_sub),.carry(),.overflow());
-    adder u_res(.A(A),.B(B),.op(1),.result(res),.zero(zero_res),.carry(),.overflow());
+    ysyx_23060096_adder u_add(.A(A),.B(B),.op(0),.result(add),.zero(zero_add),.carry(carry),.overflow(overflow));
+    ysyx_23060096_adder u_sub(.A(A),.B(B),.op(1),.result(sub),.zero(zero_sub),.carry(),.overflow());
+    ysyx_23060096_adder u_res(.A(A),.B(B),.op(1),.result(res),.zero(zero_res),.carry(),.overflow());
     always @(*) begin
         case(op)
             3'b000: out = add;
