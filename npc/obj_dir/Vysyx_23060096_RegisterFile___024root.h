@@ -35,6 +35,7 @@ VL_MODULE(Vysyx_23060096_RegisterFile___024root) {
 
     // LOCAL VARIABLES
     CData/*0:0*/ __Vclklast__TOP__clk;
+    IData/*31:0*/ ysyx_23060096_RegisterFile__DOT____Vlvbound1;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
