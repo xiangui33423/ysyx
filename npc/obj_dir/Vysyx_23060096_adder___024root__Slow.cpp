@@ -37,10 +37,6 @@ void Vysyx_23060096_adder___024root___settle__TOP__3(Vysyx_23060096_adder___024r
                                                    ((IData)(vlSelf->A) 
                                                     + 
                                                     (~ (IData)(vlSelf->B)))));
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list[0U] 
-        = (3U & (IData)(vlSelf->lut));
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list[1U] 
-        = (3U & ((IData)(vlSelf->lut) >> 2U));
     vlSelf->ysyx_23060096_pc__02Epc = vlSelf->ysyx_23060096_pc__DOT__pc_next;
     vlSelf->ysyx_23060096_PCreg__02Einst = ((0x80000000U 
                                              >= ((IData)(0x80000000U) 
@@ -62,78 +58,26 @@ void Vysyx_23060096_adder___024root___settle__TOP__3(Vysyx_23060096_adder___024r
     vlSelf->busB = ((0x10U >= (IData)(vlSelf->Rb)) ? 
                     vlSelf->ysyx_23060096_RegisterFile__DOT__rf
                     [vlSelf->Rb] : 0U);
-    vlSelf->ysyx_23060096_alu__02Eout = (0xfU & ((4U 
-                                                  & (IData)(vlSelf->op))
-                                                  ? 
-                                                 ((2U 
-                                                   & (IData)(vlSelf->op))
-                                                   ? 
-                                                  ((1U 
-                                                    & (IData)(vlSelf->op))
-                                                    ? 
-                                                   ((0U 
-                                                     != (IData)(vlSelf->ysyx_23060096_alu__DOT__res))
-                                                     ? 0U
-                                                     : 1U)
-                                                    : 
-                                                   ((8U 
-                                                     & (IData)(vlSelf->ysyx_23060096_alu__DOT__res))
-                                                     ? 1U
-                                                     : 0U))
-                                                   : 
-                                                  ((1U 
-                                                    & (IData)(vlSelf->op))
-                                                    ? 
-                                                   ((IData)(vlSelf->A) 
-                                                    ^ (IData)(vlSelf->B))
-                                                    : 
-                                                   ((IData)(vlSelf->A) 
-                                                    | (IData)(vlSelf->B))))
-                                                  : 
-                                                 ((2U 
-                                                   & (IData)(vlSelf->op))
-                                                   ? 
-                                                  ((1U 
-                                                    & (IData)(vlSelf->op))
-                                                    ? 
-                                                   ((IData)(vlSelf->A) 
-                                                    & (IData)(vlSelf->B))
-                                                    : 
-                                                   (~ (IData)(vlSelf->A)))
-                                                   : 
-                                                  ((1U 
-                                                    & (IData)(vlSelf->op))
-                                                    ? (IData)(vlSelf->ysyx_23060096_alu__DOT__res)
-                                                    : (IData)(vlSelf->ysyx_23060096_alu__DOT__add)))));
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__data_list[0U] 
-        = (1U & vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list
-           [0U]);
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__data_list[1U] 
-        = (1U & vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list
-           [1U]);
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list[0U] 
-        = (1U & (vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list
-                 [0U] >> 1U));
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list[1U] 
-        = (1U & (vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list
-                 [1U] >> 1U));
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__hit 
-        = ((IData)(vlSelf->key) == vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list
-           [0U]);
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__hit 
-        = ((IData)(vlSelf->ysyx_23060096_MuxKeyInternal__DOT__hit) 
-           | ((IData)(vlSelf->key) == vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list
-              [1U]));
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__lut_out 
-        = (((IData)(vlSelf->key) == vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list
-            [0U]) & vlSelf->ysyx_23060096_MuxKeyInternal__DOT__data_list
-           [0U]);
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__lut_out 
-        = ((IData)(vlSelf->ysyx_23060096_MuxKeyInternal__DOT__lut_out) 
-           | (((IData)(vlSelf->key) == vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list
-               [1U]) & vlSelf->ysyx_23060096_MuxKeyInternal__DOT__data_list
-              [1U]));
-    vlSelf->ysyx_23060096_MuxKeyInternal__02Eout = vlSelf->ysyx_23060096_MuxKeyInternal__DOT__lut_out;
+    vlSelf->out = (0xfU & ((4U & (IData)(vlSelf->op))
+                            ? ((2U & (IData)(vlSelf->op))
+                                ? ((1U & (IData)(vlSelf->op))
+                                    ? ((0U != (IData)(vlSelf->ysyx_23060096_alu__DOT__res))
+                                        ? 0U : 1U) : 
+                                   ((8U & (IData)(vlSelf->ysyx_23060096_alu__DOT__res))
+                                     ? 1U : 0U)) : 
+                               ((1U & (IData)(vlSelf->op))
+                                 ? ((IData)(vlSelf->A) 
+                                    ^ (IData)(vlSelf->B))
+                                 : ((IData)(vlSelf->A) 
+                                    | (IData)(vlSelf->B))))
+                            : ((2U & (IData)(vlSelf->op))
+                                ? ((1U & (IData)(vlSelf->op))
+                                    ? ((IData)(vlSelf->A) 
+                                       & (IData)(vlSelf->B))
+                                    : (~ (IData)(vlSelf->A)))
+                                : ((1U & (IData)(vlSelf->op))
+                                    ? (IData)(vlSelf->ysyx_23060096_alu__DOT__res)
+                                    : (IData)(vlSelf->ysyx_23060096_alu__DOT__add)))));
 }
 
 void Vysyx_23060096_adder___024root___eval_initial(Vysyx_23060096_adder___024root* vlSelf) {
@@ -174,10 +118,6 @@ void Vysyx_23060096_adder___024root___ctor_var_reset(Vysyx_23060096_adder___024r
     Vysyx_23060096_adder__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_adder___024root___ctor_var_reset\n"); );
     // Body
-    vlSelf->ysyx_23060096_MuxKeyInternal__02Eout = 0;
-    vlSelf->key = 0;
-    vlSelf->default_out = 0;
-    vlSelf->lut = 0;
     vlSelf->ysyx_23060096_npc__02Eclk = 0;
     vlSelf->ysyx_23060096_npc__02Erstn = 0;
     vlSelf->ysyx_23060096_npc__02Einst = 0;
@@ -206,18 +146,7 @@ void Vysyx_23060096_adder___024root___ctor_var_reset(Vysyx_23060096_adder___024r
     vlSelf->A = 0;
     vlSelf->B = 0;
     vlSelf->op = 0;
-    vlSelf->ysyx_23060096_alu__02Eout = 0;
-    for (int __Vi0=0; __Vi0<2; ++__Vi0) {
-        vlSelf->ysyx_23060096_MuxKeyInternal__DOT__pair_list[__Vi0] = 0;
-    }
-    for (int __Vi0=0; __Vi0<2; ++__Vi0) {
-        vlSelf->ysyx_23060096_MuxKeyInternal__DOT__key_list[__Vi0] = 0;
-    }
-    for (int __Vi0=0; __Vi0<2; ++__Vi0) {
-        vlSelf->ysyx_23060096_MuxKeyInternal__DOT__data_list[__Vi0] = 0;
-    }
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__lut_out = 0;
-    vlSelf->ysyx_23060096_MuxKeyInternal__DOT__hit = 0;
+    vlSelf->out = 0;
     for (int __Vi0=0; __Vi0<-2147483647; ++__Vi0) {
         vlSelf->ysyx_23060096_PCreg__DOT__inst_reg[__Vi0] = 0;
     }

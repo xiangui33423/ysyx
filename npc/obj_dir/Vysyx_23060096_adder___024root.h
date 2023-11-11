@@ -23,10 +23,6 @@ VL_MODULE(Vysyx_23060096_adder___024root) {
     VL_IN8(ysyx_23060096_pc__02Eclk,0,0);
     VL_IN8(ysyx_23060096_RegisterFile__02Eclk,0,0);
     VL_IN8(ysyx_23060096_Reg__02Eclk,0,0);
-    VL_OUT8(ysyx_23060096_MuxKeyInternal__02Eout,0,0);
-    VL_IN8(key,0,0);
-    VL_IN8(default_out,0,0);
-    VL_IN8(lut,3,0);
     VL_IN8(ysyx_23060096_npc__02Eclk,0,0);
     VL_IN8(ysyx_23060096_npc__02Erstn,0,0);
     VL_IN8(rst_n,0,0);
@@ -43,7 +39,7 @@ VL_MODULE(Vysyx_23060096_adder___024root) {
     VL_IN8(A,3,0);
     VL_IN8(B,3,0);
     VL_IN8(op,2,0);
-    VL_OUT8(ysyx_23060096_alu__02Eout,3,0);
+    VL_OUT8(out,3,0);
     VL_IN(ysyx_23060096_npc__02Einst,31,0);
     VL_OUT(ysyx_23060096_npc__02Epc,31,0);
     VL_IN(ysyx_23060096_PCreg__02Epc,31,0);
@@ -54,15 +50,10 @@ VL_MODULE(Vysyx_23060096_adder___024root) {
     VL_OUT(busB,31,0);
 
     // LOCAL SIGNALS
-    CData/*0:0*/ ysyx_23060096_MuxKeyInternal__DOT__lut_out;
-    CData/*0:0*/ ysyx_23060096_MuxKeyInternal__DOT__hit;
     CData/*3:0*/ ysyx_23060096_alu__DOT__res;
     CData/*3:0*/ ysyx_23060096_alu__DOT__add;
     IData/*31:0*/ ysyx_23060096_pc__DOT__pc_next;
     IData/*31:0*/ ysyx_23060096_RegisterFile__DOT__i;
-    VlUnpacked<CData/*1:0*/, 2> ysyx_23060096_MuxKeyInternal__DOT__pair_list;
-    VlUnpacked<CData/*0:0*/, 2> ysyx_23060096_MuxKeyInternal__DOT__key_list;
-    VlUnpacked<CData/*0:0*/, 2> ysyx_23060096_MuxKeyInternal__DOT__data_list;
     VlUnpacked<IData/*31:0*/, -2147483647> ysyx_23060096_PCreg__DOT__inst_reg;
     VlUnpacked<IData/*31:0*/, 17> ysyx_23060096_RegisterFile__DOT__rf;
 

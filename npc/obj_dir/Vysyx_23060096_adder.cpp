@@ -10,10 +10,6 @@
 
 Vysyx_23060096_adder::Vysyx_23060096_adder(VerilatedContext* _vcontextp__, const char* _vcname__)
     : vlSymsp{new Vysyx_23060096_adder__Syms(_vcontextp__, _vcname__, this)}
-    , ysyx_23060096_MuxKeyInternal__02Eout{vlSymsp->TOP.ysyx_23060096_MuxKeyInternal__02Eout}
-    , key{vlSymsp->TOP.key}
-    , default_out{vlSymsp->TOP.default_out}
-    , lut{vlSymsp->TOP.lut}
     , ysyx_23060096_npc__02Eclk{vlSymsp->TOP.ysyx_23060096_npc__02Eclk}
     , ysyx_23060096_npc__02Erstn{vlSymsp->TOP.ysyx_23060096_npc__02Erstn}
     , ysyx_23060096_npc__02Einst{vlSymsp->TOP.ysyx_23060096_npc__02Einst}
@@ -42,7 +38,7 @@ Vysyx_23060096_adder::Vysyx_23060096_adder(VerilatedContext* _vcontextp__, const
     , A{vlSymsp->TOP.A}
     , B{vlSymsp->TOP.B}
     , op{vlSymsp->TOP.op}
-    , ysyx_23060096_alu__02Eout{vlSymsp->TOP.ysyx_23060096_alu__02Eout}
+    , out{vlSymsp->TOP.out}
     , rootp{&(vlSymsp->TOP)}
 {
 }
@@ -89,7 +85,7 @@ static void _eval_initial_loop(Vysyx_23060096_adder__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = Vysyx_23060096_adder___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("vsrc/ysyx_23060096_MuxKeyInternal.v", 1, "",
+            VL_FATAL_MT("vsrc/ysyx_23060096_npc.v", 1, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -120,7 +116,7 @@ void Vysyx_23060096_adder::eval_step() {
             Verilated::debug(1);
             __Vchange = Vysyx_23060096_adder___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("vsrc/ysyx_23060096_MuxKeyInternal.v", 1, "",
+            VL_FATAL_MT("vsrc/ysyx_23060096_npc.v", 1, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
