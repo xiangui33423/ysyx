@@ -5,7 +5,7 @@ module ysyx_23060096_ImmGen (
     input  [2:0]  ExtOP,
     output [31:0] imm
 );
-    reg imm;
+    reg [31:0] imm;
     wire [31:0] immI;
     wire [31:0] immU;
     wire [31:0] immS;
