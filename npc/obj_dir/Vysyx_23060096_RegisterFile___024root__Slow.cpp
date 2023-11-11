@@ -63,10 +63,11 @@ void Vysyx_23060096_RegisterFile___024root___ctor_var_reset(Vysyx_23060096_Regis
     vlSelf->w_en = 0;
     vlSelf->busA = 0;
     vlSelf->busB = 0;
-    for (int __Vi0=0; __Vi0<32; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<5; ++__Vi0) {
         vlSelf->ysyx_23060096_RegisterFile__DOT__rf[__Vi0] = 0;
     }
     vlSelf->ysyx_23060096_RegisterFile__DOT__i = 0;
+    vlSelf->ysyx_23060096_RegisterFile__DOT____Vlvbound2 = 0;
     for (int __Vi0=0; __Vi0<2; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }

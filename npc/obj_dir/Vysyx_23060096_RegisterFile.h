@@ -29,13 +29,13 @@ class Vysyx_23060096_RegisterFile VL_NOT_FINAL {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clk,0,0);
     VL_IN8(&rstn,0,0);
-    VL_IN8(&wdata,4,0);
-    VL_IN(&Ra,31,0);
-    VL_IN(&Rb,31,0);
-    VL_IN(&waddr,31,0);
+    VL_IN(&wdata,31,0);
+    VL_IN8(&Ra,4,0);
+    VL_IN8(&Rb,4,0);
+    VL_IN8(&waddr,4,0);
     VL_IN8(&w_en,0,0);
-    VL_OUT8(&busA,4,0);
-    VL_OUT8(&busB,4,0);
+    VL_OUT(&busA,31,0);
+    VL_OUT(&busB,31,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

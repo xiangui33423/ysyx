@@ -21,20 +21,21 @@ VL_MODULE(Vysyx_23060096_RegisterFile___024root) {
     // PORTS
     VL_IN8(clk,0,0);
     VL_IN8(rstn,0,0);
-    VL_IN8(wdata,4,0);
+    VL_IN8(Ra,4,0);
+    VL_IN8(Rb,4,0);
+    VL_IN8(waddr,4,0);
     VL_IN8(w_en,0,0);
-    VL_OUT8(busA,4,0);
-    VL_OUT8(busB,4,0);
-    VL_IN(Ra,31,0);
-    VL_IN(Rb,31,0);
-    VL_IN(waddr,31,0);
+    VL_IN(wdata,31,0);
+    VL_OUT(busA,31,0);
+    VL_OUT(busB,31,0);
 
     // LOCAL SIGNALS
     IData/*31:0*/ ysyx_23060096_RegisterFile__DOT__i;
-    VlUnpacked<CData/*4:0*/, 32> ysyx_23060096_RegisterFile__DOT__rf;
+    VlUnpacked<IData/*31:0*/, 5> ysyx_23060096_RegisterFile__DOT__rf;
 
     // LOCAL VARIABLES
     CData/*0:0*/ __Vclklast__TOP__clk;
+    IData/*31:0*/ ysyx_23060096_RegisterFile__DOT____Vlvbound2;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
