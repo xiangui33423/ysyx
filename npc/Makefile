@@ -1,11 +1,12 @@
 NPC_HOME=/home/xiangui/ysyx-workbench/npc
-VERILATOR_CFLAGS=-MMD --build -cc  --trace --exe\
+VERILATOR_CFLAGS=-MMD --build --cc  --trace --exe\
 	-O3 --x-assign fast --x-initial fast --noassert 
-FILE=ysyx_23060096_RegisterFile
+YSYX=ysyx_23060096
+FILE=RegisterFile
 VFILES=$(wildcard vsrc/*.v)
 CFILES=$(wildcard csrc/*.cpp)
 CFILE=$(NPC_HOME)/csrc/$(FILE).cpp
-VTOP=$(NPC_HOME)/vsrc/$(FILE).v
+VTOP=$(NPC_HOME)/vsrc/$(YSYX)$(FILE).v
 
 all:
 	@echo "Write this Makefile by your self."
