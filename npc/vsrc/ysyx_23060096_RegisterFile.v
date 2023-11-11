@@ -18,7 +18,7 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
 
   always @(posedge clk) begin
     if(!rstn) begin
-      for (i = 0;i < 2 ^ ADDR_WIDTH; i = i + 1) begin
+      for (i = 0;i < 1<<ADDR_WIDTH; i = i + 1) begin
         rf[i] <= 32'h0;
         end
     end
