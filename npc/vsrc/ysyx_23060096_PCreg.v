@@ -4,6 +4,9 @@ module ysyx_23060096_PCreg (
     input  [31:0] pc,
     output [31:0] inst
 );
+
+wire [31:0] addr;
+
 assign addr = (pc - 32'h8000_0000) >> 2;
     reg [31:0] inst_reg [1<<32-1:0];
 
