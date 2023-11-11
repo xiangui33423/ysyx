@@ -29,17 +29,29 @@ void Vysyx_23060096_RegisterFile___024root__traceChgSub0(Vysyx_23060096_Register
             tracep->chgIData(oldp+2,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[2]),32);
             tracep->chgIData(oldp+3,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[3]),32);
             tracep->chgIData(oldp+4,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[4]),32);
-            tracep->chgIData(oldp+5,(vlSelf->ysyx_23060096_RegisterFile__DOT__i),32);
+            tracep->chgIData(oldp+5,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[5]),32);
+            tracep->chgIData(oldp+6,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[6]),32);
+            tracep->chgIData(oldp+7,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[7]),32);
+            tracep->chgIData(oldp+8,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[8]),32);
+            tracep->chgIData(oldp+9,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[9]),32);
+            tracep->chgIData(oldp+10,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[10]),32);
+            tracep->chgIData(oldp+11,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[11]),32);
+            tracep->chgIData(oldp+12,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[12]),32);
+            tracep->chgIData(oldp+13,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[13]),32);
+            tracep->chgIData(oldp+14,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[14]),32);
+            tracep->chgIData(oldp+15,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[15]),32);
+            tracep->chgIData(oldp+16,(vlSelf->ysyx_23060096_RegisterFile__DOT__rf[16]),32);
+            tracep->chgIData(oldp+17,(vlSelf->ysyx_23060096_RegisterFile__DOT__i),32);
         }
-        tracep->chgBit(oldp+6,(vlSelf->clk));
-        tracep->chgBit(oldp+7,(vlSelf->rstn));
-        tracep->chgIData(oldp+8,(vlSelf->wdata),32);
-        tracep->chgCData(oldp+9,(vlSelf->Ra),5);
-        tracep->chgCData(oldp+10,(vlSelf->Rb),5);
-        tracep->chgCData(oldp+11,(vlSelf->waddr),5);
-        tracep->chgBit(oldp+12,(vlSelf->w_en));
-        tracep->chgIData(oldp+13,(vlSelf->busA),32);
-        tracep->chgIData(oldp+14,(vlSelf->busB),32);
+        tracep->chgBit(oldp+18,(vlSelf->clk));
+        tracep->chgBit(oldp+19,(vlSelf->rstn));
+        tracep->chgIData(oldp+20,(vlSelf->wdata),32);
+        tracep->chgCData(oldp+21,(vlSelf->Ra),5);
+        tracep->chgCData(oldp+22,(vlSelf->Rb),5);
+        tracep->chgCData(oldp+23,(vlSelf->waddr),5);
+        tracep->chgBit(oldp+24,(vlSelf->w_en));
+        tracep->chgIData(oldp+25,(vlSelf->busA),32);
+        tracep->chgIData(oldp+26,(vlSelf->busB),32);
     }
 }
 

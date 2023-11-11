@@ -12,7 +12,7 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___sequent__TOP__1(Vysyx
     Vysyx_23060096_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_RegisterFile___024root___sequent__TOP__1\n"); );
     // Variables
-    CData/*2:0*/ __Vdlyvdim0__ysyx_23060096_RegisterFile__DOT__rf__v0;
+    CData/*4:0*/ __Vdlyvdim0__ysyx_23060096_RegisterFile__DOT__rf__v0;
     CData/*0:0*/ __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v0;
     CData/*0:0*/ __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v1;
     IData/*31:0*/ __Vdlyvval__ysyx_23060096_RegisterFile__DOT__rf__v0;
@@ -26,12 +26,12 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___sequent__TOP__1(Vysyx
         if (vlSelf->w_en) {
             vlSelf->ysyx_23060096_RegisterFile__DOT____Vlvbound1 
                 = vlSelf->wdata;
-            if ((4U >= (7U & (IData)(vlSelf->waddr)))) {
+            if ((0x10U >= (IData)(vlSelf->waddr))) {
                 __Vdlyvval__ysyx_23060096_RegisterFile__DOT__rf__v0 
                     = vlSelf->ysyx_23060096_RegisterFile__DOT____Vlvbound1;
                 __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v0 = 1U;
                 __Vdlyvdim0__ysyx_23060096_RegisterFile__DOT__rf__v0 
-                    = (7U & (IData)(vlSelf->waddr));
+                    = vlSelf->waddr;
             }
         }
     } else {
@@ -47,21 +47,18 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___sequent__TOP__1(Vysyx
         vlSelf->ysyx_23060096_RegisterFile__DOT__rf[2U] = 0U;
         vlSelf->ysyx_23060096_RegisterFile__DOT__rf[3U] = 0U;
         vlSelf->ysyx_23060096_RegisterFile__DOT__rf[4U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[1U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[2U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[3U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[4U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[1U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[2U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[3U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[4U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[1U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[2U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[3U] = 0U;
-        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[4U] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[5U] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[6U] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[7U] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[8U] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[9U] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0xaU] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0xbU] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0xcU] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0xdU] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0xeU] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0xfU] = 0U;
+        vlSelf->ysyx_23060096_RegisterFile__DOT__rf[0x10U] = 0U;
     }
 }
 
@@ -70,12 +67,12 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___settle__TOP__2(Vysyx_
     Vysyx_23060096_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_RegisterFile___024root___settle__TOP__2\n"); );
     // Body
-    vlSelf->busA = ((4U >= (7U & (IData)(vlSelf->Ra)))
-                     ? vlSelf->ysyx_23060096_RegisterFile__DOT__rf
-                    [(7U & (IData)(vlSelf->Ra))] : 0U);
-    vlSelf->busB = ((4U >= (7U & (IData)(vlSelf->Rb)))
-                     ? vlSelf->ysyx_23060096_RegisterFile__DOT__rf
-                    [(7U & (IData)(vlSelf->Rb))] : 0U);
+    vlSelf->busA = ((0x10U >= (IData)(vlSelf->Ra)) ? 
+                    vlSelf->ysyx_23060096_RegisterFile__DOT__rf
+                    [vlSelf->Ra] : 0U);
+    vlSelf->busB = ((0x10U >= (IData)(vlSelf->Rb)) ? 
+                    vlSelf->ysyx_23060096_RegisterFile__DOT__rf
+                    [vlSelf->Rb] : 0U);
 }
 
 void Vysyx_23060096_RegisterFile___024root___eval(Vysyx_23060096_RegisterFile___024root* vlSelf) {
