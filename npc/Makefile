@@ -10,6 +10,6 @@ all:
 
 sim:
 	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	-@echo verilator $(VERILATOR_CFLAGS) $(VFILES) csrc/RegisterFile.cpp $(VTOP)
+	-@echo verilator $(VERILATOR_CFLAGS) csrc/RegisterFile.cpp $(VTOP)
 
 include ../Makefile
