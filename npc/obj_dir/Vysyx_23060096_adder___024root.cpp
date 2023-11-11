@@ -144,16 +144,14 @@ VL_INLINE_OPT void Vysyx_23060096_adder___024root___combo__TOP__7(Vysyx_23060096
     vlSelf->ysyx_23060096_PCreg__02Einst = ((0x80000000U 
                                              >= ((IData)(0x80000000U) 
                                                  + 
-                                                 (1U 
-                                                  & ((vlSelf->ysyx_23060096_PCreg__02Epc 
-                                                      - (IData)(0x80000000U)) 
-                                                     >> 2U))))
+                                                 ((vlSelf->ysyx_23060096_PCreg__02Epc 
+                                                   - (IData)(0x80000000U)) 
+                                                  >> 2U)))
                                              ? vlSelf->ysyx_23060096_PCreg__DOT__inst_reg
                                             [((IData)(0x80000000U) 
-                                              + (1U 
-                                                 & ((vlSelf->ysyx_23060096_PCreg__02Epc 
-                                                     - (IData)(0x80000000U)) 
-                                                    >> 2U)))]
+                                              + ((vlSelf->ysyx_23060096_PCreg__02Epc 
+                                                  - (IData)(0x80000000U)) 
+                                                 >> 2U))]
                                              : 0U);
     vlSelf->busA = ((0x10U >= (IData)(vlSelf->Ra)) ? 
                     vlSelf->ysyx_23060096_RegisterFile__DOT__rf

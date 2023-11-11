@@ -85,9 +85,9 @@ void Vysyx_23060096_adder___024root__traceChgSub0(Vysyx_23060096_adder___024root
         tracep->chgCData(oldp+2147483697,(vlSelf->B),4);
         tracep->chgCData(oldp+2147483698,(vlSelf->op),3);
         tracep->chgCData(oldp+2147483699,(vlSelf->out),4);
-        tracep->chgBit(oldp+2147483700,((1U & ((vlSelf->ysyx_23060096_PCreg__02Epc 
-                                                - (IData)(0x80000000U)) 
-                                               >> 2U))));
+        tracep->chgIData(oldp+2147483700,(((vlSelf->ysyx_23060096_PCreg__02Epc 
+                                            - (IData)(0x80000000U)) 
+                                           >> 2U)),32);
         tracep->chgIData(oldp+2147483701,(vlSelf->ysyx_23060096_pc__DOT__pc_next),32);
         tracep->chgBit(oldp+2147483702,((((1U & ((IData)(vlSelf->A) 
                                                  >> 3U)) 

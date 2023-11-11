@@ -6,14 +6,14 @@ FILE=RegisterFile
 VFILES=$(wildcard vsrc/*.v)
 CFILES=$(wildcard csrc/*.cpp)
 CFILE=$(NPC_HOME)/csrc/$(FILE).cpp
-VTOP=vsrc/$(YSYX)$(FILE).v
+VTOP=vsrc/$(YSYX)$(FILE)
 
 all:
 	@echo "Write this Makefile by your self."
 
 sim:
 	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	verilator $(VERILATOR_CFLAGS) $(CFILE) $(VFILES) #--top-module $(VTOP)
+	verilator $(VERILATOR_CFLAGS) $(CFILE) $(VFILES) --top-module $(VTOP)
 	# ./obj_dir/V$(YSYX)$(FILE)
 	# gtkwave wave.vcd
 

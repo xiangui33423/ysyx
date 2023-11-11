@@ -59,9 +59,9 @@ void Vysyx_23060096_adder___024root__traceInitSub0(Vysyx_23060096_adder___024roo
         tracep->declBit(c+2147483677,"ysyx_23060096_PCreg rst_n", false,-1);
         tracep->declBus(c+2147483678,"ysyx_23060096_PCreg pc", false,-1, 31,0);
         tracep->declBus(c+2147483679,"ysyx_23060096_PCreg inst", false,-1, 31,0);
+        tracep->declBus(c+2147483701,"ysyx_23060096_PCreg addr", false,-1, 31,0);
         {int i; for (i=0; i<-2147483647; i++) {
                 tracep->declBus(c+5+i*1,"ysyx_23060096_PCreg inst_reg", true,(i+-2147483648), 31,0);}}
-        tracep->declBit(c+2147483701,"ysyx_23060096_PCreg addr", false,-1);
         tracep->declBit(c+2147483680,"ysyx_23060096_pc clk", false,-1);
         tracep->declBit(c+2147483681,"ysyx_23060096_pc rstn", false,-1);
         tracep->declBus(c+2147483682,"ysyx_23060096_pc pc", false,-1, 31,0);
@@ -213,9 +213,9 @@ void Vysyx_23060096_adder___024root__traceFullSub0(Vysyx_23060096_adder___024roo
         tracep->fullCData(oldp+2147483698,(vlSelf->B),4);
         tracep->fullCData(oldp+2147483699,(vlSelf->op),3);
         tracep->fullCData(oldp+2147483700,(vlSelf->out),4);
-        tracep->fullBit(oldp+2147483701,((1U & ((vlSelf->ysyx_23060096_PCreg__02Epc 
-                                                 - (IData)(0x80000000U)) 
-                                                >> 2U))));
+        tracep->fullIData(oldp+2147483701,(((vlSelf->ysyx_23060096_PCreg__02Epc 
+                                             - (IData)(0x80000000U)) 
+                                            >> 2U)),32);
         tracep->fullIData(oldp+2147483702,(vlSelf->ysyx_23060096_pc__DOT__pc_next),32);
         tracep->fullBit(oldp+2147483703,((((1U & ((IData)(vlSelf->A) 
                                                   >> 3U)) 
