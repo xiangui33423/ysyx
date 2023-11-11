@@ -10,7 +10,7 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
   output [DATA_WIDTH-1:0] busA,
   output [DATA_WIDTH-1:0] busB
 );
-  reg [DATA_WIDTH-1:0] rf [ADDR_WIDTH-1:0];
+  reg [DATA_WIDTH-1:0] rf [1<<ADDR_WIDTH-1:0];
 
   //=====initial======
   integer i;
@@ -21,7 +21,7 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
         end
     end
     else
-      if (w_en) rf[waddr[2:0]] <= wdata;
+      if (w_en) rf[waddr] <= wdata;
   end
   assign busA = rf[Ra];
   assign busB = rf[Rb];
