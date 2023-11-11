@@ -11,12 +11,15 @@
 
 class Vysyx_23060096_RegisterFile__Syms;
 class Vysyx_23060096_RegisterFile_VerilatedVcd;
+class Vysyx_23060096_RegisterFile___024unit;
 
 
 //----------
 
 VL_MODULE(Vysyx_23060096_RegisterFile___024root) {
   public:
+    // CELLS
+    Vysyx_23060096_RegisterFile___024unit* __PVT____024unit;
 
     // PORTS
     VL_IN8(clk,0,0);

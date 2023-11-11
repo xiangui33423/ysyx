@@ -27,10 +27,12 @@ VM_TRACE_FST_WRITER_THREAD = 0
 VM_CLASSES_FAST += \
 	Vysyx_23060096_RegisterFile \
 	Vysyx_23060096_RegisterFile___024root \
+	Vysyx_23060096_RegisterFile___024unit \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	Vysyx_23060096_RegisterFile___024root__Slow \
+	Vysyx_23060096_RegisterFile___024unit__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

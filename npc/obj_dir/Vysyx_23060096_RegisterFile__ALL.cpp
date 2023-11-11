@@ -2,7 +2,9 @@
 #define VL_INCLUDE_OPT include
 #include "Vysyx_23060096_RegisterFile.cpp"
 #include "Vysyx_23060096_RegisterFile___024root.cpp"
+#include "Vysyx_23060096_RegisterFile___024unit.cpp"
 #include "Vysyx_23060096_RegisterFile__Trace.cpp"
 #include "Vysyx_23060096_RegisterFile___024root__Slow.cpp"
+#include "Vysyx_23060096_RegisterFile___024unit__Slow.cpp"
 #include "Vysyx_23060096_RegisterFile__Syms.cpp"
 #include "Vysyx_23060096_RegisterFile__Trace__Slow.cpp"

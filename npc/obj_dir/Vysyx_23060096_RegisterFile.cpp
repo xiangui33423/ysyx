@@ -19,6 +19,7 @@ Vysyx_23060096_RegisterFile::Vysyx_23060096_RegisterFile(VerilatedContext* _vcon
     , w_en{vlSymsp->TOP.w_en}
     , busA{vlSymsp->TOP.busA}
     , busB{vlSymsp->TOP.busB}
+    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {
 }
