@@ -14,17 +14,14 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
 
   //=====initial======
   integer i;
-
-
   always @(posedge clk) begin
     if(!rstn) begin
       for (i = 0;i < 1<<ADDR_WIDTH; i = i + 1) begin
         rf[i] <= 32'h0;
         end
     end
-      
-    if (w_en) rf[waddr] <= wdata;
-    else rf[waddr] <= rf[waddr];
+    else
+      if (w_en) rf[waddr] <= wdata;
   end
   assign busA = rf[Ra];
   assign busB = rf[Rb];
