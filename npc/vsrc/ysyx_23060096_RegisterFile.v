@@ -21,12 +21,11 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
         end
     end
     else
-      if (w_en) rf[waddr] <= wdata;
+      if (w_en) begin
+        rf[waddr] <= wdata;
+        $monitor("%8x %8x",busA,busB);
+      end
   end
   assign busA = rf[Ra];
   assign busB = rf[Rb];
-  
-  always @(negedge (!busA) or negedge (!busB)) begin
-    $monitor("busA:0x%8x   busB:0x%8x",busA,busB);
-  end
 endmodule
