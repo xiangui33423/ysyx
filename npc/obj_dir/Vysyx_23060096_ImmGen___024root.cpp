@@ -12,39 +12,52 @@ VL_INLINE_OPT void Vysyx_23060096_ImmGen___024root___combo__TOP__1(Vysyx_2306009
     Vysyx_23060096_ImmGen__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_ImmGen___024root___combo__TOP__1\n"); );
     // Body
-    if ((0U == (IData)(vlSelf->ExtOP))) {
-        vlSelf->imm = (((- (IData)((1U & (vlSelf->inst 
-                                          >> 0x18U)))) 
-                        << 0xcU) | (0xfffU & (vlSelf->inst 
-                                              >> 0xcU)));
-    } else if ((1U == (IData)(vlSelf->ExtOP))) {
-        vlSelf->imm = (0xfffff000U & (vlSelf->inst 
-                                      << 7U));
-    } else if ((2U == (IData)(vlSelf->ExtOP))) {
-        vlSelf->imm = (((- (IData)((1U & (vlSelf->inst 
-                                          >> 0x18U)))) 
-                        << 0xcU) | ((0xfe0U & (vlSelf->inst 
-                                               >> 0xdU)) 
-                                    | (0x1fU & vlSelf->inst)));
-    } else if ((3U == (IData)(vlSelf->ExtOP))) {
-        vlSelf->imm = (((- (IData)((1U & (vlSelf->inst 
-                                          >> 0x18U)))) 
-                        << 0xcU) | ((0x800U & (vlSelf->inst 
-                                               << 0xbU)) 
-                                    | ((0x7e0U & (vlSelf->inst 
-                                                  >> 0xdU)) 
-                                       | (0x1eU & vlSelf->inst))));
-    } else if ((4U == (IData)(vlSelf->ExtOP))) {
-        vlSelf->imm = (((- (IData)((1U & (vlSelf->inst 
-                                          >> 0x18U)))) 
-                        << 0x14U) | ((0xff000U & (vlSelf->inst 
-                                                  << 7U)) 
-                                     | ((0x800U & (vlSelf->inst 
-                                                   >> 2U)) 
-                                        | (0x7feU & 
-                                           (vlSelf->inst 
-                                            >> 0xdU)))));
-    }
+    vlSelf->ysyx_23060096_ImmGen__DOT__immI = (((- (IData)(
+                                                           (1U 
+                                                            & (vlSelf->inst 
+                                                               >> 0x18U)))) 
+                                                << 0xcU) 
+                                               | (0xfffU 
+                                                  & (vlSelf->inst 
+                                                     >> 0xcU)));
+    vlSelf->imm = ((4U & (IData)(vlSelf->ExtOP)) ? 
+                   ((2U & (IData)(vlSelf->ExtOP)) ? vlSelf->ysyx_23060096_ImmGen__DOT__immI
+                     : ((1U & (IData)(vlSelf->ExtOP))
+                         ? vlSelf->ysyx_23060096_ImmGen__DOT__immI
+                         : (((- (IData)((1U & (vlSelf->inst 
+                                               >> 0x18U)))) 
+                             << 0x14U) | ((0xff000U 
+                                           & (vlSelf->inst 
+                                              << 7U)) 
+                                          | ((0x800U 
+                                              & (vlSelf->inst 
+                                                 >> 2U)) 
+                                             | (0x7feU 
+                                                & (vlSelf->inst 
+                                                   >> 0xdU)))))))
+                    : ((2U & (IData)(vlSelf->ExtOP))
+                        ? ((1U & (IData)(vlSelf->ExtOP))
+                            ? (((- (IData)((1U & (vlSelf->inst 
+                                                  >> 0x18U)))) 
+                                << 0xcU) | ((0x800U 
+                                             & (vlSelf->inst 
+                                                << 0xbU)) 
+                                            | ((0x7e0U 
+                                                & (vlSelf->inst 
+                                                   >> 0xdU)) 
+                                               | (0x1eU 
+                                                  & vlSelf->inst))))
+                            : (((- (IData)((1U & (vlSelf->inst 
+                                                  >> 0x18U)))) 
+                                << 0xcU) | ((0xfe0U 
+                                             & (vlSelf->inst 
+                                                >> 0xdU)) 
+                                            | (0x1fU 
+                                               & vlSelf->inst))))
+                        : ((1U & (IData)(vlSelf->ExtOP))
+                            ? (0xfffff000U & (vlSelf->inst 
+                                              << 7U))
+                            : vlSelf->ysyx_23060096_ImmGen__DOT__immI)));
 }
 
 void Vysyx_23060096_ImmGen___024root___eval(Vysyx_23060096_ImmGen___024root* vlSelf) {

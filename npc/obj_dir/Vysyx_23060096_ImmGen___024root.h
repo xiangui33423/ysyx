@@ -25,6 +25,9 @@ VL_MODULE(Vysyx_23060096_ImmGen___024root) {
     VL_IN(inst,24,0);
     VL_OUT(imm,31,0);
 
+    // LOCAL SIGNALS
+    IData/*31:0*/ ysyx_23060096_ImmGen__DOT__immI;
+
     // INTERNAL VARIABLES
     Vysyx_23060096_ImmGen__Syms* vlSymsp;  // Symbol table
 

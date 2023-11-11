@@ -28,12 +28,7 @@ void Vysyx_23060096_ImmGen___024root__traceChgSub0(Vysyx_23060096_ImmGen___024ro
         tracep->chgIData(oldp+2,(vlSelf->inst),25);
         tracep->chgCData(oldp+3,(vlSelf->ExtOP),3);
         tracep->chgIData(oldp+4,(vlSelf->imm),32);
-        tracep->chgIData(oldp+5,((((- (IData)((1U & 
-                                               (vlSelf->inst 
-                                                >> 0x18U)))) 
-                                   << 0xcU) | (0xfffU 
-                                               & (vlSelf->inst 
-                                                  >> 0xcU)))),32);
+        tracep->chgIData(oldp+5,(vlSelf->ysyx_23060096_ImmGen__DOT__immI),32);
         tracep->chgIData(oldp+6,((0xfffff000U & (vlSelf->inst 
                                                  << 7U))),32);
         tracep->chgIData(oldp+7,((((- (IData)((1U & 

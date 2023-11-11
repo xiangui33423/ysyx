@@ -57,4 +57,5 @@ void Vysyx_23060096_ImmGen___024root___ctor_var_reset(Vysyx_23060096_ImmGen___02
     vlSelf->inst = 0;
     vlSelf->ExtOP = 0;
     vlSelf->imm = 0;
+    vlSelf->ysyx_23060096_ImmGen__DOT__immI = 0;
 }

@@ -78,12 +78,7 @@ void Vysyx_23060096_ImmGen___024root__traceFullSub0(Vysyx_23060096_ImmGen___024r
         tracep->fullIData(oldp+3,(vlSelf->inst),25);
         tracep->fullCData(oldp+4,(vlSelf->ExtOP),3);
         tracep->fullIData(oldp+5,(vlSelf->imm),32);
-        tracep->fullIData(oldp+6,((((- (IData)((1U 
-                                                & (vlSelf->inst 
-                                                   >> 0x18U)))) 
-                                    << 0xcU) | (0xfffU 
-                                                & (vlSelf->inst 
-                                                   >> 0xcU)))),32);
+        tracep->fullIData(oldp+6,(vlSelf->ysyx_23060096_ImmGen__DOT__immI),32);
         tracep->fullIData(oldp+7,((0xfffff000U & (vlSelf->inst 
                                                   << 7U))),32);
         tracep->fullIData(oldp+8,((((- (IData)((1U 
