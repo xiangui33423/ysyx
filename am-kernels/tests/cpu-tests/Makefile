@@ -8,7 +8,7 @@ COLOR_GREEN = \033[1;32m
 COLOR_NONE  = \033[0m
 
 ALL = $(basename $(notdir $(shell find tests/. -name "*.c")))
-ARCH = risv32-nemu
+ARCH = riscv32-nemu
 
 all: $(addprefix Makefile., $(ALL))
 	@echo "" $(ALL)
