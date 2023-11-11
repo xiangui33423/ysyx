@@ -24,6 +24,8 @@ always @(*) begin
         3'b010: imm = immS;
         3'b011: imm = immB;
         3'b100: imm = immJ;
+        default :
+            imm = immI;
     endcase
 end
 
