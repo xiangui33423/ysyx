@@ -60,6 +60,7 @@ int main()
             top->wdata = 0x12341234;
             break;
         case 20:
+            top->w_en = 0;
             top->Ra = 0b01000;
             break;
         case 50:
@@ -69,6 +70,8 @@ int main()
             top->Rb = 0b01100;
             top->wdata = 0x12789545;
             break;
+        case 60:top->w_en = 0;
+        break;
         default:
             break;
         }   

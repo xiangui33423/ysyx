@@ -20,6 +20,7 @@ VL_MODULE(Vysyx_23060096_RegisterFile___024unit) {
 
     // LOCAL VARIABLES
     CData/*0:0*/ __VmonitorOff;
+    QData/*63:0*/ __VmonitorNum;
 
     // INTERNAL VARIABLES
     Vysyx_23060096_RegisterFile__Syms* vlSymsp;  // Symbol table

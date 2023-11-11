@@ -20,6 +20,11 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___sequent__TOP__1(Vysyx
     if ((1U & (~ (IData)(vlSelf->rstn)))) {
         vlSelf->ysyx_23060096_RegisterFile__DOT__i = 0x20U;
     }
+    if (vlSelf->rstn) {
+        if (vlSelf->w_en) {
+            vlSymsp->TOP____024unit.__VmonitorNum = 1U;
+        }
+    }
     __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v0 = 0U;
     __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v1 = 0U;
     if (vlSelf->rstn) {
@@ -73,9 +78,9 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___settle__TOP__2(Vysyx_
     vlSelf->busB = ((0x10U >= (IData)(vlSelf->Rb)) ? 
                     vlSelf->ysyx_23060096_RegisterFile__DOT__rf
                     [vlSelf->Rb] : 0U);
-    if (VL_UNLIKELY((1U & (~ (IData)(vlSymsp->TOP____024unit.__VmonitorOff))))) {
-        VL_WRITEF("busA:0x%8x   busB:0x%8x\n",32,vlSelf->busA,
-                  32,vlSelf->busB);
+    if (VL_UNLIKELY(((~ (IData)(vlSymsp->TOP____024unit.__VmonitorOff)) 
+                     & (1U == vlSymsp->TOP____024unit.__VmonitorNum)))) {
+        VL_WRITEF("%8x %8x\n",32,vlSelf->busA,32,vlSelf->busB);
     }
 }
 

@@ -30,5 +30,6 @@ void Vysyx_23060096_RegisterFile___024unit___ctor_var_reset(Vysyx_23060096_Regis
     Vysyx_23060096_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+  Vysyx_23060096_RegisterFile___024unit___ctor_var_reset\n"); );
     // Body
+    vlSelf->__VmonitorNum = 0;
     vlSelf->__VmonitorOff = 0;
 }
