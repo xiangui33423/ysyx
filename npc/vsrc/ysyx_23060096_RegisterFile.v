@@ -26,7 +26,7 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
   assign busA = rf[Ra];
   assign busB = rf[Rb];
   
-  always @(posedge !(!busA) or posedge !(!busB)) begin
+  always @(negedge (!busA) or negedge (!busB)) begin
     $monitor("busA:0x%8x   busB:0x%8x",busA,busB);
   end
 endmodule
