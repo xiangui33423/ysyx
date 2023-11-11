@@ -1,5 +1,5 @@
 NPC_HOME=/home/xiangui/ysyx-workbench/npc
-VERILATOR_CFLAGS=-MMD --build --cc  --trace --exe
+VERILATOR_CFLAGS= --build --cc  --trace --exe
 	#-O3 --x-assign fast --x-initial fast --noassert 
 VFILES=$(wildcard vsrc/*.v)
 CFILES=$(wildcard csrc/*.cpp)
