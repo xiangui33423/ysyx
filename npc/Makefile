@@ -6,7 +6,7 @@ FILE=RegisterFile
 VFILES=$(wildcard vsrc/*.v)
 CFILES=$(wildcard csrc/*.cpp)
 CFILE=$(NPC_HOME)/csrc/$(FILE).cpp
-VTOP=vsrc/$(YSYX)$(FILE)
+VTOP=$(YSYX)$(FILE)
 
 all:
 	@echo "Write this Makefile by your self."
