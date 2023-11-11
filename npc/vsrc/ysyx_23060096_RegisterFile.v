@@ -15,6 +15,7 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
   //=====initial======
   integer i;
   always @(posedge clk) begin
+    $monitor("busA:0x%8x   busB:0x%8x",busA,busB);
     if(!rstn) begin
       for (i = 0;i < 1<<ADDR_WIDTH; i = i + 1) begin
         rf[i] <= 32'h0;
@@ -26,6 +27,6 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
   assign busA = rf[Ra];
   assign busB = rf[Rb];
   
-  //$display("busA:0x%8x   busB:0x%8x",busA,busB);
+  
   
 endmodule

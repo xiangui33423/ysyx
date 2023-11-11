@@ -41,7 +41,7 @@ int main()
 {
     sim_init();
 
-        while (sc_time_stamp()< 1000 && !contextp->gotFinish())
+    while (sc_time_stamp()< 1000 && !contextp->gotFinish())
     {
         if(main_time > 10)
             top->rstn = 1;
@@ -56,9 +56,9 @@ int main()
             top->ExtOP = 0b000;
             top->inst = 0b0111000011110000111100001;
             break;
-        // case 20:
-        //     top->Ra = 0b01000;
-        //     break;
+        case 20:
+            printf("%x",top->imm);
+            break;
         // case 50:
         //     top->w_en = 1;
         //     top->waddr = 0b01100;
