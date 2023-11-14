@@ -18,7 +18,7 @@ always @(*) begin
     case ({op[6:2],func3[2:0],func7[5]})
         9'b00100_000_?:begin//addi
             ExtOP = 3'b000;
-            RegWr = 1;
+            RegWr = 1'b1;
             Branch = 0;
             MemtoReg = 0;
             MemWr = 0;
