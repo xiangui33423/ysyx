@@ -3,15 +3,15 @@ module ysyx_23060096_ContrGen (
     input  [6:0] op,
     input  [2:0] func3,
     input  [6:0] func7,
-    output [2:0] ExtOP,
-    output       RegWr,
-    output       ALUAsrc,
-    output [1:0] ALUBsrc,
-    output [3:0] ALUctr,
-    output [2:0] Branch,
-    output       MemtoReg,
-    output       MemWr,
-    output [2:0] MemOP
+    output reg [2:0] ExtOP,
+    output reg       RegWr,
+    output reg       ALUAsrc,
+    output reg [1:0] ALUBsrc,
+    output reg [3:0] ALUctr,
+    output reg [2:0] Branch,
+    output reg       MemtoReg,
+    output reg       MemWr,
+    output reg [2:0] MemOP
 );
 
 always @(*) begin
