@@ -14,7 +14,7 @@ all:
 
 sim:
 	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	@verilator $(VERILATOR_CFLAGS) $(CFILE)  $(VTOP).v
+	@verilator $(VERILATOR_CFLAGS) $(CFILE) /csrc/$(VTOP).v
 	./obj_dir/V$(YSYX)$(FILE)
 	gtkwave wave.vcd
 
