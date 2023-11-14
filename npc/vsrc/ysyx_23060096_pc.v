@@ -9,7 +9,7 @@ module ysyx_23060096_pc (
         begin
           pc <= 32'h8000_0000;
         end
-        else begin
+      else begin
           pc <= pc + 32'h4; 
         end
     end
