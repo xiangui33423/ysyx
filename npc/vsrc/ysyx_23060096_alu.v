@@ -1,8 +1,8 @@
 module ysyx_23060096_alu (
-    input   [3:0] A,
-    input   [3:0] B,
+    input   [31:0] A,
+    input   [31:0] B,
     input   [2:0] op,
-    output  reg [3:0] out
+    output  reg [31:0] out
 );
 
     reg zero_add;
@@ -10,9 +10,9 @@ module ysyx_23060096_alu (
     reg zero_res;
     reg overflow;
     reg carry;
-    reg [3:0] res;
-    reg [3:0] sub;
-    reg [3:0] add;
+    reg [31:0] res;
+    reg [31:0] sub;
+    reg [31:0] add;
 
     ysyx_23060096_adder u_add(.A(A),.B(B),.op(0),.result(add),.zero(zero_add),.carry(carry),.overflow(overflow));
     ysyx_23060096_adder u_sub(.A(A),.B(B),.op(1),.result(sub),.zero(zero_sub),.carry(),.overflow());
