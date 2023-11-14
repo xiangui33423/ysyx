@@ -80,7 +80,6 @@ void Vysyx_23060096_npc___024root___settle__TOP__2(Vysyx_23060096_npc___024root*
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__ALUAsrc = 0U;
     }
-    vlSelf->pc = vlSelf->ysyx_23060096_npc__DOT__u_pc__DOT__pc_next;
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
@@ -101,6 +100,7 @@ void Vysyx_23060096_npc___024root___settle__TOP__2(Vysyx_23060096_npc___024root*
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__ALUctr = 0U;
     }
+    vlSelf->pc = vlSelf->ysyx_23060096_npc__DOT__u_pc__DOT__pc_next;
     if ((0U == (IData)(vlSelf->ysyx_23060096_npc__DOT__ALUBsrc))) {
         vlSelf->ysyx_23060096_npc__DOT__src2 = ((0x10U 
                                                  >= 
