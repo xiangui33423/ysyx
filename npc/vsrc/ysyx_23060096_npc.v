@@ -13,11 +13,11 @@ ysyx_23060096_pc u_pc(
 );
 
 //========ID=======
-wire [2:0] ExtOP,
+wire [2:0] ExtOP;
 wire       RegWr;
 wire       ALUAsrc;
 wire [1:0] ALUBsrc;
-wire [2:0] Branch,
+wire [2:0] Branch;
 wire [3:0] ALUctr;
 wire       MemtoReg;
 wire       MemWr;
@@ -58,7 +58,7 @@ ysyx_23060096_RegisterFile u_RegisterFile(
     .rstn(rstn),
     .Ra(inst[19:15]),
     .Rb(inst[24:20]),
-    .wdata(out_data),
+    .wdata(out),
     .waddr(inst[11:7]),
     .w_en(RegWr),
     .busA(rc1),

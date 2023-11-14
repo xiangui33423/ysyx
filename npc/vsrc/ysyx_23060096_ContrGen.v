@@ -4,7 +4,7 @@ module ysyx_23060096_ContrGen (
     input  [2:0] func3,
     input  [6:0] func7,
     output [2:0] ExtOP,
-    output reg   RegWr,
+    output       RegWr,
     output       ALUAsrc,
     output [1:0] ALUBsrc,
     output [3:0] ALUctr,
