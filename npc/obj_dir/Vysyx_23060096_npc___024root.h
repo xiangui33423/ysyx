@@ -25,7 +25,6 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
     VL_OUT(pc,31,0);
 
     // LOCAL SIGNALS
-    CData/*2:0*/ ysyx_23060096_npc__DOT__ExtOP;
     CData/*0:0*/ ysyx_23060096_npc__DOT__RegWr;
     CData/*0:0*/ ysyx_23060096_npc__DOT__ALUAsrc;
     CData/*1:0*/ ysyx_23060096_npc__DOT__ALUBsrc;
@@ -37,7 +36,6 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
     IData/*31:0*/ ysyx_23060096_npc__DOT__src1;
     IData/*31:0*/ ysyx_23060096_npc__DOT__src2;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_pc__DOT__pc_next;
-    IData/*31:0*/ ysyx_23060096_npc__DOT__u_ImmGen__DOT__immI;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_RegisterFile__DOT__i;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__res;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__sub;
