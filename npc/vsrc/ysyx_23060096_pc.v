@@ -4,13 +4,13 @@ module ysyx_23060096_pc (
     output [31:0] pc
 );
     reg [31:0] pc_next;
-    always @(posedge clk) begin
+    always @(negedge clk) begin
       if(!rstn)
         begin
-          pc_next <= 32'h8000_0000;
+          pc_next = 32'h8000_0000;
         end
         else begin
-          pc_next <= pc_next + 32'h4; 
+          pc_next = pc_next + 32'h4; 
         end
     end
 

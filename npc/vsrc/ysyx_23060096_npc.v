@@ -39,7 +39,53 @@ ysyx_23060096_ContrGen u_ContrGen(
     .MemOP(MemOP)
 );
 
+wire [31:0] imm;
+
+ysyx_23060096_ImmGen u_ImmGen(
+    .clk(clk),
+    .inst(inst[31:7]),
+    .ExtOP(ExtOP),
+    .imm(imm)
+);
 
 
+//=======EX=======
+wire [31:0] rc1;
+wire [31:0] rc2;
+
+ysyx_23060096_RegisterFile u_RegisterFile(
+    .clk(clk),
+    .rstn(rstn),
+    .Ra(inst[19:15]),
+    .Rb(inst[24:20]),
+    .wdata(out_data),
+    .waddr(inst[11:7]),
+    .w_en(RegWr),
+    .busA(rc1),
+    .busB(rc2)
+);
+
+wire [31:0] src1;
+wire [31:0] src2;
+
+assign src1 = ALUAsrc ? pc : rc1;
+
+always @(*) begin
+    case (ALUBsrc)
+        2'b00: src2 = rc2;
+        2'b01: src2 = imm;
+        2'b10: src2 = 32'd4;
+        default : src2 = src2;
+    endcase
+end
+
+wire out_data;
+
+ysyx_23060096_alu u_alu(
+    .A(src1),
+    .B(src2),
+    .op(ALUctr),
+    .out(out_data)
+);
 
 endmodule //ysyx_23060096_NPC
