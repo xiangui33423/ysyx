@@ -7,10 +7,10 @@ module ysyx_23060096_pc (
     always @(negedge clk) begin
       if(!rstn)
         begin
-          pc_next = 32'h8000_0000;
+          pc_next <= 32'h8000_0000;
         end
         else begin
-          pc_next = pc_next + 32'h4; 
+          pc_next <= pc_next + 32'h4; 
         end
     end
 
