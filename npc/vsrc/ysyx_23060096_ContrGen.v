@@ -26,7 +26,6 @@ always @(*) begin
             ALUBsrc = 2'b01;
             ALUctr = 4'b0000;
         end  
-        default: 
     endcase
 end
 
