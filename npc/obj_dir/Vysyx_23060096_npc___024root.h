@@ -24,6 +24,31 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
     VL_IN(inst,31,0);
     VL_OUT(pc,31,0);
 
+    // LOCAL SIGNALS
+    CData/*2:0*/ ysyx_23060096_npc__DOT__ExtOP;
+    CData/*0:0*/ ysyx_23060096_npc__DOT__RegWr;
+    CData/*0:0*/ ysyx_23060096_npc__DOT__ALUAsrc;
+    CData/*1:0*/ ysyx_23060096_npc__DOT__ALUBsrc;
+    CData/*2:0*/ ysyx_23060096_npc__DOT__Branch;
+    CData/*3:0*/ ysyx_23060096_npc__DOT__ALUctr;
+    CData/*0:0*/ ysyx_23060096_npc__DOT__MemtoReg;
+    CData/*0:0*/ ysyx_23060096_npc__DOT__MemWr;
+    CData/*2:0*/ ysyx_23060096_npc__DOT__MemOP;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__src1;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__src2;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_pc__DOT__pc_next;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_ImmGen__DOT__immI;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_RegisterFile__DOT__i;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__res;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__sub;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__add;
+    VlUnpacked<IData/*31:0*/, 17> ysyx_23060096_npc__DOT__u_RegisterFile__DOT__rf;
+
+    // LOCAL VARIABLES
+    CData/*0:0*/ __Vclklast__TOP__clk;
+    IData/*31:0*/ ysyx_23060096_npc__DOT__u_RegisterFile__DOT____Vlvbound1;
+    VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
+
     // INTERNAL VARIABLES
     Vysyx_23060096_npc__Syms* vlSymsp;  // Symbol table
 

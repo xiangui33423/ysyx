@@ -76,6 +76,8 @@ always @(*) begin
         2'b00: src2 = rc2;
         2'b01: src2 = imm;
         2'b10: src2 = 32'd4;
+        default :
+            src2 = src2;
     endcase
 end
 
