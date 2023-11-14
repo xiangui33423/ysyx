@@ -35,7 +35,6 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
     CData/*2:0*/ ysyx_23060096_npc__DOT__MemOP;
     IData/*31:0*/ ysyx_23060096_npc__DOT__src1;
     IData/*31:0*/ ysyx_23060096_npc__DOT__src2;
-    IData/*31:0*/ ysyx_23060096_npc__DOT__u_pc__DOT__pc_next;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_RegisterFile__DOT__i;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__res;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_alu__DOT__sub;

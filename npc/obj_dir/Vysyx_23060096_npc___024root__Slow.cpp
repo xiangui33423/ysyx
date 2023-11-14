@@ -100,7 +100,6 @@ void Vysyx_23060096_npc___024root___settle__TOP__2(Vysyx_23060096_npc___024root*
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__ALUctr = 0U;
     }
-    vlSelf->pc = vlSelf->ysyx_23060096_npc__DOT__u_pc__DOT__pc_next;
     if ((0U == (IData)(vlSelf->ysyx_23060096_npc__DOT__ALUBsrc))) {
         vlSelf->ysyx_23060096_npc__DOT__src2 = ((0x10U 
                                                  >= 
@@ -191,7 +190,6 @@ void Vysyx_23060096_npc___024root___ctor_var_reset(Vysyx_23060096_npc___024root*
     vlSelf->ysyx_23060096_npc__DOT__MemOP = 0;
     vlSelf->ysyx_23060096_npc__DOT__src1 = 0;
     vlSelf->ysyx_23060096_npc__DOT__src2 = 0;
-    vlSelf->ysyx_23060096_npc__DOT__u_pc__DOT__pc_next = 0;
     for (int __Vi0=0; __Vi0<17; ++__Vi0) {
         vlSelf->ysyx_23060096_npc__DOT__u_RegisterFile__DOT__rf[__Vi0] = 0;
     }

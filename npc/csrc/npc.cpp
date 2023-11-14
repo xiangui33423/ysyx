@@ -43,7 +43,7 @@ int main()
 
         while (sc_time_stamp()< 1000 && !contextp->gotFinish())
     {
-        if(main_time >= 10)
+        if(main_time > 10)
             top->rstn = 1;
         if((main_time%10)==5)
             top->clk = 0;
@@ -55,14 +55,11 @@ int main()
         {
             top->inst = 0b00001111110000000000101010010011;
         }
-        switch (main_time)
-        {
-        case 15:
-            
-            break;
-        default:
-            break;
-        }   
+        // switch (main_time)
+        // {
+        // default:
+        //     break;
+        // }   
         step_and_dump_wave();
         main_time++;     
     }
