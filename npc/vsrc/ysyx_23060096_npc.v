@@ -65,7 +65,11 @@ ysyx_23060096_RegisterFile u_RegisterFile(
     .busB(rc2)
 );
 
-reg [31:0] rd2 = rc2;
+reg [31:0] rd2;
+
+always @(*) begin
+    rd2 = rc2;
+end
 
 wire [31:0] src1;
 wire [31:0] src2;
