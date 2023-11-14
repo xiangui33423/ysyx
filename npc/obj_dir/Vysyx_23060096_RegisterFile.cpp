@@ -12,14 +12,13 @@ Vysyx_23060096_RegisterFile::Vysyx_23060096_RegisterFile(VerilatedContext* _vcon
     : vlSymsp{new Vysyx_23060096_RegisterFile__Syms(_vcontextp__, _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , rstn{vlSymsp->TOP.rstn}
-    , wdata{vlSymsp->TOP.wdata}
     , Ra{vlSymsp->TOP.Ra}
     , Rb{vlSymsp->TOP.Rb}
+    , wdata{vlSymsp->TOP.wdata}
     , waddr{vlSymsp->TOP.waddr}
     , w_en{vlSymsp->TOP.w_en}
     , busA{vlSymsp->TOP.busA}
     , busB{vlSymsp->TOP.busB}
-    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {
 }
@@ -66,7 +65,7 @@ static void _eval_initial_loop(Vysyx_23060096_RegisterFile__Syms* __restrict vlS
             Verilated::debug(1);
             __Vchange = Vysyx_23060096_RegisterFile___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("vsrc/ysyx_23060096_RegisterFile.v", 1, "",
+            VL_FATAL_MT("/home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_RegisterFile.v", 1, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -97,7 +96,7 @@ void Vysyx_23060096_RegisterFile::eval_step() {
             Verilated::debug(1);
             __Vchange = Vysyx_23060096_RegisterFile___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("vsrc/ysyx_23060096_RegisterFile.v", 1, "",
+            VL_FATAL_MT("/home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_RegisterFile.v", 1, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {

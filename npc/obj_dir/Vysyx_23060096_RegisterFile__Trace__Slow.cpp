@@ -24,9 +24,9 @@ void Vysyx_23060096_RegisterFile___024root__traceInitSub0(Vysyx_23060096_Registe
     {
         tracep->declBit(c+19,"clk", false,-1);
         tracep->declBit(c+20,"rstn", false,-1);
-        tracep->declBus(c+21,"wdata", false,-1, 31,0);
-        tracep->declBus(c+22,"Ra", false,-1, 4,0);
-        tracep->declBus(c+23,"Rb", false,-1, 4,0);
+        tracep->declBus(c+21,"Ra", false,-1, 4,0);
+        tracep->declBus(c+22,"Rb", false,-1, 4,0);
+        tracep->declBus(c+23,"wdata", false,-1, 31,0);
         tracep->declBus(c+24,"waddr", false,-1, 4,0);
         tracep->declBit(c+25,"w_en", false,-1);
         tracep->declBus(c+26,"busA", false,-1, 31,0);
@@ -35,9 +35,9 @@ void Vysyx_23060096_RegisterFile___024root__traceInitSub0(Vysyx_23060096_Registe
         tracep->declBus(c+29,"ysyx_23060096_RegisterFile DATA_WIDTH", false,-1, 31,0);
         tracep->declBit(c+19,"ysyx_23060096_RegisterFile clk", false,-1);
         tracep->declBit(c+20,"ysyx_23060096_RegisterFile rstn", false,-1);
-        tracep->declBus(c+21,"ysyx_23060096_RegisterFile wdata", false,-1, 31,0);
-        tracep->declBus(c+22,"ysyx_23060096_RegisterFile Ra", false,-1, 4,0);
-        tracep->declBus(c+23,"ysyx_23060096_RegisterFile Rb", false,-1, 4,0);
+        tracep->declBus(c+21,"ysyx_23060096_RegisterFile Ra", false,-1, 4,0);
+        tracep->declBus(c+22,"ysyx_23060096_RegisterFile Rb", false,-1, 4,0);
+        tracep->declBus(c+23,"ysyx_23060096_RegisterFile wdata", false,-1, 31,0);
         tracep->declBus(c+24,"ysyx_23060096_RegisterFile waddr", false,-1, 4,0);
         tracep->declBit(c+25,"ysyx_23060096_RegisterFile w_en", false,-1);
         tracep->declBus(c+26,"ysyx_23060096_RegisterFile busA", false,-1, 31,0);
@@ -101,9 +101,9 @@ void Vysyx_23060096_RegisterFile___024root__traceFullSub0(Vysyx_23060096_Registe
         tracep->fullIData(oldp+18,(vlSelf->ysyx_23060096_RegisterFile__DOT__i),32);
         tracep->fullBit(oldp+19,(vlSelf->clk));
         tracep->fullBit(oldp+20,(vlSelf->rstn));
-        tracep->fullIData(oldp+21,(vlSelf->wdata),32);
-        tracep->fullCData(oldp+22,(vlSelf->Ra),5);
-        tracep->fullCData(oldp+23,(vlSelf->Rb),5);
+        tracep->fullCData(oldp+21,(vlSelf->Ra),5);
+        tracep->fullCData(oldp+22,(vlSelf->Rb),5);
+        tracep->fullIData(oldp+23,(vlSelf->wdata),32);
         tracep->fullCData(oldp+24,(vlSelf->waddr),5);
         tracep->fullBit(oldp+25,(vlSelf->w_en));
         tracep->fullIData(oldp+26,(vlSelf->busA),32);

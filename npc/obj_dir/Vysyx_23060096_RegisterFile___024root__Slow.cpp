@@ -56,9 +56,9 @@ void Vysyx_23060096_RegisterFile___024root___ctor_var_reset(Vysyx_23060096_Regis
     // Body
     vlSelf->clk = 0;
     vlSelf->rstn = 0;
-    vlSelf->wdata = 0;
     vlSelf->Ra = 0;
     vlSelf->Rb = 0;
+    vlSelf->wdata = 0;
     vlSelf->waddr = 0;
     vlSelf->w_en = 0;
     vlSelf->busA = 0;

@@ -15,7 +15,6 @@
 
 // INCLUDE MODULE CLASSES
 #include "Vysyx_23060096_RegisterFile___024root.h"
-#include "Vysyx_23060096_RegisterFile___024unit.h"
 
 // SYMS CLASS (contains all model state)
 class Vysyx_23060096_RegisterFile__Syms final : public VerilatedSyms {
@@ -28,10 +27,6 @@ class Vysyx_23060096_RegisterFile__Syms final : public VerilatedSyms {
 
     // MODULE INSTANCE STATE
     Vysyx_23060096_RegisterFile___024root TOP;
-    Vysyx_23060096_RegisterFile___024unit TOP____024unit;
-
-    // SCOPE NAMES
-    VerilatedScope __Vscope_ysyx_23060096_RegisterFile;
 
     // CONSTRUCTORS
     Vysyx_23060096_RegisterFile__Syms(VerilatedContext* contextp, const char* namep, Vysyx_23060096_RegisterFile* modelp);

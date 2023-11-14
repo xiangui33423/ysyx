@@ -14,7 +14,6 @@ class Vysyx_23060096_RegisterFile__Syms;
 class Vysyx_23060096_RegisterFile___024root;
 class VerilatedVcdC;
 class Vysyx_23060096_RegisterFile_VerilatedVcd;
-class Vysyx_23060096_RegisterFile___024unit;
 
 
 // This class is the main interface to the Verilated model
@@ -30,9 +29,9 @@ class Vysyx_23060096_RegisterFile VL_NOT_FINAL {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clk,0,0);
     VL_IN8(&rstn,0,0);
-    VL_IN(&wdata,31,0);
     VL_IN8(&Ra,4,0);
     VL_IN8(&Rb,4,0);
+    VL_IN(&wdata,31,0);
     VL_IN8(&waddr,4,0);
     VL_IN8(&w_en,0,0);
     VL_OUT(&busA,31,0);
@@ -41,7 +40,6 @@ class Vysyx_23060096_RegisterFile VL_NOT_FINAL {
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
-    Vysyx_23060096_RegisterFile___024unit* const __PVT____024unit;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.

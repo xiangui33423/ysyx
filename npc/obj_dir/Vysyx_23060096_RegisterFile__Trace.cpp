@@ -45,9 +45,9 @@ void Vysyx_23060096_RegisterFile___024root__traceChgSub0(Vysyx_23060096_Register
         }
         tracep->chgBit(oldp+18,(vlSelf->clk));
         tracep->chgBit(oldp+19,(vlSelf->rstn));
-        tracep->chgIData(oldp+20,(vlSelf->wdata),32);
-        tracep->chgCData(oldp+21,(vlSelf->Ra),5);
-        tracep->chgCData(oldp+22,(vlSelf->Rb),5);
+        tracep->chgCData(oldp+20,(vlSelf->Ra),5);
+        tracep->chgCData(oldp+21,(vlSelf->Rb),5);
+        tracep->chgIData(oldp+22,(vlSelf->wdata),32);
         tracep->chgCData(oldp+23,(vlSelf->waddr),5);
         tracep->chgBit(oldp+24,(vlSelf->w_en));
         tracep->chgIData(oldp+25,(vlSelf->busA),32);

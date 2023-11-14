@@ -20,11 +20,6 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___sequent__TOP__1(Vysyx
     if ((1U & (~ (IData)(vlSelf->rstn)))) {
         vlSelf->ysyx_23060096_RegisterFile__DOT__i = 0x20U;
     }
-    if (vlSelf->rstn) {
-        if (vlSelf->w_en) {
-            vlSymsp->TOP____024unit.__VmonitorNum = 1U;
-        }
-    }
     __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v0 = 0U;
     __Vdlyvset__ysyx_23060096_RegisterFile__DOT__rf__v1 = 0U;
     if (vlSelf->rstn) {
@@ -78,10 +73,6 @@ VL_INLINE_OPT void Vysyx_23060096_RegisterFile___024root___settle__TOP__2(Vysyx_
     vlSelf->busB = ((0x10U >= (IData)(vlSelf->Rb)) ? 
                     vlSelf->ysyx_23060096_RegisterFile__DOT__rf
                     [vlSelf->Rb] : 0U);
-    if (VL_UNLIKELY(((~ (IData)(vlSymsp->TOP____024unit.__VmonitorOff)) 
-                     & (1U == vlSymsp->TOP____024unit.__VmonitorNum)))) {
-        VL_WRITEF("%8x %8x\n",32,vlSelf->busA,32,vlSelf->busB);
-    }
 }
 
 void Vysyx_23060096_RegisterFile___024root___eval(Vysyx_23060096_RegisterFile___024root* vlSelf) {
@@ -89,7 +80,7 @@ void Vysyx_23060096_RegisterFile___024root___eval(Vysyx_23060096_RegisterFile___
     Vysyx_23060096_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_RegisterFile___024root___eval\n"); );
     // Body
-    if (((IData)(vlSelf->clk) & (~ (IData)(vlSelf->__Vclklast__TOP__clk)))) {
+    if (((~ (IData)(vlSelf->clk)) & (IData)(vlSelf->__Vclklast__TOP__clk))) {
         Vysyx_23060096_RegisterFile___024root___sequent__TOP__1(vlSelf);
         vlSelf->__Vm_traceActivity[1U] = 1U;
     }
