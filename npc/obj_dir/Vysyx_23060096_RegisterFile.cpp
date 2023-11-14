@@ -65,7 +65,7 @@ static void _eval_initial_loop(Vysyx_23060096_RegisterFile__Syms* __restrict vlS
             Verilated::debug(1);
             __Vchange = Vysyx_23060096_RegisterFile___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("/home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_RegisterFile.v", 1, "",
+            VL_FATAL_MT("vsrc/ysyx_23060096_RegisterFile.v", 1, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -96,7 +96,7 @@ void Vysyx_23060096_RegisterFile::eval_step() {
             Verilated::debug(1);
             __Vchange = Vysyx_23060096_RegisterFile___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("/home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_RegisterFile.v", 1, "",
+            VL_FATAL_MT("vsrc/ysyx_23060096_RegisterFile.v", 1, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
