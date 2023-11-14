@@ -10,7 +10,7 @@ module ysyx_23060096_adder (
 
 wire [31:0] t_add_op;
 
-assign t_add_op = ({4{op}}^B) ;
+assign t_add_op = ({32{op}}^B) ;
 assign {carry, result} = A + t_add_op + {3'b0,op};
 assign overflow = (A[3] == t_add_op[3]) && (result[3] != A[3]);
 assign zero = ~(|result);
