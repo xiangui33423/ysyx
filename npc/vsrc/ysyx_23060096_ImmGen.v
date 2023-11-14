@@ -1,6 +1,5 @@
 module ysyx_23060096_ImmGen (
     input  clk,
-    input  rstn,
     input  [24:0] inst,
     input  [2:0]  ExtOP,
     output reg [31:0] imm

@@ -23,7 +23,6 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
     else
       if (w_en) begin
         rf[waddr] <= wdata;
-        $monitor("%8x %8x",busA,busB);
       end
   end
   assign busA = rf[Ra];
