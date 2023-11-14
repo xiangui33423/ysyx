@@ -49,11 +49,16 @@ int main()
             top->clk = 0;
         if((main_time%10)==0)
             top->clk = 1;
+        
 
+        if(top->pc = 0h80000000)
+        {
+            top->inst = 0b00001111110000000000101010010011;
+        }
         switch (main_time)
         {
         case 15:
-            top->pc = 0b00001111110000000000101010010011;
+            
             break;
         default:
             break;
