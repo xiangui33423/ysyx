@@ -50,12 +50,15 @@ int main()
         if((main_time%10)==0)
             top->clk = 1;
         
-
-        if(top->pc == 0x80000000)
+        if(rstn == 1)
         {
-            top->inst = 0b00001111110000000000101010010011;
+            if(top->pc == 0x80000000)
+            {
+                top->inst = 0b00001111110000000000101010010011;
+            }
+            else top->inst = 0b00011111110000000000101010010011;
         }
-        else top->inst = 0;
+    
         // switch (main_time)
         // {
         // default:
