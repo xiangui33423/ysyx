@@ -27,9 +27,6 @@ module ysyx_23060096_RegisterFile #(ADDR_WIDTH = 5, DATA_WIDTH = 32) (
       end
   end
 
-  always @(posedge clk ) begin
-    
-  end
   assign busA = rf[Ra];
   assign busB = rf[Rb];
 endmodule
