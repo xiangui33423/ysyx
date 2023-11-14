@@ -26,6 +26,9 @@ always @(*) begin
             ALUBsrc = 2'b01;
             ALUctr = 4'b0000;
         end  
+        default :begin
+            ExtOP = 0;
+        end
     endcase
 end
 
