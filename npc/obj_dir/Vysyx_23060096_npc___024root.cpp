@@ -12,6 +12,66 @@ VL_INLINE_OPT void Vysyx_23060096_npc___024root___combo__TOP__1(Vysyx_23060096_n
     Vysyx_23060096_npc__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_npc___024root___combo__TOP__1\n"); );
     // Body
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__Branch = 0U;
+    }
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__MemtoReg = 0U;
+    }
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__MemWr = 0U;
+    }
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__ALUAsrc = 0U;
+    }
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__ExtOP = 0U;
+    }
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__ALUBsrc = 1U;
+    }
     vlSelf->ysyx_23060096_npc__DOT__u_ImmGen__DOT__immI 
         = (((- (IData)((vlSelf->inst >> 0x1fU))) << 0xcU) 
            | (0xfffU & (vlSelf->inst >> 0x13U)));
@@ -100,6 +160,26 @@ VL_INLINE_OPT void Vysyx_23060096_npc___024root___combo__TOP__4(Vysyx_23060096_n
     Vysyx_23060096_npc__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_npc___024root___combo__TOP__4\n"); );
     // Body
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__RegWr = 1U;
+    }
+    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                        << 2U)) | (
+                                                   (0xeU 
+                                                    & (vlSelf->inst 
+                                                       >> 0xbU)) 
+                                                   | (1U 
+                                                      & (vlSelf->inst 
+                                                         >> 0x1eU))))))) {
+        vlSelf->ysyx_23060096_npc__DOT__ALUctr = 0U;
+    }
     vlSelf->ysyx_23060096_npc__DOT__src1 = ((IData)(vlSelf->ysyx_23060096_npc__DOT__ALUAsrc)
                                              ? vlSelf->pc
                                              : ((0x10U 
