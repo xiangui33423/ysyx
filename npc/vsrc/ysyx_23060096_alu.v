@@ -1,7 +1,7 @@
 module ysyx_23060096_alu (
     input   [31:0] A,
     input   [31:0] B,
-    input   [2:0] op,
+    input   [3:0] op,
     output  reg [31:0] out
 );
 
@@ -18,7 +18,7 @@ module ysyx_23060096_alu (
     ysyx_23060096_adder u_sub(.A(A),.B(B),.op(1),.result(sub),.zero(zero_sub),.carry(),.overflow());
     ysyx_23060096_adder u_res(.A(A),.B(B),.op(1),.result(res),.zero(zero_res),.carry(),.overflow());
     always @(*) begin
-        case(op)
+        case(op[2:0])
             3'b000: out = add;
             3'b001: out = sub;
             3'b010: out = ~A;
