@@ -55,6 +55,7 @@ int main()
         {
             top->inst = 0b00001111110000000000101010010011;
         }
+        else top->inst = 0;
         // switch (main_time)
         // {
         // default:
