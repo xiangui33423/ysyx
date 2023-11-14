@@ -58,7 +58,7 @@ ysyx_23060096_RegisterFile u_RegisterFile(
     .rstn(rstn),
     .Ra(inst[19:15]),
     .Rb(inst[24:20]),
-    .wdata(out),
+    .wdata(out_data),
     .waddr(inst[11:7]),
     .w_en(RegWr),
     .busA(rc1),
