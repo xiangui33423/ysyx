@@ -65,20 +65,15 @@ ysyx_23060096_RegisterFile u_RegisterFile(
     .busB(rc2)
 );
 
-reg [31:0] rd2;
 
-always @(*) begin
-    rd2 = rc2;
-end
-
-wire [31:0] src1;
-wire [31:0] src2;
+reg [31:0] src1;
+reg [31:0] src2;
 
 assign src1 = ALUAsrc ? pc : rc1;
 
 always @(*) begin
     case (ALUBsrc)
-        2'b00: src2 = rd2;
+        2'b00: src2 = rc2;
         2'b01: src2 = imm;
         2'b10: src2 = 32'd4;
     endcase
