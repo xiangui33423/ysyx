@@ -44,7 +44,7 @@ int main()
 
         while (sc_time_stamp()< 1000 && !contextp->gotFinish())
     {
-        if(main_time > 10)
+        if(main_time >= 10)
             top->rstn = 1;
         if((main_time%10)==5)
             top->clk = 0;
@@ -53,7 +53,7 @@ int main()
 
         switch (main_time)
         {
-        case 10:
+        case 15:
             top->w_en = 0b1;
             top->waddr = 0b01000;
             top->Ra = 0b01000;
