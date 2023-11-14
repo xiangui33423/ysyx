@@ -79,7 +79,7 @@ always @(*) begin
     endcase
 end
 
-wire  out_data;
+wire [31:0] out_data;
 
 ysyx_23060096_alu u_alu(
     .A(src1),
