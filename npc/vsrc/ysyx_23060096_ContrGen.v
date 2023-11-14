@@ -28,6 +28,8 @@ always @(*) begin
         end  
         default :begin
             ExtOP = 0;
+            RegWr = 0;
+            MemWr = 0;
         end
     endcase
 end
