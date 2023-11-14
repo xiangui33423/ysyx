@@ -50,7 +50,7 @@ int main()
         if((main_time%10)==0)
             top->clk = 1;
         
-        if(rstn == 1)
+        if(top->rstn == 1)
         {
             if(top->pc == 0x80000000)
             {
