@@ -14,11 +14,11 @@ ysyx_23060096_pc u_pc(
 
 //========ID=======
 wire [2:0] ExtOP,
-reg        RegWr;
+wire       RegWr;
 wire       ALUAsrc;
 wire [1:0] ALUBsrc;
 wire [2:0] Branch,
-reg  [3:0] ALUctr;
+wire [3:0] ALUctr;
 wire       MemtoReg;
 wire       MemWr;
 wire [2:0] MemOP;
