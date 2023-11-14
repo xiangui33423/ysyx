@@ -2,8 +2,8 @@ NPC_HOME=/home/xiangui/ysyx-workbench/npc
 VERILATOR_CFLAGS=-MMD --build --cc  --trace --exe\
 	-O3 --x-assign fast --x-initial fast --noassert 
 YSYX=ysyx_23060096_
-FILE=RegisterFile
-TOP_FILE=RegisterFile
+FILE=npc
+TOP_FILE=npc
 VFILES=$(wildcard vsrc/*.v)
 CFILES=$(wildcard csrc/*.cpp)
 CFILE=$(NPC_HOME)/csrc/$(FILE).cpp
