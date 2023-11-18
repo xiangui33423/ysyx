@@ -39,7 +39,7 @@ char *strncpy(char *dst, const char *src, size_t n) {
 
 char *strcat(char *dst, const char *src) {
   char *ret = dst;
-  int i = strlen(dst);
+  char i = strlen(dst);
   dst += i;
   while(*src != '\0')
     {
