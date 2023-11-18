@@ -22,7 +22,7 @@ char *strcpy(char *dst, const char *src) {
       src++;
       dst++;
     }
-    *dst = *src;
+    *dst = '\0';
     return ret;
 }
 
@@ -47,7 +47,7 @@ char *strcat(char *dst, const char *src) {
       src++;
       dst++;
     }
-  *dst = *src;
+  *dst = '\0';
   return ret;
 }
 
