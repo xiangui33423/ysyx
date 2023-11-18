@@ -22,7 +22,6 @@ char *strcpy(char *dst, const char *src) {
       src++;
       dst++;
     }
-    *dst = *src;
     return ret;
 }
 
@@ -33,7 +32,6 @@ char *strncpy(char *dst, const char *src, size_t n) {
   {
     *dst++=*src++;
   }
-  *dst = '\0';
   return ret;
 }
 
@@ -47,7 +45,6 @@ char *strcat(char *dst, const char *src) {
       src++;
       dst++;
     }
-  *dst = *src;
   return ret;
 }
 
