@@ -58,16 +58,6 @@ void Vysyx_23060096_npc___024root___settle__TOP__2(Vysyx_23060096_npc___024root*
                                                    | (1U 
                                                       & (vlSelf->inst 
                                                          >> 0x1eU))))))) {
-        vlSelf->ysyx_23060096_npc__DOT__MemWr = 0U;
-    }
-    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
-                                        << 2U)) | (
-                                                   (0xeU 
-                                                    & (vlSelf->inst 
-                                                       >> 0xbU)) 
-                                                   | (1U 
-                                                      & (vlSelf->inst 
-                                                         >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__ALUBsrc = 1U;
     }
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
@@ -79,16 +69,6 @@ void Vysyx_23060096_npc___024root___settle__TOP__2(Vysyx_23060096_npc___024root*
                                                       & (vlSelf->inst 
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__ALUAsrc = 0U;
-    }
-    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
-                                        << 2U)) | (
-                                                   (0xeU 
-                                                    & (vlSelf->inst 
-                                                       >> 0xbU)) 
-                                                   | (1U 
-                                                      & (vlSelf->inst 
-                                                         >> 0x1eU))))))) {
-        vlSelf->ysyx_23060096_npc__DOT__RegWr = 1U;
     }
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
@@ -180,13 +160,11 @@ void Vysyx_23060096_npc___024root___ctor_var_reset(Vysyx_23060096_npc___024root*
     vlSelf->rstn = 0;
     vlSelf->inst = 0;
     vlSelf->pc = 0;
-    vlSelf->ysyx_23060096_npc__DOT__RegWr = 0;
     vlSelf->ysyx_23060096_npc__DOT__ALUAsrc = 0;
     vlSelf->ysyx_23060096_npc__DOT__ALUBsrc = 0;
     vlSelf->ysyx_23060096_npc__DOT__Branch = 0;
     vlSelf->ysyx_23060096_npc__DOT__ALUctr = 0;
     vlSelf->ysyx_23060096_npc__DOT__MemtoReg = 0;
-    vlSelf->ysyx_23060096_npc__DOT__MemWr = 0;
     vlSelf->ysyx_23060096_npc__DOT__MemOP = 0;
     vlSelf->ysyx_23060096_npc__DOT__src1 = 0;
     vlSelf->ysyx_23060096_npc__DOT__src2 = 0;

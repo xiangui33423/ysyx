@@ -40,16 +40,6 @@ VL_INLINE_OPT void Vysyx_23060096_npc___024root___combo__TOP__1(Vysyx_23060096_n
                                                    | (1U 
                                                       & (vlSelf->inst 
                                                          >> 0x1eU))))))) {
-        vlSelf->ysyx_23060096_npc__DOT__MemWr = 0U;
-    }
-    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
-                                        << 2U)) | (
-                                                   (0xeU 
-                                                    & (vlSelf->inst 
-                                                       >> 0xbU)) 
-                                                   | (1U 
-                                                      & (vlSelf->inst 
-                                                         >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__ALUBsrc = 1U;
     }
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
@@ -83,7 +73,12 @@ VL_INLINE_OPT void Vysyx_23060096_npc___024root___sequent__TOP__3(Vysyx_23060096
                                            + vlSelf->pc)
                    : 0x80000000U);
     if (vlSelf->rstn) {
-        if (vlSelf->ysyx_23060096_npc__DOT__RegWr) {
+        if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
+                                            << 2U)) 
+                                 | ((0xeU & (vlSelf->inst 
+                                             >> 0xbU)) 
+                                    | (1U & (vlSelf->inst 
+                                             >> 0x1eU))))))) {
             vlSelf->ysyx_23060096_npc__DOT__u_RegisterFile__DOT____Vlvbound1 
                 = ((4U & (IData)(vlSelf->ysyx_23060096_npc__DOT__ALUctr))
                     ? ((2U & (IData)(vlSelf->ysyx_23060096_npc__DOT__ALUctr))
@@ -146,16 +141,6 @@ VL_INLINE_OPT void Vysyx_23060096_npc___024root___combo__TOP__4(Vysyx_23060096_n
     Vysyx_23060096_npc__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_npc___024root___combo__TOP__4\n"); );
     // Body
-    if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
-                                        << 2U)) | (
-                                                   (0xeU 
-                                                    & (vlSelf->inst 
-                                                       >> 0xbU)) 
-                                                   | (1U 
-                                                      & (vlSelf->inst 
-                                                         >> 0x1eU))))))) {
-        vlSelf->ysyx_23060096_npc__DOT__RegWr = 1U;
-    }
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
