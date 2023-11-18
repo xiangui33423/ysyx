@@ -120,8 +120,7 @@ int memcmp(const void *s1, const void *s2, size_t n) {
   int i;
   for(i = 0;(*(size_t*)s1 != 0 || *(size_t*)s2 !=0) && i < n; i++,s1 = (size_t*)s1 + 1,s2 = (size_t*)s2 + 1)
   {
-    if(*(size_t*)s1 < *(size_t*)s2) return -1;
-    if(*(size_t*)s1 > *(size_t*)s2) return 1;
+    if(*(size_t*)s1 != *(size_t*)s2) return (*(size_t*)s1 - *(size_t*)s2);
   }
   return 0;
 }
