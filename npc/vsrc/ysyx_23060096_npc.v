@@ -16,7 +16,7 @@ ysyx_23060096_pc u_pc(
 
 
 //========ID=======
-reg en;
+reg [31:0]en;
 reg clk_en;
 always @(*) begin
     en = ebreak(inst);

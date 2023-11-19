@@ -48,6 +48,7 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
     CData/*0:0*/ __Vclklast__TOP__ysyx_23060096_npc__DOT__clk_en;
     CData/*0:0*/ __Vclklast__TOP__clk;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_RegisterFile__DOT____Vlvbound1;
+    IData/*31:0*/ __Vfunc_ebreak__0__Vfuncout;
     VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES

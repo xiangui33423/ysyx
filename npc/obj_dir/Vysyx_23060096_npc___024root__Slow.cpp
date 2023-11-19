@@ -33,10 +33,7 @@ void Vysyx_23060096_npc___024root___settle__TOP__3(Vysyx_23060096_npc___024root*
     if (false && vlSelf) {}  // Prevent unused
     Vysyx_23060096_npc__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_npc___024root___settle__TOP__3\n"); );
-    // Variables
-    IData/*31:0*/ __Vtask_ebreak__0__Vfuncout;
     // Body
-    Vysyx_23060096_npc___024unit____Vdpiimwrap_ebreak_TOP____024unit(vlSelf->inst, __Vtask_ebreak__0__Vfuncout);
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
@@ -57,6 +54,8 @@ void Vysyx_23060096_npc___024root___settle__TOP__3(Vysyx_23060096_npc___024root*
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__MemtoReg = 0U;
     }
+    Vysyx_23060096_npc___024unit____Vdpiimwrap_ebreak_TOP____024unit(vlSelf->inst, vlSelf->__Vfunc_ebreak__0__Vfuncout);
+    vlSelf->ysyx_23060096_npc__DOT__en = (1U & vlSelf->__Vfunc_ebreak__0__Vfuncout);
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
@@ -187,6 +186,7 @@ void Vysyx_23060096_npc___024root___ctor_var_reset(Vysyx_23060096_npc___024root*
     vlSelf->ysyx_23060096_npc__DOT__u_alu__DOT__res = 0;
     vlSelf->ysyx_23060096_npc__DOT__u_alu__DOT__sub = 0;
     vlSelf->ysyx_23060096_npc__DOT__u_alu__DOT__add = 0;
+    vlSelf->__Vfunc_ebreak__0__Vfuncout = 0;
     for (int __Vi0=0; __Vi0<3; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
