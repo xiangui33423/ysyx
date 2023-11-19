@@ -2,7 +2,10 @@
 #define VL_INCLUDE_OPT include
 #include "Vysyx_23060096_npc.cpp"
 #include "Vysyx_23060096_npc___024root.cpp"
+#include "Vysyx_23060096_npc___024unit.cpp"
+#include "Vysyx_23060096_npc__Dpi.cpp"
 #include "Vysyx_23060096_npc__Trace.cpp"
 #include "Vysyx_23060096_npc___024root__Slow.cpp"
+#include "Vysyx_23060096_npc___024unit__Slow.cpp"
 #include "Vysyx_23060096_npc__Syms.cpp"
 #include "Vysyx_23060096_npc__Trace__Slow.cpp"
