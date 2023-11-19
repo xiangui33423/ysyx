@@ -22,7 +22,7 @@ always @(*) begin
     end
 end
 
-ebreak(inst);
+// ebreak(inst);
 
 wire [2:0] ExtOP;
 wire       RegWr;
