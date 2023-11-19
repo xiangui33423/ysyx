@@ -40,7 +40,7 @@ void sim_exit()
 
 void ebreak(int inst)
 {
-    if(inst == 0b0000000_00001_00000_000_00000_11100_11)
+    if(inst == 32b0000000_00001_00000_000_00000_11100_11)
         contextp->gotFinish() = 1;
     else contextp->gotFinish() = 0;
 }
