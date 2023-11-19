@@ -42,7 +42,7 @@ void sim_exit()
 void ebreak(int inst)
 {
     if(inst == 0b00000000000100000000000001110011)
-        sim_exit();
+        printf("finish\n");
 }
 
 int main()
