@@ -1,4 +1,4 @@
-import "DPI-C" function void ebreak(input int32_t inst);
+import "DPI-C" function void ebreak(input long inst);
 
 module ysyx_23060096_npc (
     input         clk,
