@@ -19,7 +19,7 @@ ysyx_23060096_pc u_pc(
 reg [31:0]en;
 reg clk_en;
 always @(*) begin
-    en = ebreak(inst);
+    ebreak(inst);
     // if(inst == 32'b0000000_00001_00000_000_00000_11100_11) begin
     //     clk_en = en & clk;
     // end
