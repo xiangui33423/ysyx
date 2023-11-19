@@ -1,7 +1,7 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include "../obj_dir/Vysyx_23060096_npc.h"
-#include "Vour__Dpi.h"
+#include "Vnpc__Dpi.h"
 #include "svdpi.h"
 VerilatedContext* contextp = NULL;
 VerilatedVcdC* tfp = NULL;
