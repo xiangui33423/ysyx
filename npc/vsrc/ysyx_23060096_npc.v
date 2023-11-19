@@ -14,13 +14,13 @@ ysyx_23060096_pc u_pc(
 
 import "DPI-C" function int ebreak(int inst);
 //========ID=======
-// reg en;
-// reg clk_en;
-// always @(*) begin
-//     if(inst == 32'b0000000_00001_00000_000_00000_11100_11) begin
-//         clk_en = en & clk;
-//     end
-// end
+reg en;
+reg clk_en;
+always @(*) begin
+    if(inst == 32'b0000000_00001_00000_000_00000_11100_11) begin
+        clk_en = en & clk;
+    end
+end
 
 ebreak(inst);
 
