@@ -12,7 +12,7 @@ ysyx_23060096_pc u_pc(
     .pc(pc)
 );
 
-import "DPI-C" function int ebreak(int inst);
+// import "DPI-C" function int ebreak(int inst);
 //========ID=======
 reg en;
 reg clk_en;
