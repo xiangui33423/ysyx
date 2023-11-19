@@ -66,7 +66,7 @@ int main()
             }
             else if(top->pc == 0x80000004)
             top->inst = 0b00011111110000000000101010010011;
-            else 
+            else if(top->pc > 0x80000004)
                 top->inst = 0b00000000000100000000000001110011;
         }
         ebreak(top->inst);
