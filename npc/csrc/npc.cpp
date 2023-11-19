@@ -69,7 +69,6 @@ int main()
             else 
                 top->inst = 0b0000000_00001_00000_000_00000_11100_11;
         }
-        ebreak(inst);
         // switch (main_time)
         // {
         // default:
