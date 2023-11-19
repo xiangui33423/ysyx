@@ -24,7 +24,7 @@ void Vysyx_23060096_npc___024root__traceChgSub0(Vysyx_23060096_npc___024root* vl
     // Body
     {
         if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[1U])) {
-            tracep->chgBit(oldp+0,(vlSelf->ysyx_23060096_npc__DOT__en));
+            tracep->chgIData(oldp+0,(vlSelf->ysyx_23060096_npc__DOT__en),32);
             tracep->chgBit(oldp+1,(vlSelf->ysyx_23060096_npc__DOT__ALUAsrc));
             tracep->chgCData(oldp+2,(vlSelf->ysyx_23060096_npc__DOT__ALUBsrc),2);
             tracep->chgCData(oldp+3,(vlSelf->ysyx_23060096_npc__DOT__Branch),3);

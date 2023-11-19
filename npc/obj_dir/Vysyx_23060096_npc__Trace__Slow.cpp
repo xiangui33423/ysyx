@@ -30,7 +30,7 @@ void Vysyx_23060096_npc___024root__traceInitSub0(Vysyx_23060096_npc___024root* v
         tracep->declBit(c+41,"ysyx_23060096_npc rstn", false,-1);
         tracep->declBus(c+42,"ysyx_23060096_npc inst", false,-1, 31,0);
         tracep->declBus(c+43,"ysyx_23060096_npc pc", false,-1, 31,0);
-        tracep->declBit(c+1,"ysyx_23060096_npc en", false,-1);
+        tracep->declBus(c+1,"ysyx_23060096_npc en", false,-1, 31,0);
         tracep->declBit(c+59,"ysyx_23060096_npc clk_en", false,-1);
         tracep->declBus(c+60,"ysyx_23060096_npc ExtOP", false,-1, 2,0);
         tracep->declBit(c+44,"ysyx_23060096_npc RegWr", false,-1);
@@ -158,7 +158,7 @@ void Vysyx_23060096_npc___024root__traceFullSub0(Vysyx_23060096_npc___024root* v
     if (false && oldp) {}  // Prevent unused
     // Body
     {
-        tracep->fullBit(oldp+1,(vlSelf->ysyx_23060096_npc__DOT__en));
+        tracep->fullIData(oldp+1,(vlSelf->ysyx_23060096_npc__DOT__en),32);
         tracep->fullBit(oldp+2,(vlSelf->ysyx_23060096_npc__DOT__ALUAsrc));
         tracep->fullCData(oldp+3,(vlSelf->ysyx_23060096_npc__DOT__ALUBsrc),2);
         tracep->fullCData(oldp+4,(vlSelf->ysyx_23060096_npc__DOT__Branch),3);
