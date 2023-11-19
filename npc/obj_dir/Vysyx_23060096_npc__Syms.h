@@ -15,6 +15,7 @@
 
 // INCLUDE MODULE CLASSES
 #include "Vysyx_23060096_npc___024root.h"
+#include "Vysyx_23060096_npc___024unit.h"
 
 // DPI TYPES for DPI Export callbacks (Internal use)
 
@@ -29,6 +30,7 @@ class Vysyx_23060096_npc__Syms final : public VerilatedSyms {
 
     // MODULE INSTANCE STATE
     Vysyx_23060096_npc___024root   TOP;
+    Vysyx_23060096_npc___024unit   TOP____024unit;
 
     // CONSTRUCTORS
     Vysyx_23060096_npc__Syms(VerilatedContext* contextp, const char* namep, Vysyx_23060096_npc* modelp);

@@ -37,7 +37,7 @@ void sim_exit()
     tfp->close();
 }
 
-extern "C" int ebreak(int inst)
+extern "C" void ebreak(int inst)
 {
     if(inst == 0b0000000_00001_00000_000_00000_11100_11)
         contextp->gotFinish() = 1;
