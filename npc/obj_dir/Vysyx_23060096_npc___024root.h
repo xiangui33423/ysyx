@@ -25,8 +25,8 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
     VL_OUT(pc,31,0);
 
     // LOCAL SIGNALS
-    CData/*0:0*/ ysyx_23060096_npc__DOT__en;
     CData/*0:0*/ ysyx_23060096_npc__DOT__clk_en;
+    CData/*0:0*/ ysyx_23060096_npc__DOT__en;
     CData/*0:0*/ ysyx_23060096_npc__DOT__ALUAsrc;
     CData/*1:0*/ ysyx_23060096_npc__DOT__ALUBsrc;
     CData/*2:0*/ ysyx_23060096_npc__DOT__Branch;
@@ -43,6 +43,7 @@ VL_MODULE(Vysyx_23060096_npc___024root) {
 
     // LOCAL VARIABLES
     CData/*0:0*/ __Vclklast__TOP__clk;
+    CData/*0:0*/ __Vclklast__TOP__ysyx_23060096_npc__DOT__clk_en;
     IData/*31:0*/ ysyx_23060096_npc__DOT__u_RegisterFile__DOT____Vlvbound1;
     VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
