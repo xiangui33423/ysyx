@@ -38,11 +38,11 @@ void sim_exit()
     tfp->close();
 }
 
-void ebreak(int inst)
+int ebreak(int inst)
 {
     if(inst == 0b00000000000100000000000001110011)
-        contextp->gotFinish() = 1;
-    else contextp->gotFinish() = 0;
+        return 1;
+    else return 0;
 }
 
 int main()
@@ -69,6 +69,7 @@ int main()
             else 
                 top->inst = 0b00000000000100000000000001110011;
         }
+        contextp->gotFinish() = ebreak(top->inst);
         // switch (main_time)
         // {
         // default:
