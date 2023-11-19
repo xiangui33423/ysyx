@@ -27,14 +27,16 @@ void Vysyx_23060096_npc___024root::__Vconfigure(Vysyx_23060096_npc__Syms* _vlSym
 Vysyx_23060096_npc___024root::~Vysyx_23060096_npc___024root() {
 }
 
-void Vysyx_23060096_npc___024unit____Vdpiimwrap_ebreak_TOP____024unit(IData/*31:0*/ inst);
+void Vysyx_23060096_npc___024unit____Vdpiimwrap_ebreak_TOP____024unit(IData/*31:0*/ inst, IData/*31:0*/ &ebreak__Vfuncrtn);
 
 void Vysyx_23060096_npc___024root___settle__TOP__3(Vysyx_23060096_npc___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vysyx_23060096_npc__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_23060096_npc___024root___settle__TOP__3\n"); );
+    // Variables
+    IData/*31:0*/ __Vtask_ebreak__0__Vfuncout;
     // Body
-    Vysyx_23060096_npc___024unit____Vdpiimwrap_ebreak_TOP____024unit(vlSelf->inst);
+    Vysyx_23060096_npc___024unit____Vdpiimwrap_ebreak_TOP____024unit(vlSelf->inst, __Vtask_ebreak__0__Vfuncout);
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
