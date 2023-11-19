@@ -50,6 +50,10 @@ void Vysyx_23060096_npc___024root___settle__TOP__2(Vysyx_23060096_npc___024root*
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__MemtoReg = 0U;
     }
+    if ((0x100073U == vlSelf->inst)) {
+        vlSelf->ysyx_23060096_npc__DOT__clk_en = ((IData)(vlSelf->ysyx_23060096_npc__DOT__en) 
+                                                  & (IData)(vlSelf->clk));
+    }
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
@@ -160,6 +164,8 @@ void Vysyx_23060096_npc___024root___ctor_var_reset(Vysyx_23060096_npc___024root*
     vlSelf->rstn = 0;
     vlSelf->inst = 0;
     vlSelf->pc = 0;
+    vlSelf->ysyx_23060096_npc__DOT__en = 0;
+    vlSelf->ysyx_23060096_npc__DOT__clk_en = 0;
     vlSelf->ysyx_23060096_npc__DOT__ALUAsrc = 0;
     vlSelf->ysyx_23060096_npc__DOT__ALUBsrc = 0;
     vlSelf->ysyx_23060096_npc__DOT__Branch = 0;

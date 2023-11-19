@@ -7,7 +7,7 @@ module ysyx_23060096_npc (
 
 //========IF=======
 ysyx_23060096_pc u_pc(
-    .clk(clk),
+    .clk(clk_en),
     .rstn(rstn),
     .pc(pc)
 );
@@ -35,7 +35,7 @@ wire       MemWr;
 wire [2:0] MemOP;
 
 ysyx_23060096_ContrGen u_ContrGen(
-    .clk(clk),
+    .clk(clk_en),
     .op(inst[6:0]),
     .func3(inst[14:12]),
     .func7(inst[31:25]),
@@ -53,7 +53,7 @@ ysyx_23060096_ContrGen u_ContrGen(
 wire [31:0] imm;
 
 ysyx_23060096_ImmGen u_ImmGen(
-    .clk(clk),
+    .clk(clk_en),
     .inst(inst[31:7]),
     .ExtOP(ExtOP),
     .imm(imm)

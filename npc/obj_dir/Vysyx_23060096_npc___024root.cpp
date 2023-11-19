@@ -32,6 +32,10 @@ VL_INLINE_OPT void Vysyx_23060096_npc___024root___combo__TOP__1(Vysyx_23060096_n
                                                          >> 0x1eU))))))) {
         vlSelf->ysyx_23060096_npc__DOT__MemtoReg = 0U;
     }
+    if ((0x100073U == vlSelf->inst)) {
+        vlSelf->ysyx_23060096_npc__DOT__clk_en = ((IData)(vlSelf->ysyx_23060096_npc__DOT__en) 
+                                                  & (IData)(vlSelf->clk));
+    }
     if ((0x40U == (0x1feU & ((0x1f0U & (vlSelf->inst 
                                         << 2U)) | (
                                                    (0xeU 
