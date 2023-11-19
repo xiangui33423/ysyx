@@ -42,7 +42,7 @@ void sim_exit()
 void ebreak(int inst)
 {
     if(inst == 0b00000000000100000000000001110011)
-        assert(0);
+        sim_exit();
 }
 
 int main()
@@ -63,7 +63,6 @@ int main()
             if(top->pc == 0x80000000)
             {
                 top->inst = 0b00001111110000000000101010010011;
-                printf("a\n");
             }
             else if(top->pc == 0x80000004)
             top->inst = 0b00011111110000000000101010010011;
