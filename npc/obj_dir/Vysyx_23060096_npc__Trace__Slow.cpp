@@ -47,10 +47,10 @@ void Vysyx_23060096_npc___024root__traceInitSub0(Vysyx_23060096_npc___024root* v
         tracep->declBus(c+7,"ysyx_23060096_npc src1", false,-1, 31,0);
         tracep->declBus(c+8,"ysyx_23060096_npc src2", false,-1, 31,0);
         tracep->declBus(c+9,"ysyx_23060096_npc out_data", false,-1, 31,0);
-        tracep->declBit(c+59,"ysyx_23060096_npc u_pc clk", false,-1);
+        tracep->declBit(c+40,"ysyx_23060096_npc u_pc clk", false,-1);
         tracep->declBit(c+41,"ysyx_23060096_npc u_pc rstn", false,-1);
         tracep->declBus(c+43,"ysyx_23060096_npc u_pc pc", false,-1, 31,0);
-        tracep->declBit(c+59,"ysyx_23060096_npc u_ContrGen clk", false,-1);
+        tracep->declBit(c+40,"ysyx_23060096_npc u_ContrGen clk", false,-1);
         tracep->declBus(c+48,"ysyx_23060096_npc u_ContrGen op", false,-1, 6,0);
         tracep->declBus(c+49,"ysyx_23060096_npc u_ContrGen func3", false,-1, 2,0);
         tracep->declBus(c+50,"ysyx_23060096_npc u_ContrGen func7", false,-1, 6,0);
@@ -63,7 +63,7 @@ void Vysyx_23060096_npc___024root__traceInitSub0(Vysyx_23060096_npc___024root* v
         tracep->declBit(c+6,"ysyx_23060096_npc u_ContrGen MemtoReg", false,-1);
         tracep->declBit(c+61,"ysyx_23060096_npc u_ContrGen MemWr", false,-1);
         tracep->declBus(c+62,"ysyx_23060096_npc u_ContrGen MemOP", false,-1, 2,0);
-        tracep->declBit(c+59,"ysyx_23060096_npc u_ImmGen clk", false,-1);
+        tracep->declBit(c+40,"ysyx_23060096_npc u_ImmGen clk", false,-1);
         tracep->declBus(c+51,"ysyx_23060096_npc u_ImmGen inst", false,-1, 24,0);
         tracep->declBus(c+60,"ysyx_23060096_npc u_ImmGen ExtOP", false,-1, 2,0);
         tracep->declBus(c+45,"ysyx_23060096_npc u_ImmGen imm", false,-1, 31,0);

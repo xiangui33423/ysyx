@@ -3,6 +3,7 @@
 #include "../obj_dir/Vysyx_23060096_npc.h"
 #include "Vysyx_23060096_npc__Dpi.h"
 #include "svdpi.h"
+#include <assert.h>
 VerilatedContext* contextp = NULL;
 VerilatedVcdC* tfp = NULL;
 vluint64_t main_time = 0;
@@ -38,11 +39,10 @@ void sim_exit()
     tfp->close();
 }
 
-int ebreak(int inst)
+void ebreak(int inst)
 {
     if(inst == 0b00000000000100000000000001110011)
-        return 1;
-    else return 0;
+        assert(0);
 }
 
 int main()
@@ -69,7 +69,7 @@ int main()
             else 
                 top->inst = 0b00000000000100000000000001110011;
         }
-        contextp->gotFinish() = ebreak(top->inst);
+        ebreak(top->inst);
         // switch (main_time)
         // {
         // default:
