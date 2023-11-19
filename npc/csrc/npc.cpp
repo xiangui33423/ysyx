@@ -40,7 +40,7 @@ void sim_exit()
 
 void ebreak(int inst)
 {
-    if(inst == 32b0000000_00001_00000_000_00000_11100_11)
+    if(inst == 0b00000000000100000000000001110011)
         contextp->gotFinish() = 1;
     else contextp->gotFinish() = 0;
 }
@@ -67,7 +67,7 @@ int main()
             else if(top->pc == 0x80000004)
             top->inst = 0b00011111110000000000101010010011;
             else 
-                top->inst = 0b0000000_00001_00000_000_00000_11100_11;
+                top->inst = 0b00000000000100000000000001110011;
         }
         // switch (main_time)
         // {
