@@ -5,13 +5,14 @@
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
 
 size_t strlen(const char *s) {
+  if(s==NULL) return 0;
   int i = 0;
   while( *s != '\0')
   {
     i++;
     s++;
   }
-  return ++i;
+  return i;
 }
 
 char *strcpy(char *dst, const char *src) {
