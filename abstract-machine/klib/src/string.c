@@ -16,6 +16,7 @@ size_t strlen(const char *s) {
 }
 
 char *strcpy(char *dst, const char *src) {
+  if(src == NULL || dst==NULL) return dst;
     char *ret = dst;
     while(*src != '\0')
     {
@@ -28,14 +29,21 @@ char *strcpy(char *dst, const char *src) {
 }
 
 char *strncpy(char *dst, const char *src, size_t n) {
-  char *ret = dst;
-  int i = 0;
-  for(;i < n;i++)
-  {
-    *dst++=*src++;
+  if(src == NULL || dst==NULL) return dst;
+  char *ans = dst;
+  while (*src != '\0' && n != 0) {
+    *dst = *src;
+    ++dst;
+    ++src;
+    --n;
   }
-  *dst = '\0';
-  return ret;
+  // 将额外的空字符写入dest，直到写入了n个字符的总数。
+  while (n != 0) {
+    *dst = '\0';
+    ++dst;
+    --n;
+  }
+  return ans;
 }
 
 char *strcat(char *dst, const char *src) {
