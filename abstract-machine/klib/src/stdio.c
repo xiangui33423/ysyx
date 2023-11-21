@@ -14,7 +14,10 @@ int vsprintf(char *out, const char *fmt, va_list ap) {
 }
 
 int sprintf(char *out, const char *fmt, ...) {
-  panic("Not implemented");
+  strcpy(out,fmt);
+  int a=strlen(out);
+  if(out == NULL) return -1;
+  return a;
 }
 
 int snprintf(char *out, size_t n, const char *fmt, ...) {
