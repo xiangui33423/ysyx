@@ -81,22 +81,12 @@ int strncmp(const char *s1, const char *s2, size_t n) {
 }
 
 void *memset(void *s, int c, size_t n) {
-  // if(s==NULL) return s;
-  // int i;
-  // size_t *dst = s;
-  // for(i = 0;i < n ;i++,*dst++)
-  // {
-  //   *dst = c;
-  // }
-  // return s;
-    if (s == NULL) {
-    return s;
-  }
-  unsigned char *src = s;   // 先讲传入得指针，做无符号字符解释
-  while (n != 0) {
-    --n;
-    *src = c;
-    ++src;
+  if(s==NULL) return s;
+  int i;
+  unsigned char *dst = s;
+  for(i = 0;i < n ;i++,*dst++)
+  {
+    *dst = c;
   }
   return s;
 }
