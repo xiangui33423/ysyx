@@ -47,6 +47,7 @@ char *strncpy(char *dst, const char *src, size_t n) {
 }
 
 char *strcat(char *dst, const char *src) {
+  if(src == NULL || dst==NULL) return dst;
   char *ret = dst;
   char i = strlen(dst);
   dst += i;
