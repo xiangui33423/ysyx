@@ -1,5 +1,6 @@
 #include <am.h>
 #include <klib-macros.h>
+#include <klib.h>
 
 #define N 32
 uint8_t data[N];
