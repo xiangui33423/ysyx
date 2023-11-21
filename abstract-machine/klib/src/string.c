@@ -98,7 +98,7 @@ void *memmove(void *dst, const void *src, size_t n) {
     {
         for (i = 0; i < n; i++)
         {
-            *((size_t*)dst + i) = *((size_t*)src + i);
+            *((unsigned char*)dst + i) = *((unsigned char*)src + i);
         }
         return dst;
     }
@@ -106,7 +106,7 @@ void *memmove(void *dst, const void *src, size_t n) {
     {
         for (i = n; i >0; i--)
         {
-            *((size_t*)dst + i) = *((size_t*)src + i);
+            *((unsigned char*)dst + i) = *((unsigned char*)src + i);
         }
         return dst;
     }
@@ -120,18 +120,18 @@ void *memcpy(void *out, const void *in, size_t n) {
   void *ret = out;
   while(n--)
   {
-    *(size_t*) out = *(size_t*)in;
-    out = (size_t*)out + 1;
-    in = (size_t*)in + 1;
+    *(unsigned char*) out = *(unsigned char*)in;
+    out = (unsigned char*)out + 1;
+    in = (unsigned char*)in + 1;
   }
   return ret;
 }
 
 int memcmp(const void *s1, const void *s2, size_t n) {
   int i;
-  for(i = 0;(*(size_t*)s1 != 0 || *(size_t*)s2 !=0) && i < n; i++,s1 = (size_t*)s1 + 1,s2 = (size_t*)s2 + 1)
+  for(i = 0;(*(unsigned char*)s1 != 0 || *(unsigned char*)s2 !=0) && i < n; i++,s1 = (unsigned char*)s1 + 1,s2 = (unsigned char*)s2 + 1)
   {
-    if(*(size_t*)s1 != *(size_t*)s2) return (*(size_t*)s1 - *(size_t*)s2);
+    if(*(unsigned char*)s1 != *(unsigned char*)s2) return (*(unsigned char*)s1 - *(unsigned char*)s2);
   }
   return 0;
 }
