@@ -29,6 +29,7 @@ int atoi(const char* nptr) {
   return x;
 }
 
+
 static void reverse(char *s,int len)
 {
   char *end = s + len - 1;
