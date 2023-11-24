@@ -156,6 +156,11 @@ config TRACE_IRINGBUF
   bool "Trace the scene of the error"
   default y
 
+config TRACE_IRINGBUF
+  depends on TRACE
+  bool "Trace the out of bound of memory"
+  default y
+
 config WATCHPOINT
   bool "watchpoint"
   default 0
