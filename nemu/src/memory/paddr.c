@@ -54,7 +54,8 @@ word_t paddr_read(paddr_t addr, int len) {
   if (likely(in_pmem(addr)))
   {
     #ifdef CONFIG_MTRACE
-      Log(" address = " FMT_PADDR " is at pc = " FMT_WORD,  addr, cpu.pc);
+      if(cpu.pc != addr)
+        Log(" address = " FMT_PADDR " is at pc = " FMT_WORD,  addr, cpu.pc);
     #endif
     return pmem_read(addr, len);
   } 
@@ -66,8 +67,8 @@ word_t paddr_read(paddr_t addr, int len) {
 void paddr_write(paddr_t addr, int len, word_t data) {
   if (likely(in_pmem(addr))) { 
     #ifdef CONFIG_MTRACE
-    if(cpu.pc != addr)
-      Log("address = " FMT_PADDR " is at pc = " FMT_WORD,  addr, cpu.pc);
+      if(cpu.pc != addr)
+        Log("address = " FMT_PADDR " is at pc = " FMT_WORD,  addr, cpu.pc);
     #endif
     pmem_write(addr, len, data); return; }
   IFDEF(CONFIG_DEVICE, mmio_write(addr, len, data); return);
