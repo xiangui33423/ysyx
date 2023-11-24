@@ -156,7 +156,7 @@ config TRACE_IRINGBUF
   bool "Trace the scene of the error"
   default y
 
-config TRACE_IRINGBUF
+config TRACE_MTRACE
   depends on TRACE
   bool "Trace the out of bound of memory"
   default y

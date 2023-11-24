@@ -53,8 +53,9 @@ void init_mem() {
 word_t paddr_read(paddr_t addr, int len) {
   if (likely(in_pmem(addr)))
   {
-    if(addr <= 0x80000200 && addr >=0x80000100)
+    #ifdef CONFIG_MTRACE
       Log("address = " FMT_PADDR " is at pc = " FMT_WORD,  addr, cpu.pc);
+    #endif
     return pmem_read(addr, len);
   } 
   IFDEF(CONFIG_DEVICE, return mmio_read(addr, len));
