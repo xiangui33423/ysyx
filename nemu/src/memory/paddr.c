@@ -54,7 +54,7 @@ word_t paddr_read(paddr_t addr, int len) {
   if (likely(in_pmem(addr)))
   {
     #ifdef CONFIG_MTRACE
-      Log(" \naddress = " FMT_PADDR " is\n at pc = " FMT_WORD,  addr, cpu.pc);
+      Log(" \naddress = " FMT_PADDR " \n     pc = " FMT_WORD,  addr, cpu.pc);
     #endif
     return pmem_read(addr, len);
   } 
