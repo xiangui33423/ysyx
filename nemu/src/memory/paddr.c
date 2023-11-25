@@ -63,6 +63,8 @@ word_t paddr_read(paddr_t addr, int len) {
   } 
   IFDEF(CONFIG_DEVICE, return mmio_read(addr, len));
   // out_of_bound(addr);
+  if(addr < 0x80000000)
+    nemu_state.state = NEMU_ABORT;
   return 0;
 }
 
@@ -78,4 +80,6 @@ void paddr_write(paddr_t addr, int len, word_t data) {
   }
   IFDEF(CONFIG_DEVICE, mmio_write(addr, len, data); return);
   // out_of_bound(addr);
+  if(addr < 0x80000000)
+    nemu_state.state = NEMU_ABORT;
 }
