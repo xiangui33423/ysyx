@@ -69,7 +69,7 @@ static long load_img() {
 
 static char* load_elf()
 {
-  
+
 }
 
 static int parse_args(int argc, char *argv[]) {
@@ -130,7 +130,7 @@ void init_monitor(int argc, char *argv[]) {
   long img_size = load_img();
 
   #ifdef CONFIG_FTRACE
-
+  
   #endif
 
   /* Initialize differential testing. */
