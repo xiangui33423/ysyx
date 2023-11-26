@@ -161,6 +161,11 @@ config MTRACE
   bool "Trace the out of bound of memory"
   default y
 
+config FTRACE
+  depends on TRACE
+  bool "Trace the fault of functions"
+  default y
+
 config WATCHPOINT
   bool "watchpoint"
   default 0
