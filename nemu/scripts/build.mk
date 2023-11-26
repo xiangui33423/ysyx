@@ -13,6 +13,7 @@ BUILD_DIR = $(WORK_DIR)/build
 INC_PATH := $(WORK_DIR)/include $(INC_PATH)
 OBJ_DIR  = $(BUILD_DIR)/obj-$(NAME)$(SO)
 BINARY   = $(BUILD_DIR)/$(NAME)$(SO)
+ELF_PATH = $(BUILD_DIR)/$(NAME)-riscv32-nemu.elf
 
 # Compilation flags
 ifeq ($(CC),clang)
