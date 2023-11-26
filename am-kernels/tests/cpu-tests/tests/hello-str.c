@@ -1,7 +1,7 @@
 #include "trap.h"
 
 char buf[128];
-const char*hello="hello world";
+const char*hello="Hello world!";
 int main() {
 	sprintf(buf,"%s\n",hello);
 	// sprintf(buf, "%s", "Hello world!\n");
