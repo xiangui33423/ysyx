@@ -1,7 +1,7 @@
 #include "trap.h"
 
 char buf[128];
-
+const char*hello="hello world";
 int main() {
 	sprintf(buf, "%s", "Hello world!\n");
 	check(strcmp(buf, "Hello world!\n") == 0);
