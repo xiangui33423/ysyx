@@ -25,8 +25,8 @@ $(BINARY):: compile_git
 # Some convenient rules
 
 override ARGS ?= --log=$(BUILD_DIR)/nemu-log.txt
-override ARGS += -e=$(BUILD_DIR)/dummy-riscv32-nemu.elf
 override ARGS += $(ARGS_DIFF)
+override ARGS += -e=$(BUILD_DIR)/dummy-riscv32-nemu.elf
 
 # Command to execute NEMU
 IMG ?=
