@@ -1,9 +1,9 @@
 #include "trap.h"
 
 char buf[128];
-const char*hello="Hello world!";
+const char*c_hello="Hello world!";
 int main() {
-	sprintf(buf,"%s\n",hello);
+	sprintf(buf,"%s\n",c_hello);
 	// sprintf(buf, "%s", "Hello world!\n");
 	check(strcmp(buf, "Hello world!\n") == 0);
 
