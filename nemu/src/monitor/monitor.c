@@ -67,9 +67,11 @@ static long load_img() {
   return size;
 }
 
-static void load_elf(char *file)
+static void load_elf()
 {
-
+  FILE *fp = fopen(elf_file, "rb");
+  
+  fclose(fp);
 }
 
 static int parse_args(int argc, char *argv[]) {
@@ -118,7 +120,7 @@ void init_monitor(int argc, char *argv[]) {
   init_log(log_file);
 
   #ifdef CONFIG_FTRACE
-    load_elf(elf_file);
+    load_elf();
   #endif
 
   /* Initialize memory. */
