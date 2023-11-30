@@ -73,10 +73,10 @@ static void load_elf()
   //   Log("No elf is given. Use the default build-in elf.");
   //   return ; 
   // }
-  FILE *fp = fopen(elf_file, "rb");
-  Assert(fp, "Can not open '%s'", elf_file);
+  FILE *FP = fopen(elf_file, "rb");
+  Assert(FP, "Can not open '%s'", elf_file);
   
-  fclose(fp);
+  fclose(FP);
 }
 
 static int parse_args(int argc, char *argv[]) {

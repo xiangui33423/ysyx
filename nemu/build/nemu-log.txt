@@ -1,4 +1,1 @@
 [1;34m[src/utils/log.c:28 init_log] Log is written to /home/xiangui/ysyx-workbench/nemu/build/nemu-log.txt[0m
-[1;34m[src/cpu/cpu-exec.c:115 statistic] host time spent = 0 us[0m
-[1;34m[src/cpu/cpu-exec.c:116 statistic] total guest instructions = 0[0m
-[1;34m[src/cpu/cpu-exec.c:118 statistic] Finish running in less than 1 us and can not calculate the simulation frequency[0m
