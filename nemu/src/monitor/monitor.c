@@ -15,6 +15,7 @@
 
 #include <isa.h>
 #include <memory/paddr.h>
+#include <elf.h>
 
 void init_rand();
 void init_log(const char *log_file);
@@ -75,8 +76,6 @@ static void load_elf()
   }
   FILE *FP = fopen(elf_file, "rb");
   Assert(FP, "Can not open '%s'", elf_file);
-  
-  fclose(FP);
 }
 
 static int parse_args(int argc, char *argv[]) {
@@ -90,7 +89,7 @@ static int parse_args(int argc, char *argv[]) {
     {0          , 0                , NULL,  0 },
   };
   int o;
-  while ( (o = getopt_long(argc, argv, "-bhle:d:p:", table, NULL)) != -1) {
+  while ( (o = getopt_long(argc, argv, "-bhl:d:p:e:", table, NULL)) != -1) {
     switch (o) {
       case 'b': sdb_set_batch_mode(); break;
       case 'p': sscanf(optarg, "%d", &difftest_port); break;

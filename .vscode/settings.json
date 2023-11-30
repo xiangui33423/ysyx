@@ -5,6 +5,8 @@
         "klib.h": "c",
         "stdarg.h": "c",
         "am.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "common.h": "c",
+        "isa.h": "c"
     }
 }

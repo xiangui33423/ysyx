@@ -57,7 +57,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   {
     sprintf(ringbuf[tail],"%s", _this->logbuf);
     tail = (tail + 1) % 17;  
-    if((tail+1)%16 == head) head++;
+    if((tail+1)%17 == head) head++;
   }
 #endif
 
