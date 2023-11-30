@@ -69,6 +69,10 @@ static long load_img() {
 
 static void load_elf()
 {
+  if (elf_file == NULL) {
+    Log("No elf is given. Use the default build-in elf.");
+    return ; 
+  }
   FILE *fp = fopen(elf_file, "rb");
   Assert(fp, "Can not open '%s'", elf_file);
   
