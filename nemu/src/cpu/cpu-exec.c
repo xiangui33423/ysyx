@@ -18,6 +18,7 @@
 #include <cpu/difftest.h>
 #include <locale.h>
 #include "../monitor/sdb/sdb.h"
+#include <elf.h>
 
 /* The assembly code of instructions executed is only output to the screen
  * when the number of instructions executed is less than this value.
@@ -25,6 +26,11 @@
  * You can modify this value as you want.
  */
 #define MAX_INST_TO_PRINT 10
+typedef struct
+{
+  char name[32];
+  
+}SectionHeader;
 
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
@@ -64,7 +70,13 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_WATCHPOINT
   if(watch_all() == true) nemu_state.state = NEMU_STOP;
 #endif
+
+#ifdef CONFIG_FTRACE
+
+#endif
 }
+
+
 
 static void exec_once(Decode *s, vaddr_t pc) {
   s->pc = pc;
@@ -87,13 +99,13 @@ static void exec_once(Decode *s, vaddr_t pc) {
   memset(p, ' ', space_len);
   p += space_len;
 
-#ifndef CONFIG_ISA_loongarch32r
-  void disassemble(char *str, int size, uint64_t pc, uint8_t *code, int nbyte);
-  disassemble(p, s->logbuf + sizeof(s->logbuf) - p,
-      MUXDEF(CONFIG_ISA_x86, s->snpc, s->pc), (uint8_t *)&s->isa.inst.val, ilen);
-#else
-  p[0] = '\0'; // the upstream llvm does not support loongarch32r
-#endif
+  #ifndef CONFIG_ISA_loongarch32r
+    void disassemble(char *str, int size, uint64_t pc, uint8_t *code, int nbyte);
+    disassemble(p, s->logbuf + sizeof(s->logbuf) - p,
+        MUXDEF(CONFIG_ISA_x86, s->snpc, s->pc), (uint8_t *)&s->isa.inst.val, ilen);
+  #else
+    p[0] = '\0'; // the upstream llvm does not support loongarch32r
+  #endif
 #endif
 }
 
