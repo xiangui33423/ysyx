@@ -19,6 +19,7 @@
 #include <locale.h>
 #include "../monitor/sdb/sdb.h"
 #include <elf.h>
+#include "stdio.h"
 
 /* The assembly code of instructions executed is only output to the screen
  * when the number of instructions executed is less than this value.
@@ -26,15 +27,25 @@
  * You can modify this value as you want.
  */
 #define MAX_INST_TO_PRINT 10
-typedef struct
-{
-  char name[32];
-  paddr_t addr;
-  unsigned char info;
-  Elf32_Xword size;
-}SectionHeader;
 
+// static int find_elf32_func(paddr_t target, bool is_call)
+// {
+//   int i;
+//   for(i = 0; i < )
+// }
 
+// void trace_func_call(paddr_t pc, paddr_t target)
+// {
+//   if(elf32 == NULL) return;
+
+//   ++call_depth;
+
+//   if(call_depth <= 2) return;
+
+//   int i = 
+// }
+int call_depth;
+static Elf32_Ehdr *elf32; 
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
@@ -75,9 +86,11 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #endif
 
 #ifdef CONFIG_FTRACE
-  static Elf32_Ehdr elf32; 
   extern FILE* elf_fp;
-  
+  int c;
+  c = fread(elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
+  paddr_t a;
+  a = elf32->e_entry;
 #endif
 }
 

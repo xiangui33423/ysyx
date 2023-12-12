@@ -77,6 +77,7 @@ static void init_elf()
     return ; 
   }
   elf_fp = fopen(elf_file, "rb");
+  fseek(elf_fp, 0, SEEK_SET);
   Assert(elf_fp, "Can not open '%s'", elf_file);
 }
 
