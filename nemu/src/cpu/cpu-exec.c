@@ -29,8 +29,11 @@
 typedef struct
 {
   char name[32];
-  
+  paddr_t addr;
+  unsigned char info;
+  Elf32_Xword size;
 }SectionHeader;
+
 
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
@@ -72,6 +75,8 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #endif
 
 #ifdef CONFIG_FTRACE
+  static Elf32_Ehdr elf32; 
+  extern FILE* elf_fp;
   
 #endif
 }
@@ -155,6 +160,10 @@ void cpu_exec(uint64_t n) {
   switch (nemu_state.state) {
     case NEMU_RUNNING: nemu_state.state = NEMU_STOP; break;
     case NEMU_END: case NEMU_ABORT:
+    #ifdef CONFIG_FTRACE
+      extern FILE* elf_fp;
+      fclose(elf_fp);
+    #endif
       Log("nemu: %s at pc = " FMT_WORD,
           (nemu_state.state == NEMU_ABORT ? ANSI_FMT("ABORT", ANSI_FG_RED) :
            (nemu_state.halt_ret == 0 ? ANSI_FMT("HIT GOOD TRAP", ANSI_FG_GREEN) :

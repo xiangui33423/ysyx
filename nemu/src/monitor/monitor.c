@@ -68,14 +68,16 @@ static long load_img() {
   return size;
 }
 
+FILE *elf_fp = NULL;
+
 static void init_elf()
 {
   if (elf_file == NULL) {
     Log("No elf is given. Use the default build-in elf.");
     return ; 
   }
-  FILE *FP = fopen(elf_file, "rb");
-  Assert(FP, "Can not open '%s'", elf_file);
+  elf_fp = fopen(elf_file, "rb");
+  Assert(elf_fp, "Can not open '%s'", elf_file);
 }
 
 static int parse_args(int argc, char *argv[]) {
