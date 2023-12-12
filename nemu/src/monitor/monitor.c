@@ -68,7 +68,7 @@ static long load_img() {
   return size;
 }
 
-static void load_elf()
+static void init_elf()
 {
   if (elf_file == NULL) {
     Log("No elf is given. Use the default build-in elf.");
@@ -124,7 +124,7 @@ void init_monitor(int argc, char *argv[]) {
   init_log(log_file);
 
   #ifdef CONFIG_FTRACE
-    load_elf();
+    init_elf();
   #endif
 
   /* Initialize memory. */
