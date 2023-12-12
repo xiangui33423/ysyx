@@ -89,7 +89,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern FILE* elf_fp;
   int c;
   Assert(elf_fp,"3");
-  c = fread(elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
+  // c = fread(elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
   paddr_t a;
   a = elf32->e_entry;
 #endif
