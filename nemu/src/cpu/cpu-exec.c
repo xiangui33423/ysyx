@@ -45,7 +45,7 @@
 //   int i = 
 // }
 int call_depth;
-static Elf32_Ehdr *elf32; 
+static Elf32_Ehdr *elf32 = NULL; 
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
@@ -87,8 +87,8 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 
 #ifdef CONFIG_FTRACE
   extern FILE* elf_fp;
-  // int c;
-  // c = fread(elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
+  int c;
+  c = fread(elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
   // paddr_t a;
   // a = elf32->e_entry;
 #endif
