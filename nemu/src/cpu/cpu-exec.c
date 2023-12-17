@@ -72,10 +72,17 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_FTRACE
   extern FILE* elf_fp;
   extern Elf32_Ehdr elf32;
-  int b = 1;
-  b = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
-  b = ELF32_ST_TYPE(elf_symbol.st_info);
-  if(b == 2) printf("0x%x\n",elf_symbol.st_value);
+  extern Elf32_Off elf_sym_off;
+  int b = 0,type;
+  int c = 0;
+  b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
+  type = ELF32_ST_TYPE(elf_symbol.st_info);
+  if(type == STT_FUNC) 
+  {
+    // fseek(elf_fp, elf_symbol.st_name,SEEK_SET);
+    printf("0x%x\n",elf_symbol.st_name);
+    // fseek(elf_fp, elf_symbol.st_name,SEEK_SET);
+  }
 #endif
 }
 
