@@ -88,7 +88,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
     if(cpu.pc >= func[i].value && cpu.pc <= func[i].size+func[i].value && func[i].flag == false)
     {
       printf("0x%x  %s\n",cpu.pc,func[i].name);
-      // func[i].flag = true;
+      func[i].flag = true;
       break;
     }
   }
