@@ -73,6 +73,8 @@ static long load_img() {
 FILE *elf_fp = NULL;
 FILE *elf_str = NULL;
 Elf32_Shdr elf_sec;
+Elf32_Off elf_sym_off;
+Elf32_Off elf_str_off;
 static void init_elf()
 {
   if (elf_file == NULL) {
@@ -91,9 +93,10 @@ static void init_elf()
   {
     b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_fp);
   }
-  elf_str = elf_fp;
-  fseek(elf_fp,elf_sec.sh_offset,SEEK_SET);
-  b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_str);
+  elf_sym_off = elf_sec.sh_offset;
+  b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_fp);
+
+  elf_str_off = elf_sec.sh_offset;
   Assert(elf_fp, "Can not open '%s'", elf_file);
 }
 
