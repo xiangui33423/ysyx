@@ -89,7 +89,7 @@ static void init_elf()
   fseek(elf_fp,elf32.e_shoff,SEEK_SET);
   for (i = 0;i < 8;i++)
   {
-    
+    b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_fp);
   }
   elf_str = elf_fp;
   fseek(elf_fp,elf_sec.sh_offset,SEEK_SET);
