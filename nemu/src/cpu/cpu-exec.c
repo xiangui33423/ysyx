@@ -81,7 +81,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern Elf32_Ehdr elf32;
   int i = 0;
   extern elf_func func[256];
-  while(func[i].name)
+  while(func[i].value != 0)
   { 
     i++;
     if(cpu.pc >= func[i].value && cpu.pc <= func[i].size+func[i].value)
