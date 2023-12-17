@@ -87,9 +87,9 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
     i++;
     if(cpu.pc >= func[i].value && cpu.pc < func[i].value + func[i].size)
     {
-      if(cpu.pc & 1111111 == 1101111)
+      if(cpu.pc & 0x1111111 == 1101111)
         printf("call:0x%x  %s\n",cpu.pc,func[i].name);
-      if(cpu.pc & 1111111 == 1100111)
+      if(cpu.pc & 0x1111111 == 1100111)
         printf("ret:0x%x  %s\n",cpu.pc,func[i].name);
       break;
     }
