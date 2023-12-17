@@ -77,11 +77,13 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   int c = 0;
   char func_name[256];
   char str;
-  int i;
+  int i,value,size;
   b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
   type = ELF32_ST_TYPE(elf_symbol.st_info);
-  if(type == STT_FUNC) 
+  if(type == STT_FUNC && cpu.pc == elf_symbol.st_value) 
   {
+    value = elf_symbol.st_value;
+    size = elf_symbol.st_size;
     fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
     for(i = 0; func_name[i] != 0;i++)
     {
