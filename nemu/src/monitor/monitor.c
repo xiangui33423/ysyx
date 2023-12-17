@@ -124,6 +124,7 @@ static void init_elf()
     type = ELF32_ST_TYPE(elf_symbol.st_info);
     if(type == STT_FUNC) 
     {
+      printf("ok");
       func[j].value = elf_symbol.st_value;
       func[j].size = elf_symbol.st_size;
       func[j].flag = false;
