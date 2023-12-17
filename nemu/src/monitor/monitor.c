@@ -71,7 +71,7 @@ static long load_img() {
 }
 
 FILE *elf_fp = NULL;
-static Elf32_Ehdr elf32; 
+Elf32_Ehdr elf32; 
 static void init_elf()
 {
   if (elf_file == NULL) {

@@ -70,8 +70,9 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 
 #ifdef CONFIG_FTRACE
   extern FILE* elf_fp;
-  int b;
-  
+  extern Elf32_Ehdr elf32;
+  int b = 1;
+  b = b + 2;
   printf("0x%x\n",b);
 
 #endif
