@@ -76,6 +76,7 @@ typedef struct
   char name[256];
   Elf32_Addr value;
   Elf32_Word size;
+  bool flag;
 }elf_func;
 
 elf_func func[256];
