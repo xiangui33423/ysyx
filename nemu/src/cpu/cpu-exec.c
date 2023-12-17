@@ -81,14 +81,14 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   type = ELF32_ST_TYPE(elf_symbol.st_info);
   if(type == STT_FUNC) 
   {
-    // fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-    // c = fscanf(elf_fp,"%s",func_name);
+    fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
+    c = fscanf(elf_fp,"%s",func_name);
     printf("0x%x %s\n",elf_symbol.st_value,func_name);
-    // fseek(elf_fp,elf_sym_off,SEEK_SET);
-    // for(i = 0; i<b;i++)
-    // {
-    //   c = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
-    // }
+    fseek(elf_fp,elf_sym_off,SEEK_SET);
+    for(i = 0; i<b;i++)
+    {
+      c = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
+    }
   }
 #endif
 }
