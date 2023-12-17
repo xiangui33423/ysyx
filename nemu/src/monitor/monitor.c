@@ -126,9 +126,11 @@ static void init_elf()
       func[j].value = elf_symbol.st_value;
       func[j].size = elf_symbol.st_size;
       fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-      for(i = 0; func_name[i] != 0;i++)
+      i = 0;
+      c = fread(func_name + i,sizeof(char),1,elf_fp);
+      for(; func_name[i-1] != 0;i++)
       {
-        c = fread(func_name + i,1,1,elf_fp);
+        c = fread(func_name + i,sizeof(char),1,elf_fp);
       } 
       sprintf(func[j++].name,"%s",func_name);
       fseek(elf_fp,elf_sym_off,SEEK_SET);
