@@ -87,6 +87,7 @@ static int decode_exec(Decode *s) {
   INSTPAT("??????? ????? ????? ??? ????? 11011 11", jal    , J, s->dnpc = s->pc +  (imm) ;IFDEF(CONFIG_FTRACE,{
       extern elf_func func[256];
       int k = 0;
+      call_depth++;
       if(rd == 1) 
       {
         while(func[k].value != 0)
