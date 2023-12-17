@@ -27,7 +27,7 @@
  * You can modify this value as you want.
  */
 #define MAX_INST_TO_PRINT 10
-Elf32_Section elf_sec;
+static Elf32_Section elf_sec;
 int call_depth;
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
