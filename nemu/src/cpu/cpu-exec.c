@@ -82,7 +82,10 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   if(type == STT_FUNC) 
   {
     fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-    c = fscanf(elf_fp,"%s",func_name);
+    for(i = 0; func_name[i] != '\0';i++)
+    {
+      c = fread(func_name+i,sizeof(char),1,elf_fp);
+    }
     printf("0x%x %s\n",elf_symbol.st_value,func_name);
     fseek(elf_fp,elf_sym_off,SEEK_SET);
     for(i = 0; i<b;i++)
