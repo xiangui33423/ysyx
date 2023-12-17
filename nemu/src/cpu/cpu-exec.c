@@ -85,9 +85,10 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   while(func[i].value != 0)
   { 
     i++;
+    
     if(cpu.pc >= func[i].value && cpu.pc < func[i].value + func[i].size)
     {
-      if(cpu.pc & 127 == 111)
+      if(BITS(cpu.pc,6,0) == 0b1101111)
         printf("call:0x%x  %s\n",cpu.pc,func[i].name);
       if(cpu.pc & 127 == 103)
         printf("ret:0x%x  %s\n",cpu.pc,func[i].name);
