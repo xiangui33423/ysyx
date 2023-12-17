@@ -71,7 +71,7 @@ static long load_img() {
 }
 
 FILE *elf_fp = NULL;
-Elf32_Ehdr elf32; 
+Elf32_Shdr elf_sec;
 static void init_elf()
 {
   if (elf_file == NULL) {
@@ -79,12 +79,12 @@ static void init_elf()
     return ; 
   }
   elf_fp = fopen(elf_file, "rb");
-  
+  Elf32_Ehdr elf32; 
   int i;
   int a,b;
   // fseek(elf_fp, 0, SEEK_SET);
   a=fread(&elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
-  Elf32_Shdr elf_sec;
+  
   for (i = 0;i < 8;i++)
   {
     b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_fp);
