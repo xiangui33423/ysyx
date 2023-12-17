@@ -34,7 +34,7 @@ typedef struct
   char name[256];
   Elf32_Addr value;
   Elf32_Word size;
-  bool flag;
+  int flag;
 }elf_func;
 // static Elf32_Sym elf_symbol;
 int call_depth;
@@ -85,16 +85,16 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   while(func[i].value != 0)
   { 
     i++;
-    if(cpu.pc == func[i].value)
+    if(cpu.pc == func[i].value && func[i].flag == 0)
     {
       printf("call:0x%x  %s\n",cpu.pc,func[i].name);
-      func[i].flag = true;
+      func[i].flag = 1;
       break;
     }
-    if(cpu.pc == func[i].value + func[i].size-4)
+    if(cpu.pc == func[i].value + func[i].size-4 && func[i].flag == 1)
     {
       printf("ret:0x%x  %s\n",cpu.pc,func[i].name);
-      func[i].flag = true;
+      func[i].flag = false;
       break;
     }
   }
