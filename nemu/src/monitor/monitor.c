@@ -126,6 +126,7 @@ static void init_elf()
     {
       func[j].value = elf_symbol.st_value;
       func[j].size = elf_symbol.st_size;
+      func[j].flag = false;
       fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
       i = 0;
       c = fread(func_name + i,sizeof(char),1,elf_fp);
