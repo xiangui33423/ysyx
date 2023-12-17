@@ -19,7 +19,7 @@
 #include <locale.h>
 #include "../monitor/sdb/sdb.h"
 #include <elf.h>
-#include "stdio.h"
+#include <stdio.h>
 
 /* The assembly code of instructions executed is only output to the screen
  * when the number of instructions executed is less than this value.
@@ -72,16 +72,18 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_FTRACE
   extern FILE* elf_fp;
   extern Elf32_Ehdr elf32;
-  extern Elf32_Off elf_sym_off;
+  extern Elf32_Off elf_sym_off,elf_str_off;
   int b = 0,type;
   int c = 0;
+  char func_name[256];
+  int i;
   b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
   type = ELF32_ST_TYPE(elf_symbol.st_info);
   if(type == STT_FUNC) 
   {
-    // fseek(elf_fp, elf_symbol.st_name,SEEK_SET);
-    printf("0x%x\n",elf_symbol.st_name);
-    // fseek(elf_fp, elf_symbol.st_name,SEEK_SET);
+    fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
+    c = fscanf(elf_fp,"%s",func_name);
+    printf("0x%x %s\n",elf_symbol.st_value,func_name);
   }
 #endif
 }

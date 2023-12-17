@@ -95,6 +95,8 @@ static void init_elf()
   }
   elf_sym_off = elf_sec.sh_offset;
 
+  elf_str_off = elf_sec.sh_offset;
+
   fseek(elf_fp,elf_sym_off,SEEK_SET);
 
   Assert(elf_fp, "Can not open '%s'", elf_file);
