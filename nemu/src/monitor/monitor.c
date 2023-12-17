@@ -128,10 +128,9 @@ static void init_elf()
       fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
       for(i = 0; func_name[i] != 0;i++)
       {
-        c = fread(&func[j].name[i],sizeof(char),1,elf_fp);
+        c = fread(func_name + i,sizeof(char),1,elf_fp);
       } 
-      j++;
-      // sprintf(func[j++].name,"%s",func_name);
+      sprintf(func[j++].name,"%s",func_name);
       fseek(elf_fp,elf_sym_off,SEEK_SET);
       for(i = 0; i<b;i++)
       {
