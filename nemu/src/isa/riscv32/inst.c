@@ -59,7 +59,7 @@ typedef struct
   Elf32_Word size;
   int flag;
 }elf_func;
-
+static int call_depth = 0;
 static int decode_exec(Decode *s) {
   int rd = 0;
   word_t src1 = 0, src2 = 0, imm = 0;
@@ -92,11 +92,12 @@ static int decode_exec(Decode *s) {
         while(func[k].value != 0)
         { 
           k++;
-          if(cpu.pc >= func[k].value && cpu.pc < func[k].value + func[k].size)
+          if(s->dnpc >= func[k].value && s->dnpc < func[k].value + func[k].size)
           {
             break;
           }
         }
+        printf(FMT_PADDR ": %*scall[%s@" FMT_PADDR "]\n",cpu.pc,(call_depth-1)*2, "", k>=0?func[k].name:"???",s->dnpc);
       }
   })(rd) = s->pc + 4 );
   INSTPAT("??????? ????? ????? 000 ????? 11001 11", jalr   , I, s->dnpc = (src1 + imm)&0xfffffffe; R(rd) = s->pc + 4);

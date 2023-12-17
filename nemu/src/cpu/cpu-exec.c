@@ -80,7 +80,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern FILE* elf_fp;
   extern Elf32_Ehdr elf32;
   int i = 0,j;
-  extern elf_func func[256];
+  // extern elf_func func[256];
   // while(func[i].value != 0)
   // { 
   //   i++;
@@ -90,7 +90,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
       
   //     break;
   //   }
-  }
+  // }
   
 
 #endif
