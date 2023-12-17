@@ -75,7 +75,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   int b = 1;
   b = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
   b = ELF32_ST_TYPE(elf_symbol.st_info);
-  if(b == 2) printf("%d\n",elf_symbol.st_name);
+  if(b == 2) printf("%d\n",elf_symbol.st_value);
 #endif
 }
 
