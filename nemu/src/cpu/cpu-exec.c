@@ -27,7 +27,7 @@
  * You can modify this value as you want.
  */
 #define MAX_INST_TO_PRINT 10
-
+Elf32_Section elf_sec;
 int call_depth;
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
@@ -70,9 +70,9 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 
 #ifdef CONFIG_FTRACE
   extern FILE* elf_fp;
-  int c;
-
-  printf("0x%x\n",c);
+  int b;
+  b=fread(&elf_sec, sizeof(Elf32_Section), 1, elf_fp);
+  printf("0x%x\n",b);
 
 #endif
 }

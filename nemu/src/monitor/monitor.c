@@ -80,11 +80,11 @@ static void init_elf()
   }
   elf_fp = fopen(elf_file, "rb");
   Elf32_Ehdr elf32; 
-  Elf32_Section elf_sec;
+  
   int a,b;
   // fseek(elf_fp, 0, SEEK_SET);
   a=fread(&elf32, sizeof(Elf32_Ehdr), 1, elf_fp);
-  b=fread(&elf_sec, sizeof(Elf32_Section), 1, elf_fp);
+  
   Assert(elf_fp, "Can not open '%s'", elf_file);
 }
 
