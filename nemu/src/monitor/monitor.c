@@ -89,7 +89,7 @@ static void init_elf()
   {
     b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_fp);
   }
-  
+  fseek(elf_fp,elf_sec.sh_offset,SEEK_SET);
   Assert(elf_fp, "Can not open '%s'", elf_file);
 }
 

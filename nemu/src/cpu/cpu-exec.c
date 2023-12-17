@@ -28,6 +28,7 @@
  */
 #define MAX_INST_TO_PRINT 10
 
+static Elf32_Sym elf_symbol;
 int call_depth;
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
@@ -72,8 +73,8 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern FILE* elf_fp;
   extern Elf32_Ehdr elf32;
   int b = 1;
-  b = b + 2;
-  printf("0x%x\n",b);
+  b = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
+  printf("0x%x\n",elf_symbol.st_value);
 
 #endif
 }
