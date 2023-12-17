@@ -106,7 +106,7 @@ static void init_elf()
   elf_sym_off = elf_sec.sh_offset;
   b=fread(&elf_sec, sizeof(Elf32_Shdr), 1, elf_fp);
   elf_str_off = elf_sec.sh_offset;
-
+  int delta = elf_str_off - elf_sym_off;
   fseek(elf_fp,elf_sym_off,SEEK_SET);
 
   Assert(elf_fp, "Can not open '%s'", elf_file);
@@ -116,24 +116,27 @@ static void init_elf()
   char func_name[256];
   char str;
   int value,size;
-  int j = 0;
-  b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
-  type = ELF32_ST_TYPE(elf_symbol.st_info);
-  if(type == STT_FUNC) 
-  {
-    func[j].value = elf_symbol.st_value;
-    func[j].size = elf_symbol.st_size;
-    fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-    for(i = 0; func_name[i] != 0;i++)
+  int j = 0,k = 0;
+  while(k < delta){
+    k += sizeof(Elf32_Sym);
+    b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
+    type = ELF32_ST_TYPE(elf_symbol.st_info);
+    if(type == STT_FUNC) 
     {
-      c = fread(func_name + i,sizeof(char),1,elf_fp);
-    }
-    sprintf(func[j++].name,"%s",func_name);
-    fseek(elf_fp,elf_sym_off,SEEK_SET);
-    for(i = 0; i<b;i++)
-    {
-      c = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
-    }
+      func[j].value = elf_symbol.st_value;
+      func[j].size = elf_symbol.st_size;
+      fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
+      for(i = 0; func_name[i] != 0;i++)
+      {
+        c = fread(func_name + i,sizeof(char),1,elf_fp);
+      } 
+      sprintf(func[j++].name,"%s",func_name);
+      fseek(elf_fp,elf_sym_off,SEEK_SET);
+      for(i = 0; i<b;i++)
+      {
+        c = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
+      }
+  }
   }
 }
 
