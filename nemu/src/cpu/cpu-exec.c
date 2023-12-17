@@ -75,7 +75,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern Elf32_Off elf_sym_off,elf_str_off;
   static int b = 0,type;
   int c = 0;
-  char func_name[256];
+  char func_name[256] = "";
   int i;
   b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
   type = ELF32_ST_TYPE(elf_symbol.st_info);
