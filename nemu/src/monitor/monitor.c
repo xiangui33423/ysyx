@@ -128,7 +128,8 @@ static void init_elf()
       fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
       i = 0;
       c = fread(func_name + i,sizeof(char),1,elf_fp);
-     while(func_name[i-1] !=0 )
+      i ++;
+      while(func_name[i-1] !=0 )
       {
         c = fread(func_name + i,sizeof(char),1,elf_fp);
         i++;
