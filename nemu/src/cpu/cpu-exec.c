@@ -28,7 +28,14 @@
  */
 #define MAX_INST_TO_PRINT 10
 
-static Elf32_Sym elf_symbol;
+
+typedef struct 
+{
+  char name[256];
+  Elf32_Addr value;
+  Elf32_Word size;
+}elf_func;
+// static Elf32_Sym elf_symbol;
 int call_depth;
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
@@ -72,30 +79,16 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_FTRACE
   extern FILE* elf_fp;
   extern Elf32_Ehdr elf32;
-  extern Elf32_Off elf_sym_off,elf_str_off;
-  static int b = 0,type;
-  int c = 0;
-  char func_name[256];
-  char str;
-  int i,value,size;
-  b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
-  type = ELF32_ST_TYPE(elf_symbol.st_info);
-  if(type == STT_FUNC && cpu.pc >= elf_symbol.st_value && cpu.pc <=elf_symbol.st_value + elf_symbol.st_size) 
+  int i = 0;
+  extern elf_func func[256];
+  if(cpu.pc >= func[i].value && cpu.pc <= func[i].size)
   {
-    value = elf_symbol.st_value;
-    size = elf_symbol.st_size;
-    fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-    for(i = 0; func_name[i] != 0;i++)
-    {
-      c = fread(func_name + i,sizeof(char),1,elf_fp);
-    }
-    printf("0x%x %s\n",cpu.pc,func_name);
-    fseek(elf_fp,elf_sym_off,SEEK_SET);
-    for(i = 0; i<b;i++)
-    {
-      c = fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
-    }
+    i++;
+    printf("0x%x  %s",cpu.pc,func[i].name);
   }
+  // extern Elf32_Off elf_sym_off,elf_str_off;
+  // static int b = 0,type;
+
 #endif
 }
 
