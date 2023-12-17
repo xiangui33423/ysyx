@@ -29,15 +29,14 @@
 #define MAX_INST_TO_PRINT 10
 
 
-typedef struct 
-{
-  char name[256];
-  Elf32_Addr value;
-  Elf32_Word size;
-  int flag;
-}elf_func;
+// typedef struct 
+// {
+//   char name[256];
+//   Elf32_Addr value;
+//   Elf32_Word size;
+//   int flag;
+// }elf_func;
 // static Elf32_Sym elf_symbol;
-int call_depth;
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
@@ -82,28 +81,15 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern Elf32_Ehdr elf32;
   int i = 0,j;
   extern elf_func func[256];
-  while(func[i].value != 0)
-  { 
-    i++;
+  // while(func[i].value != 0)
+  // { 
+  //   i++;
     
-    if(cpu.pc >= func[i].value && cpu.pc < func[i].value + func[i].size)
-    {
-      j = _this->isa.inst.val;
-      if(BITS(j,6,0) == 0b1100111)
-      {
-        if(BITS(j, 19, 15) == 1 && BITS(j, 11, 7) == 0)
-          printf("0x%x:ret [%s]\n",_this->pc,func[i].name);
-        else if(BITS(j, 11, 7) < 2)
-          printf("0x%x:call[%s@0x%x]\n",_this->pc,func[i].name,func[i].value);
-      }
-      else if(BITS(j,6,0) == 0b1101111)
-      {
-        if(BITS(j, 11, 7) == 1) 
-        printf("0x%x:call[%s@0x%x]\n",_this->pc,func[i].name,func[i].value);          
-      }
-
-      break;
-    }
+  //   if(cpu.pc >= func[i].value && cpu.pc < func[i].value + func[i].size)
+  //   {
+      
+  //     break;
+  //   }
   }
   
 
