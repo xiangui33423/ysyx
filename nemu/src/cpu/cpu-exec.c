@@ -90,7 +90,9 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
     {
       j = _this->isa.inst.val;
       // if(BITS(_this->isa.inst.val,6,0) == 0b1101111)
-      if(cpu.pc == func[i].value)
+      if(BITS(j,6,0) == 0b1100111 && BITS(j, 11, 7) < 2)
+        printf("call:0x%x  %s\n",cpu.pc,func[i].name);
+      if(BITS(j,6,0) == 0b1101111 && BITS(j, 11, 7) == 1)
         printf("call:0x%x  %s\n",cpu.pc,func[i].name);
       if(BITS(j,6,0) == 0b1100111 && BITS(j, 19, 15) == 1 && BITS(j, 11, 7) == 0)
         printf("ret:0x%x  %s\n",cpu.pc,func[i].name);
