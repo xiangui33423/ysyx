@@ -83,7 +83,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   if(type == STT_FUNC) 
   {
     fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-    for(i = 0; func_name[i] != '\0';i++)
+    for(i = 0; func_name[i] != 0;i++)
     {
       c = fread(&str,sizeof(char),1,elf_fp);
       func_name[i] = str;
