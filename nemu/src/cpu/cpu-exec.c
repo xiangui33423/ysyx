@@ -76,24 +76,6 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   if(watch_all() == true) nemu_state.state = NEMU_STOP;
 #endif
 
-#ifdef CONFIG_FTRACE
-  extern FILE* elf_fp;
-  extern Elf32_Ehdr elf32;
-  int i = 0,j;
-  // extern elf_func func[256];
-  // while(func[i].value != 0)
-  // { 
-  //   i++;
-    
-  //   if(cpu.pc >= func[i].value && cpu.pc < func[i].value + func[i].size)
-  //   {
-      
-  //     break;
-  //   }
-  // }
-  
-
-#endif
 }
 
 static void exec_once(Decode *s, vaddr_t pc) {
