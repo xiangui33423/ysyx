@@ -98,7 +98,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
       }
       else if(BITS(j,6,0) == 0b1101111)
       {
-        // if(BITS(j, 11, 7) == 0) 
+        if(BITS(j, 11, 7) == 1) 
         printf("call:0x%x  %s\n",cpu.pc,func[i].name);
       }
 
