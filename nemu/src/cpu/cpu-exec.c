@@ -75,18 +75,18 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern Elf32_Off elf_sym_off,elf_str_off;
   static int b = 0,type;
   int c = 0;
-  char func_name[256] = "";
+  char func_name[256];
   int i;
   b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
   type = ELF32_ST_TYPE(elf_symbol.st_info);
   if(type == STT_FUNC) 
   {
     fseek(elf_fp,elf_str_off+elf_symbol.st_name,SEEK_SET);
-    for(i = 0; func_name[i] != 0;i++)
+    for(i = 0; func_name[i] != '\0';i++)
     {
       c = fread(func_name+i,sizeof(char),1,elf_fp);
     }
-    printf("0x%d %s\n",elf_symbol.st_name,func_name);
+    printf("0x%x %s\n",elf_symbol.st_name,func_name);
     fseek(elf_fp,elf_sym_off,SEEK_SET);
     for(i = 0; i<b;i++)
     {
