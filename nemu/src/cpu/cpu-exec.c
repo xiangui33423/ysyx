@@ -80,7 +80,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   int i,value,size;
   b += fread(&elf_symbol,sizeof(Elf32_Sym),1,elf_fp);
   type = ELF32_ST_TYPE(elf_symbol.st_info);
-  if(type == STT_FUNC && cpu.pc == elf_symbol.st_value) 
+  if(type == STT_FUNC && cpu.pc >= elf_symbol.st_value) 
   {
     value = elf_symbol.st_value;
     size = elf_symbol.st_size;
