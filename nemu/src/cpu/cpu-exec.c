@@ -81,11 +81,16 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   extern Elf32_Ehdr elf32;
   int i = 0;
   extern elf_func func[256];
-  if(cpu.pc >= func[i].value && cpu.pc <= func[i].size+func[i].value)
-  {
+  while(func[i].name)
+  { 
     i++;
-    printf("0x%x  %s\n",cpu.pc,func[i].name);
+    if(cpu.pc >= func[i].value && cpu.pc <= func[i].size+func[i].value)
+    {
+      printf("0x%x  %s\n",cpu.pc,func[i].name);
+      break;
+    }
   }
+  
   // extern Elf32_Off elf_sym_off,elf_str_off;
   // static int b = 0,type;
 
