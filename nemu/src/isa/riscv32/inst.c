@@ -108,13 +108,12 @@ static int decode_exec(Decode *s) {
       while(func[p].value != 0)
       {
         p++;
-        if(s->dnpc >= func[p].value && s->dnpc < func[p].value + func[p].size)
+        if(s->dnpc == func[p].value && s->dnpc < func[p].value + func[p].size)
         {
           break;
         }
       }
-      if(func[p].value == s->dnpc)
-        Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
+      Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
       call_depth--;
     }
     if(rd == 1/*|| (rd == 0 && BITS(s->isa.inst.val, 19, 15) != 1*/ )
