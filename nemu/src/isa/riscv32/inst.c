@@ -116,7 +116,7 @@ static int decode_exec(Decode *s) {
       Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, "", p>=0 ? func[p].name:"???");
       call_depth--;
     }
-    if(rd == 1 || (rd == 0 && imm == 0) )
+    if(rd == 1 )
     {
       int k = 0;
       call_depth++;
