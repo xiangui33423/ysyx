@@ -108,7 +108,7 @@ static int decode_exec(Decode *s) {
       while(func[p].value != 0)
       {
         p++;
-        if(s->dnpc >= func[p].value && s->dnpc < func[p].value + func[p].size)
+        if(s->pc >= func[p].value && s->pc < func[p].value + func[p].size)
         {
           break;
         }
