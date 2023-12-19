@@ -93,7 +93,7 @@ static int decode_exec(Decode *s) {
         while(func[k].value != 0)
         { 
           k++;
-          if(s->dnpc >= func[k].value && s->dnpc < func[k].value + func[k].size)
+          if(cpu.pc >= func[k].value && cpu.pc < func[k].value + func[k].size)
           {
             break;
           }
@@ -108,7 +108,7 @@ static int decode_exec(Decode *s) {
       while(func[p].value != 0)
       {
         p++;
-        if(s->dnpc >= func[p].value && s->dnpc < func[p].value + func[p].size)
+        if(cpu.pc >= func[p].value && cpu.pc < func[p].value + func[p].size)
         {
           break;
         }
@@ -116,14 +116,14 @@ static int decode_exec(Decode *s) {
       Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, "", p>=0 ? func[p].name:"???");
       call_depth--;
     }
-    if(rd == 1 )
+    if(rd == 1)
     {
       int k = 0;
       call_depth++;
         while(func[k].value != 0)
         { 
           k++;
-          if(s->dnpc >= func[k].value && s->dnpc < func[k].value + func[k].size)
+          if(cpu.pc >= func[k].value && cpu.pc < func[k].value + func[k].size)
           {
             break;
           }
