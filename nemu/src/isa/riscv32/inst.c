@@ -128,7 +128,7 @@ static int decode_exec(Decode *s) {
             break;
           }
         }
-        Log(FMT_PADDR ": %*scall[%s@" FMT_PADDR "]\n",(unsigned int)cpu.pc,(call_depth-1), "", k>=0?func[k].name:"???",(unsigned int)s->dnpc);
+        Log(FMT_PADDR ": %*scall[%s@" FMT_PADDR "]\n",(unsigned int)cpu.pc,(call_depth-1)*2, "", k>=0?func[k].name:"???",(unsigned int)s->dnpc);
     }
     
   }); R(rd) = s->pc + 4);
