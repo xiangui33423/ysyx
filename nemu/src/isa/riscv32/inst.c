@@ -102,7 +102,7 @@ static int decode_exec(Decode *s) {
       }
   });R(rd) = s->pc + 4 );
   INSTPAT("??????? ????? ????? 000 ????? 11001 11", jalr   , I, s->dnpc = (src1 + imm)&0xfffffffe;IFDEF(CONFIG_FTRACE,{
-    if(s->isa.inst.val == 0x00008067)
+    if(rd == 0 && BITS(s->isa.inst.val, 19, 15) == 1)//s->isa.inst.val == 0x00008067)
     {
       int p = 0;
       while(func[p].value != 0)
@@ -116,7 +116,7 @@ static int decode_exec(Decode *s) {
       Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
       call_depth--;
     }
-    if(rd == 1 || (rd == 0 && BITS(s->isa.inst.val, 19, 15) == 1))
+    if(rd == 1 || (rd == 0 && BITS(s->isa.inst.val, 19, 15) != 1))
     {
       int k = 0;
       call_depth++;
