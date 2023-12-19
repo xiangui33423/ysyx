@@ -98,7 +98,7 @@ static int decode_exec(Decode *s) {
             break;
           }
         }
-        printf("%08x : %*scall[%s@ %08x ]\n",cpu.pc,(call_depth-1)*2, " ", k>=0?func[k].name:"???",(unsigned int)s->dnpc);
+        Log(FMT_PADDR ": %*scall[%s@" FMT_PADDR "]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", k>=0?func[k].name:"???",(unsigned int)s->dnpc);
       }
   });R(rd) = s->pc + 4 );
   INSTPAT("??????? ????? ????? 000 ????? 11001 11", jalr   , I, s->dnpc = (src1 + imm)&0xfffffffe;IFDEF(CONFIG_FTRACE,{
@@ -113,7 +113,7 @@ static int decode_exec(Decode *s) {
           break;
         }
       }
-      printf( "%08x : %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
+      Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
     }
   }); R(rd) = s->pc + 4);
   INSTPAT("??????? ????? ????? 001 ????? 11000 11", bne    , B, if(src1 != src2) s->dnpc = s->pc + (imm&0xfffffffe));
