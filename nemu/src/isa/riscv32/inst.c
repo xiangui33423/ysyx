@@ -93,7 +93,7 @@ static int decode_exec(Decode *s) {
         while(func[k].value != 0)
         { 
           k++;
-          if(cpu.pc >= func[k].value && cpu.pc < func[k].value + func[k].size)
+          if(s->pc >= func[k].value && s->pc < func[k].value + func[k].size)
           {
             break;
           }
@@ -108,7 +108,7 @@ static int decode_exec(Decode *s) {
       while(func[p].value != 0)
       {
         p++;
-        if(cpu.pc >= func[p].value && cpu.pc < func[p].value + func[p].size)
+        if(s->pc >= func[p].value && s->pc < func[p].value + func[p].size)
         {
           break;
         }
@@ -123,7 +123,7 @@ static int decode_exec(Decode *s) {
         while(func[k].value != 0)
         { 
           k++;
-          if(cpu.pc >= func[k].value && cpu.pc < func[k].value + func[k].size)
+          if(s->pc >= func[k].value && s->pc < func[k].value + func[k].size)
           {
             break;
           }
