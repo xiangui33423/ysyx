@@ -116,7 +116,7 @@ static int decode_exec(Decode *s) {
       Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
       call_depth--;
     }
-    if(rd == 1)
+    if(rd == 1 || (rd == 0 && BITS(s->isa.inst.val, 19, 15) == 1))
     {
       int k = 0;
       call_depth++;
@@ -130,6 +130,7 @@ static int decode_exec(Decode *s) {
         }
         Log(FMT_PADDR ": %*scall[%s@" FMT_PADDR "]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", k>=0?func[k].name:"???",(unsigned int)s->dnpc);
     }
+    
   }); R(rd) = s->pc + 4);
   INSTPAT("??????? ????? ????? 001 ????? 11000 11", bne    , B, if(src1 != src2) s->dnpc = s->pc + (imm&0xfffffffe));
   INSTPAT("??????? ????? ????? 101 ????? 11000 11", bge    , B, if((int32_t)(src1) >= (int32_t)(src2)) s->dnpc = s->pc + (imm&0xfffffffe));
