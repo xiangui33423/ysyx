@@ -18,6 +18,8 @@
         "tuple": "c",
         "type_traits": "c",
         "utility": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "sdl.h": "c",
+        "alarm.h": "c"
     }
 }

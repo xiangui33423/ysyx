@@ -26,6 +26,45 @@ always @(*) begin
             ALUBsrc = 2'b01;
             ALUctr = 4'b0000;
         end  
+        9'b00101_000_?:begin//auipc
+            ExtOP = 3'b001;
+            RegWr = 1'b1;
+            Branch = 0;
+            MemtoReg = 0;
+            MemWr = 0;
+            ALUAsrc = 1;
+            ALUBsrc = 2'b01;
+            ALUctr = 0;
+        end
+        9'b01101_???_?:begin//lui
+            ExtOP = 3'b001;
+            RegWr = 1;
+            Branch = 0;
+            MemtoReg = 0;
+            MemWr = 0;
+            ALUBsrc = 2'b01;
+            ALUctr = 4'b0011;
+        end
+        9'b11011_???_?:begin//jal
+            ExtOP = 3'b100;
+            RegWr = 1;
+            Branch = 3'b001;
+            MemtoReg = 0;
+            MemWr = 0;
+            ALUAsrc = 1;
+            ALUBsrc = 2'b10;
+            ALUctr = 0;
+        end
+        9'b11001_000_?:begin//jalr
+           ExtOP = 0;
+           RegWr = 1;
+           Branch = 3'b010;
+           MemWr = 0;
+           MemtoReg = 0;
+           ALUAsrc = 1;
+           ALUBsrc = 2'b10;
+           ALUctr = 0; 
+        end
         default :begin
             ExtOP = 0;
             RegWr = 0;

@@ -1,16 +1,20 @@
 module ysyx_23060096_pc (
     input         clk,
     input         rstn,
-    output reg [31:0] pc
+    input  [31:0] pc,
+    input  [31:0] imm,
+    input  [2:0]  Branch,
+    input  [31:0] rs1,
+    output reg [31:0] next_pc
 );
     //reg [31:0] pc_next;
     always @(negedge clk) begin
       if(!rstn)
         begin
-          pc <= 32'h8000_0000;
+          next_pc <= 32'h8000_0000;
         end
       else begin
-          pc <= pc + 32'h4; 
+        next_pc <= next_pc + 32'h4; 
         end
     end
 
