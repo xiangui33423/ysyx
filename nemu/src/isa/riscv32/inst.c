@@ -93,7 +93,7 @@ static int decode_exec(Decode *s) {
         while(func[k].value != 0)
         { 
           k++;
-          if(s->dnpc >= func[k].value && s->dnpc <= func[k].value + func[k].size)
+          if(s->dnpc >= func[k].value && s->dnpc < func[k].value + func[k].size)
           {
             break;
           }
@@ -114,6 +114,21 @@ static int decode_exec(Decode *s) {
         }
       }
       Log(FMT_PADDR ": %*sret [%s]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", p>=0 ? func[p].name:"???");
+      call_depth--;
+    }
+    if(rd == 1)
+    {
+      int k = 0;
+      call_depth++;
+        while(func[k].value != 0)
+        { 
+          k++;
+          if(s->dnpc >= func[k].value && s->dnpc < func[k].value + func[k].size)
+          {
+            break;
+          }
+        }
+        Log(FMT_PADDR ": %*scall[%s@" FMT_PADDR "]\n",(unsigned int)cpu.pc,(call_depth-1)*2, " ", k>=0?func[k].name:"???",(unsigned int)s->dnpc);
     }
   }); R(rd) = s->pc + 4);
   INSTPAT("??????? ????? ????? 001 ????? 11000 11", bne    , B, if(src1 != src2) s->dnpc = s->pc + (imm&0xfffffffe));
