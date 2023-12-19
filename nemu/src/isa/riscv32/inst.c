@@ -93,7 +93,7 @@ static int decode_exec(Decode *s) {
         while(func[k].value != 0)
         { 
           k++;
-          if(s->dnpc >= func[k].value && s->dnpc < func[k].value + func[k].size)
+          if(s->dnpc >= func[k].value && s->dnpc <= func[k].value + func[k].size)
           {
             break;
           }
