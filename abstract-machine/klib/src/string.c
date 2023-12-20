@@ -18,13 +18,13 @@ size_t strlen(const char *s) {
 char *strcpy(char *dst, const char *src) {
   if(src == NULL || dst==NULL) return dst;
     char *ret = dst;
-    while(*src != '\0')
+    do
     {
       *dst = *src;
       src++;
       dst++;
-    }
-    *dst = '\0';
+    }while(*src != '\0');
+    // *dst = '\0';
     return ret;
 }
 
