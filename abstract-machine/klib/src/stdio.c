@@ -5,12 +5,48 @@
 
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
 
+static char sprintf_buf[1024];
 int printf(const char *fmt, ...) {
-  panic("Not implemented");
+  va_list args;
+  int n;
+
+  va_start(args,fmt);
+  n = vsprintf(sprintf_buf, fmt, args);
+  va_end(args);
+  putstr(sprintf_buf);
+  return n;
 }
 
 int vsprintf(char *out, const char *fmt, va_list ap) {
-  panic("Not implemented");
+  char *start = out;
+
+  for(; *fmt != '\0'; ++fmt)
+  {
+    if(*fmt != '%')
+    {
+      *out = *fmt;
+      ++out;
+    }
+    else
+    {
+      switch (*(++fmt))
+      {
+      case '%': *out = *fmt;
+                ++out; 
+                break;
+      case 'd': out += itoa(va_arg(ap,int),out,10);
+                break;
+      case 's': char *s = va_arg(ap,char *);
+                strcpy(out,s);
+                out += strlen(out);
+                break;
+      default:
+        break;
+      }
+    }
+  }  
+  *out = '\0';
+  return out - start;
 }
 
 

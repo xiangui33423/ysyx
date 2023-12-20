@@ -40,7 +40,7 @@ static void reverse(char *s,int len)
     *s = *end;
     *end = tmp;
     s++;end--;
-  }
+  }  
 }
 
 int itoa(int n,char *s, int base)
