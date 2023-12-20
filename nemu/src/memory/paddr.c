@@ -55,7 +55,7 @@ word_t paddr_read(paddr_t addr, int len) {
   {
 
     #ifdef CONFIG_MTRACE
-      if(cpu.pc != addr)
+      if(cpu.pc != addr && addr > 0xa0000000)
         Log(" address = " FMT_PADDR " is at pc = " FMT_WORD,  addr, cpu.pc);
     #endif
     
@@ -80,6 +80,6 @@ void paddr_write(paddr_t addr, int len, word_t data) {
   }
   IFDEF(CONFIG_DEVICE, mmio_write(addr, len, data); return);
   // out_of_bound(addr);
-  if(addr < 0x80000000)
+  if(addr < 0x80000000 && addr > 0xa0000000)
     nemu_state.state = NEMU_ABORT;
 }
