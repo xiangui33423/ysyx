@@ -3,7 +3,7 @@
 char buf[128];
 const char*c_hello="Hello world!";
 int main() {
-	printf(buf,"%s\n",c_hello);
+	sprintf(buf,"%s\n",c_hello);
 	// sprintf(buf, "%s", "Hello world!\n");
 	check(strcmp(buf, "Hello world!\n") == 0);
 
