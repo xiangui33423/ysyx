@@ -1,0 +1,313 @@
+Date : 2023-12-20 13:31:33
+Directory : /home/xiangui/ysyx-workbench/npc
+Total : 215 files,  -7647 codes, -2059 comments, -1588 blanks, all -11294 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         99 |      3,283 |         32 |        312 |      3,627 |
+| vcd      |          1 |        322 |          0 |          4 |        326 |
+| Verilog  |          7 |        284 |          9 |         36 |        329 |
+| Makefile |         27 |          1 |         56 |         29 |         86 |
+| Markdown |          4 |       -221 |          0 |        -49 |       -270 |
+| C        |         77 |    -11,316 |     -2,156 |     -1,920 |    -15,392 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |        215 |     -7,647 |     -2,059 |     -1,588 |    -11,294 |
+| . (Files)                                                                                            |          2 |        339 |          0 |         10 |        349 |
+| ..                                                                                                   |        126 |    -13,281 |     -3,044 |     -2,456 |    -18,781 |
+| ../nemu                                                                                              |        126 |    -13,281 |     -3,044 |     -2,456 |    -18,781 |
+| ../nemu (Files)                                                                                      |          2 |        -63 |        -22 |        -13 |        -98 |
+| ../nemu/include                                                                                      |         16 |       -407 |       -267 |       -141 |       -815 |
+| ../nemu/include (Files)                                                                              |          6 |       -192 |       -122 |        -69 |       -383 |
+| ../nemu/include/cpu                                                                                  |          4 |       -125 |        -58 |        -31 |       -214 |
+| ../nemu/include/device                                                                               |          3 |        -44 |        -43 |        -20 |       -107 |
+| ../nemu/include/memory                                                                               |          3 |        -46 |        -44 |        -21 |       -111 |
+| ../nemu/resource                                                                                     |          4 |       -582 |        -40 |       -155 |       -777 |
+| ../nemu/resource/debian                                                                              |          1 |       -141 |          0 |        -32 |       -173 |
+| ../nemu/resource/mips-elf                                                                            |          1 |         -1 |          0 |         -1 |         -2 |
+| ../nemu/resource/sdcard                                                                              |          2 |       -440 |        -40 |       -122 |       -602 |
+| ../nemu/scripts                                                                                      |          3 |       -103 |        -36 |        -43 |       -182 |
+| ../nemu/src                                                                                          |         63 |     -2,635 |     -1,143 |       -593 |     -4,371 |
+| ../nemu/src (Files)                                                                                  |          2 |        -26 |        -30 |         -8 |        -64 |
+| ../nemu/src/cpu                                                                                      |          3 |       -223 |        -74 |        -53 |       -350 |
+| ../nemu/src/cpu (Files)                                                                              |          1 |       -121 |        -29 |        -21 |       -171 |
+| ../nemu/src/cpu/difftest                                                                             |          2 |       -102 |        -45 |        -32 |       -179 |
+| ../nemu/src/device                                                                                   |         15 |       -814 |       -331 |       -175 |     -1,320 |
+| ../nemu/src/device (Files)                                                                           |         12 |       -705 |       -284 |       -146 |     -1,135 |
+| ../nemu/src/device/io                                                                                |          3 |       -109 |        -47 |        -29 |       -185 |
+| ../nemu/src/engine                                                                                   |          3 |        -42 |        -43 |        -13 |        -98 |
+| ../nemu/src/engine (Files)                                                                           |          1 |         -2 |        -14 |         -2 |        -18 |
+| ../nemu/src/engine/interpreter                                                                       |          2 |        -40 |        -29 |        -11 |        -80 |
+| ../nemu/src/isa                                                                                      |         28 |       -588 |       -450 |       -166 |     -1,204 |
+| ../nemu/src/isa (Files)                                                                              |          1 |         -2 |        -14 |         -2 |        -18 |
+| ../nemu/src/isa/loongarch32r                                                                         |          9 |       -125 |       -142 |        -55 |       -322 |
+| ../nemu/src/isa/loongarch32r (Files)                                                                 |          4 |        -77 |        -62 |        -27 |       -166 |
+| ../nemu/src/isa/loongarch32r/difftest                                                                |          1 |         -8 |        -20 |         -6 |        -34 |
+| ../nemu/src/isa/loongarch32r/include                                                                 |          1 |        -14 |        -15 |         -7 |        -36 |
+| ../nemu/src/isa/loongarch32r/local-include                                                           |          1 |        -13 |        -14 |         -7 |        -34 |
+| ../nemu/src/isa/loongarch32r/system                                                                  |          2 |        -13 |        -31 |         -8 |        -52 |
+| ../nemu/src/isa/mips32                                                                               |          9 |       -175 |       -148 |        -55 |       -378 |
+| ../nemu/src/isa/mips32 (Files)                                                                       |          4 |       -126 |        -74 |        -29 |       -229 |
+| ../nemu/src/isa/mips32/difftest                                                                      |          1 |         -8 |        -14 |         -4 |        -26 |
+| ../nemu/src/isa/mips32/include                                                                       |          1 |        -15 |        -15 |         -7 |        -37 |
+| ../nemu/src/isa/mips32/local-include                                                                 |          1 |        -13 |        -14 |         -7 |        -34 |
+| ../nemu/src/isa/mips32/system                                                                        |          2 |        -13 |        -31 |         -8 |        -52 |
+| ../nemu/src/isa/riscv32                                                                              |          9 |       -286 |       -146 |        -54 |       -486 |
+| ../nemu/src/isa/riscv32 (Files)                                                                      |          4 |       -224 |        -72 |        -27 |       -323 |
+| ../nemu/src/isa/riscv32/difftest                                                                     |          1 |        -22 |        -14 |         -5 |        -41 |
+| ../nemu/src/isa/riscv32/include                                                                      |          1 |        -14 |        -15 |         -7 |        -36 |
+| ../nemu/src/isa/riscv32/local-include                                                                |          1 |        -13 |        -14 |         -7 |        -34 |
+| ../nemu/src/isa/riscv32/system                                                                       |          2 |        -13 |        -31 |         -8 |        -52 |
+| ../nemu/src/memory                                                                                   |          2 |        -67 |        -30 |        -19 |       -116 |
+| ../nemu/src/monitor                                                                                  |          5 |       -736 |       -115 |       -127 |       -978 |
+| ../nemu/src/monitor (Files)                                                                          |          1 |       -188 |        -27 |        -33 |       -248 |
+| ../nemu/src/monitor/sdb                                                                              |          4 |       -548 |        -88 |        -94 |       -730 |
+| ../nemu/src/utils                                                                                    |          5 |       -139 |        -70 |        -32 |       -241 |
+| ../nemu/tools                                                                                        |         38 |     -9,491 |     -1,536 |     -1,511 |    -12,538 |
+| ../nemu/tools (Files)                                                                                |          1 |        -11 |        -14 |         -4 |        -29 |
+| ../nemu/tools/fixdep                                                                                 |          2 |       -225 |       -138 |        -46 |       -409 |
+| ../nemu/tools/gen-expr                                                                               |          2 |       -111 |        -30 |        -25 |       -166 |
+| ../nemu/tools/kconfig                                                                                |         20 |     -8,210 |     -1,112 |     -1,216 |    -10,538 |
+| ../nemu/tools/kconfig (Files)                                                                        |         13 |     -6,328 |       -832 |       -905 |     -8,065 |
+| ../nemu/tools/kconfig/lxdialog                                                                       |          7 |     -1,882 |       -280 |       -311 |     -2,473 |
+| ../nemu/tools/kvm-diff                                                                               |          3 |       -333 |        -58 |        -59 |       -450 |
+| ../nemu/tools/kvm-diff (Files)                                                                       |          1 |         -6 |        -14 |         -4 |        -24 |
+| ../nemu/tools/kvm-diff/include                                                                       |          1 |          0 |        -15 |         -2 |        -17 |
+| ../nemu/tools/kvm-diff/src                                                                           |          1 |       -327 |        -29 |        -53 |       -409 |
+| ../nemu/tools/qemu-diff                                                                              |          8 |       -471 |       -156 |       -132 |       -759 |
+| ../nemu/tools/qemu-diff (Files)                                                                      |          1 |         -6 |        -14 |         -4 |        -24 |
+| ../nemu/tools/qemu-diff/include                                                                      |          3 |        -64 |        -46 |        -21 |       -131 |
+| ../nemu/tools/qemu-diff/src                                                                          |          4 |       -401 |        -96 |       -107 |       -604 |
+| ../nemu/tools/spike-diff                                                                             |          2 |       -130 |        -28 |        -29 |       -187 |
+| csrc                                                                                                 |          5 |        267 |         12 |         46 |        325 |
+| obj_dir                                                                                              |         75 |      4,744 |        964 |        776 |      6,484 |
+| vsrc                                                                                                 |          7 |        284 |          9 |         36 |        329 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                             | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/xiangui/ysyx-workbench/nemu/Makefile                                                           | Makefile |        -30 |        -22 |        -10 |        -62 |
+| /home/xiangui/ysyx-workbench/nemu/README.md                                                          | Markdown |        -33 |          0 |         -3 |        -36 |
+| /home/xiangui/ysyx-workbench/nemu/include/common.h                                                   | C        |        -26 |        -14 |        -10 |        -50 |
+| /home/xiangui/ysyx-workbench/nemu/include/cpu/cpu.h                                                  | C++      |         -9 |        -14 |         -7 |        -30 |
+| /home/xiangui/ysyx-workbench/nemu/include/cpu/decode.h                                               | C++      |        -75 |        -16 |        -12 |       -103 |
+| /home/xiangui/ysyx-workbench/nemu/include/cpu/difftest.h                                             | C++      |        -33 |        -14 |         -7 |        -54 |
+| /home/xiangui/ysyx-workbench/nemu/include/cpu/ifetch.h                                               | C++      |         -8 |        -14 |         -5 |        -27 |
+| /home/xiangui/ysyx-workbench/nemu/include/debug.h                                                    | C++      |        -22 |        -14 |         -8 |        -44 |
+| /home/xiangui/ysyx-workbench/nemu/include/device/alarm.h                                             | C        |         -6 |        -14 |         -5 |        -25 |
+| /home/xiangui/ysyx-workbench/nemu/include/device/map.h                                               | C++      |        -32 |        -15 |        -10 |        -57 |
+| /home/xiangui/ysyx-workbench/nemu/include/device/mmio.h                                              | C++      |         -6 |        -14 |         -5 |        -25 |
+| /home/xiangui/ysyx-workbench/nemu/include/difftest-def.h                                             | C++      |        -21 |        -14 |         -6 |        -41 |
+| /home/xiangui/ysyx-workbench/nemu/include/isa.h                                                      | C        |        -25 |        -23 |        -11 |        -59 |
+| /home/xiangui/ysyx-workbench/nemu/include/macro.h                                                    | C++      |        -53 |        -40 |        -18 |       -111 |
+| /home/xiangui/ysyx-workbench/nemu/include/memory/host.h                                              | C++      |        -22 |        -14 |         -7 |        -43 |
+| /home/xiangui/ysyx-workbench/nemu/include/memory/paddr.h                                             | C++      |        -14 |        -16 |         -8 |        -38 |
+| /home/xiangui/ysyx-workbench/nemu/include/memory/vaddr.h                                             | C++      |        -10 |        -14 |         -6 |        -30 |
+| /home/xiangui/ysyx-workbench/nemu/include/utils.h                                                    | C++      |        -45 |        -17 |        -16 |        -78 |
+| /home/xiangui/ysyx-workbench/nemu/resource/debian/README.md                                          | Markdown |       -141 |          0 |        -32 |       -173 |
+| /home/xiangui/ysyx-workbench/nemu/resource/mips-elf/README.md                                        | Markdown |         -1 |          0 |         -1 |         -2 |
+| /home/xiangui/ysyx-workbench/nemu/resource/sdcard/README.md                                          | Markdown |        -46 |          0 |        -13 |        -59 |
+| /home/xiangui/ysyx-workbench/nemu/resource/sdcard/nemu.c                                             | C        |       -394 |        -40 |       -109 |       -543 |
+| /home/xiangui/ysyx-workbench/nemu/scripts/build.mk                                                   | Makefile |        -40 |         -5 |        -14 |        -59 |
+| /home/xiangui/ysyx-workbench/nemu/scripts/config.mk                                                  | Makefile |        -40 |        -15 |        -16 |        -71 |
+| /home/xiangui/ysyx-workbench/nemu/scripts/native.mk                                                  | Makefile |        -23 |        -16 |        -13 |        -52 |
+| /home/xiangui/ysyx-workbench/nemu/src/cpu/cpu-exec.c                                                 | C        |       -121 |        -29 |        -21 |       -171 |
+| /home/xiangui/ysyx-workbench/nemu/src/cpu/difftest/dut.c                                             | C        |        -81 |        -30 |        -25 |       -136 |
+| /home/xiangui/ysyx-workbench/nemu/src/cpu/difftest/ref.c                                             | C        |        -21 |        -15 |         -7 |        -43 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/alarm.c                                                 | C        |        -30 |        -14 |         -8 |        -52 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/audio.c                                                 | C        |        -27 |        -14 |         -7 |        -48 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/device.c                                                | C        |        -65 |        -15 |        -12 |        -92 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/disk.c                                                  | C        |         -3 |        -14 |         -3 |        -20 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/filelist.mk                                             | Makefile |        -15 |        -14 |         -4 |        -33 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/intr.c                                                  | C        |         -3 |        -14 |         -3 |        -20 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/io/map.c                                                | C        |        -46 |        -15 |        -10 |        -71 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/io/mmio.c                                               | C        |        -37 |        -16 |        -11 |        -64 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/io/port-io.c                                            | C        |        -26 |        -16 |         -8 |        -50 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/keyboard.c                                              | C        |        -69 |        -15 |        -17 |       -101 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/mmc.h                                                   | C++      |       -275 |       -117 |        -48 |       -440 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/sdcard.c                                                | C        |       -102 |        -20 |        -13 |       -135 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/serial.c                                                | C        |        -25 |        -17 |        -10 |        -52 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/timer.c                                                 | C        |        -29 |        -14 |         -6 |        -49 |
+| /home/xiangui/ysyx-workbench/nemu/src/device/vga.c                                                   | C        |        -62 |        -16 |        -15 |        -93 |
+| /home/xiangui/ysyx-workbench/nemu/src/engine/filelist.mk                                             | Makefile |         -2 |        -14 |         -2 |        -18 |
+| /home/xiangui/ysyx-workbench/nemu/src/engine/interpreter/hostcall.c                                  | C        |        -31 |        -14 |         -7 |        -52 |
+| /home/xiangui/ysyx-workbench/nemu/src/engine/interpreter/init.c                                      | C        |         -9 |        -15 |         -4 |        -28 |
+| /home/xiangui/ysyx-workbench/nemu/src/filelist.mk                                                    | Makefile |        -11 |        -14 |         -4 |        -29 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/filelist.mk                                                | Makefile |         -2 |        -14 |         -2 |        -18 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/difftest/dut.c                                | C        |         -8 |        -20 |         -6 |        -34 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/include/isa-def.h                             | C++      |        -14 |        -15 |         -7 |        -36 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/init.c                                        | C        |        -17 |        -20 |         -7 |        -44 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/inst.c                                        | C        |        -46 |        -14 |        -13 |        -73 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/local-include/reg.h                           | C++      |        -13 |        -14 |         -7 |        -34 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/logo.c                                        | C        |         -1 |        -14 |         -2 |        -17 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/reg.c                                         | C        |        -13 |        -14 |         -5 |        -32 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/system/intr.c                                 | C        |         -7 |        -17 |         -5 |        -29 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/loongarch32r/system/mmu.c                                  | C        |         -6 |        -14 |         -3 |        -23 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/difftest/dut.c                                      | C        |         -8 |        -14 |         -4 |        -26 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/include/isa-def.h                                   | C++      |        -15 |        -15 |         -7 |        -37 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/init.c                                              | C        |        -16 |        -20 |         -7 |        -43 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/inst.c                                              | C        |        -48 |        -14 |        -13 |        -75 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/local-include/reg.h                                 | C++      |        -13 |        -14 |         -7 |        -34 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/logo.c                                              | C        |        -49 |        -26 |         -4 |        -79 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/reg.c                                               | C        |        -13 |        -14 |         -5 |        -32 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/system/intr.c                                       | C        |         -7 |        -17 |         -5 |        -29 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/mips32/system/mmu.c                                        | C        |         -6 |        -14 |         -3 |        -23 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/difftest/dut.c                                     | C        |        -22 |        -14 |         -5 |        -41 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h                                  | C++      |        -14 |        -15 |         -7 |        -36 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/init.c                                             | C        |        -17 |        -20 |         -7 |        -44 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/inst.c                                             | C        |       -149 |        -14 |        -12 |       -175 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/local-include/reg.h                                | C++      |        -13 |        -14 |         -7 |        -34 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/logo.c                                             | C        |        -36 |        -24 |         -4 |        -64 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/reg.c                                              | C        |        -22 |        -14 |         -4 |        -40 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/system/intr.c                                      | C        |         -7 |        -17 |         -5 |        -29 |
+| /home/xiangui/ysyx-workbench/nemu/src/isa/riscv32/system/mmu.c                                       | C        |         -6 |        -14 |         -3 |        -23 |
+| /home/xiangui/ysyx-workbench/nemu/src/memory/paddr.c                                                 | C        |        -56 |        -16 |        -14 |        -86 |
+| /home/xiangui/ysyx-workbench/nemu/src/memory/vaddr.c                                                 | C        |        -11 |        -14 |         -5 |        -30 |
+| /home/xiangui/ysyx-workbench/nemu/src/monitor/monitor.c                                              | C        |       -188 |        -27 |        -33 |       -248 |
+| /home/xiangui/ysyx-workbench/nemu/src/monitor/sdb/expr.c                                             | C        |       -265 |        -32 |        -27 |       -324 |
+| /home/xiangui/ysyx-workbench/nemu/src/monitor/sdb/sdb.c                                              | C        |       -159 |        -24 |        -42 |       -225 |
+| /home/xiangui/ysyx-workbench/nemu/src/monitor/sdb/sdb.h                                              | C        |        -20 |        -15 |        -10 |        -45 |
+| /home/xiangui/ysyx-workbench/nemu/src/monitor/sdb/watchpoint.c                                       | C        |       -104 |        -17 |        -15 |       -136 |
+| /home/xiangui/ysyx-workbench/nemu/src/nemu-main.c                                                    | C        |        -15 |        -16 |         -4 |        -35 |
+| /home/xiangui/ysyx-workbench/nemu/src/utils/disasm.cc                                                | C++      |        -82 |        -14 |        -14 |       -110 |
+| /home/xiangui/ysyx-workbench/nemu/src/utils/filelist.mk                                              | Makefile |         -5 |        -14 |         -2 |        -21 |
+| /home/xiangui/ysyx-workbench/nemu/src/utils/log.c                                                    | C        |        -16 |        -14 |         -5 |        -35 |
+| /home/xiangui/ysyx-workbench/nemu/src/utils/state.c                                                  | C        |         -7 |        -14 |         -4 |        -25 |
+| /home/xiangui/ysyx-workbench/nemu/src/utils/timer.c                                                  | C        |        -29 |        -14 |         -7 |        -50 |
+| /home/xiangui/ysyx-workbench/nemu/tools/difftest.mk                                                  | Makefile |        -11 |        -14 |         -4 |        -29 |
+| /home/xiangui/ysyx-workbench/nemu/tools/fixdep/Makefile                                              | Makefile |         -3 |          0 |         -1 |         -4 |
+| /home/xiangui/ysyx-workbench/nemu/tools/fixdep/fixdep.c                                              | C        |       -222 |       -138 |        -45 |       -405 |
+| /home/xiangui/ysyx-workbench/nemu/tools/gen-expr/Makefile                                            | Makefile |         -3 |        -14 |         -2 |        -19 |
+| /home/xiangui/ysyx-workbench/nemu/tools/gen-expr/gen-expr.c                                          | C        |       -108 |        -16 |        -23 |       -147 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/Makefile                                             | Makefile |        -32 |          0 |         -9 |        -41 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/conf.c                                               | C        |       -637 |        -35 |        -56 |       -728 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/confdata.c                                           | C        |     -1,051 |       -116 |       -172 |     -1,339 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/expr.c                                               | C        |     -1,072 |       -138 |        -94 |     -1,304 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/expr.h                                               | C++      |       -185 |        -91 |        -57 |       -333 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/list.h                                               | C++      |        -55 |        -61 |        -17 |       -133 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lkc.h                                                | C++      |       -130 |        -14 |        -30 |       -174 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lkc_proto.h                                          | C++      |        -40 |         -5 |         -7 |        -52 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/checklist.c                                 | C        |       -237 |        -37 |        -46 |       -320 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/dialog.h                                    | C++      |       -176 |        -38 |        -25 |       -239 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/inputbox.c                                  | C        |       -245 |        -16 |        -29 |       -290 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/menubox.c                                   | C        |       -302 |        -68 |        -55 |       -425 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/textbox.c                                   | C        |       -310 |        -44 |        -42 |       -396 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/util.c                                      | C        |       -542 |        -63 |        -96 |       -701 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/lxdialog/yesno.c                                     | C        |        -70 |        -14 |        -18 |       -102 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/mconf.c                                              | C        |       -953 |        -16 |        -72 |     -1,041 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/menu.c                                               | C        |       -621 |       -175 |       -104 |       -900 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/preprocess.c                                         | C        |       -383 |        -87 |       -105 |       -575 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/symbol.c                                             | C        |     -1,067 |        -83 |       -165 |     -1,315 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kconfig/util.c                                               | C        |       -102 |        -11 |        -17 |       -130 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kvm-diff/Makefile                                            | Makefile |         -6 |        -14 |         -4 |        -24 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kvm-diff/include/paddr.h                                     | C++      |          0 |        -15 |         -2 |        -17 |
+| /home/xiangui/ysyx-workbench/nemu/tools/kvm-diff/src/kvm.c                                           | C        |       -327 |        -29 |        -53 |       -409 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/Makefile                                           | Makefile |         -6 |        -14 |         -4 |        -24 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/include/common.h                                   | C        |        -13 |        -14 |         -6 |        -33 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/include/isa.h                                      | C        |        -41 |        -14 |         -5 |        -60 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/include/protocol.h                                 | C++      |        -10 |        -18 |        -10 |        -38 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/src/diff-test.c                                    | C        |        -67 |        -17 |        -16 |       -100 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/src/gdb-host.c                                     | C        |        -83 |        -15 |        -21 |       -119 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/src/isa.c                                          | C        |        -43 |        -21 |        -15 |        -79 |
+| /home/xiangui/ysyx-workbench/nemu/tools/qemu-diff/src/protocol.c                                     | C        |       -208 |        -43 |        -55 |       -306 |
+| /home/xiangui/ysyx-workbench/nemu/tools/spike-diff/Makefile                                          | Makefile |        -30 |        -14 |        -11 |        -55 |
+| /home/xiangui/ysyx-workbench/nemu/tools/spike-diff/difftest.cc                                       | C++      |       -100 |        -14 |        -18 |       -132 |
+| /home/xiangui/ysyx-workbench/npc/Makefile                                                            | Makefile |         17 |          0 |          6 |         23 |
+| /home/xiangui/ysyx-workbench/npc/csrc/ImmGen.cpp                                                     | C++      |         62 |          7 |         10 |         79 |
+| /home/xiangui/ysyx-workbench/npc/csrc/RegisterFile.cpp                                               | C++      |         75 |          0 |         10 |         85 |
+| /home/xiangui/ysyx-workbench/npc/csrc/main.cpp                                                       | C++      |          5 |          0 |          2 |          7 |
+| /home/xiangui/ysyx-workbench/npc/csrc/npc.cpp                                                        | C++      |         75 |          5 |         13 |         93 |
+| /home/xiangui/ysyx-workbench/npc/csrc/pc.cpp                                                         | C++      |         50 |          0 |         11 |         61 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen.cpp                                   | C++      |        104 |         23 |         21 |        148 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen.h                                     | C++      |         32 |         32 |         13 |         77 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen.mk                                    | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__ALL.cpp                              | C++      |          7 |          1 |          1 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Syms.cpp                             | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Syms.h                               | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Trace.cpp                            | C++      |         67 |          5 |          6 |         78 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Trace__Slow.cpp                      | C++      |        100 |          7 |         10 |        117 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen___024root.cpp                         | C++      |         88 |         10 |          9 |        107 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen___024root.h                           | C++      |         22 |         11 |         16 |         49 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen___024root__Slow.cpp                   | C++      |         42 |          7 |         13 |         62 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen_classes.mk                            | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile.cpp                             | C++      |        108 |         23 |         21 |        152 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile.h                               | C++      |         36 |         32 |         13 |         81 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile.mk                              | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__ALL.cpp                        | C++      |          7 |          1 |          1 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Syms.cpp                       | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Syms.h                         | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Trace.cpp                      | C++      |         57 |          5 |          6 |         68 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Trace__Slow.cpp                | C++      |         98 |          7 |         10 |        115 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024root.cpp                   | C++      |        109 |         13 |         10 |        132 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024root.h                     | C++      |         30 |         12 |         17 |         59 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024root__Slow.cpp             | C++      |         54 |          8 |         13 |         75 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024unit.cpp                   | C++      |          2 |          4 |          3 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024unit.h                     | C++      |         18 |         10 |         15 |         43 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024unit__Slow.cpp             | C++      |         21 |          6 |          9 |         36 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile_classes.mk                      | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder.cpp                                    | C++      |        128 |         23 |         21 |        172 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder.h                                      | C++      |         56 |         32 |         13 |        101 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder.mk                                     | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Syms.cpp                              | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Syms.h                                | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Trace.cpp                             | C++      |        126 |          5 |          6 |        137 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Trace__Slow.cpp                       | C++      |        245 |          7 |         10 |        262 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder___024root.cpp                          | C++      |        243 |         18 |         14 |        275 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder___024root.h                            | C++      |         57 |         12 |         17 |         86 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder___024root__Slow.cpp                    | C++      |        141 |          9 |         13 |        163 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder_classes.mk                             | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc.cpp                                      | C++      |         94 |         23 |         24 |        141 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc.h                                        | C++      |         38 |         33 |         14 |         85 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc.mk                                       | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__ALL.cpp                                 | C++      |         14 |          1 |          1 |         16 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Dpi.cpp                                 | C++      |          2 |         12 |          3 |         17 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Dpi.h                                   | C++      |         11 |          8 |          8 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Syms.cpp                                | C++      |         21 |          9 |          4 |         34 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Syms.h                                  | C++      |         20 |         13 |         12 |         45 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace.cpp                               | C++      |        204 |          5 |          6 |        215 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace__0.cpp                            | C++      |        174 |          8 |          6 |        188 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace__0__Slow.cpp                      | C++      |        305 |         10 |          9 |        324 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace__Slow.cpp                         | C++      |        323 |          7 |         10 |        340 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root.cpp                            | C++      |        226 |         14 |         13 |        253 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root.h                              | C++      |         44 |          8 |         12 |         64 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_he0c52e61__0.cpp       | C++      |         96 |          6 |          9 |        111 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_he0c52e61__0__Slow.cpp | C++      |         18 |          4 |          5 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_hef1e4a62__0.cpp       | C++      |        242 |         11 |         12 |        265 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_hef1e4a62__0__Slow.cpp | C++      |        142 |         12 |         15 |        169 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__Slow.cpp                      | C++      |         16 |          4 |          7 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit.cpp                            | C++      |         10 |          5 |          6 |         21 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit.h                              | C++      |         13 |          6 |         10 |         29 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit__DepSet_h4015cd21__0__Slow.cpp | C++      |          8 |          3 |          4 |         15 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit__DepSet_h503da320__0.cpp       | C++      |         11 |          4 |          5 |         20 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit__Slow.cpp                      | C++      |         16 |          4 |          7 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc_classes.mk                               | Makefile |         30 |         21 |         10 |         61 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc.cpp                                       | C++      |        102 |         23 |         21 |        146 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc.h                                         | C++      |         30 |         32 |         13 |         75 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc.mk                                        | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__ALL.cpp                                  | C++      |          7 |          1 |          1 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Syms.cpp                                 | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Syms.h                                   | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Trace.cpp                                | C++      |         31 |          5 |          6 |         42 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Trace__Slow.cpp                          | C++      |         55 |          7 |         10 |         72 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc___024root.cpp                             | C++      |         44 |         11 |          9 |         64 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc___024root.h                               | C++      |         20 |         11 |         16 |         47 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc___024root__Slow.cpp                       | C++      |         38 |          7 |         12 |         57 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc_classes.mk                                | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_ContrGen.v                                       | Verilog  |         74 |          0 |          2 |         76 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_ImmGen.v                                         | Verilog  |         28 |          0 |          3 |         31 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_RegisterFile.v                                   | Verilog  |         27 |          1 |          4 |         32 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_adder.v                                          | Verilog  |         15 |          0 |          3 |         18 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_alu.v                                            | Verilog  |         40 |          0 |          3 |         43 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_npc.v                                            | Verilog  |         81 |          6 |         19 |        106 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_pc.v                                             | Verilog  |         19 |          2 |          2 |         23 |
+| /home/xiangui/ysyx-workbench/npc/wave.vcd                                                            | vcd      |        322 |          0 |          4 |        326 |
+| Total                                                                                                |          |     -7,647 |     -2,059 |     -1,588 |    -11,294 |
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

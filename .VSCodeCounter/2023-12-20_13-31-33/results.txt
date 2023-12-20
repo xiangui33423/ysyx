@@ -1,0 +1,120 @@
+Date : 2023-12-20 13:31:33
+Directory : /home/xiangui/ysyx-workbench/npc
+Total : 89 files,  5634 codes, 985 comments, 868 blanks, all 7487 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         70 |      4,768 |        722 |        697 |      6,187 |
+| vcd      |          1 |        322 |          0 |          4 |        326 |
+| Verilog  |          7 |        284 |          9 |         36 |        329 |
+| Makefile |         11 |        260 |        254 |        131 |        645 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |         89 |      5,634 |        985 |        868 |      7,487 |
+| . (Files)                                                                                            |          2 |        339 |          0 |         10 |        349 |
+| csrc                                                                                                 |          5 |        267 |         12 |         46 |        325 |
+| obj_dir                                                                                              |         75 |      4,744 |        964 |        776 |      6,484 |
+| vsrc                                                                                                 |          7 |        284 |          9 |         36 |        329 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                             | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/xiangui/ysyx-workbench/npc/Makefile                                                            | Makefile |         17 |          0 |          6 |         23 |
+| /home/xiangui/ysyx-workbench/npc/csrc/ImmGen.cpp                                                     | C++      |         62 |          7 |         10 |         79 |
+| /home/xiangui/ysyx-workbench/npc/csrc/RegisterFile.cpp                                               | C++      |         75 |          0 |         10 |         85 |
+| /home/xiangui/ysyx-workbench/npc/csrc/main.cpp                                                       | C++      |          5 |          0 |          2 |          7 |
+| /home/xiangui/ysyx-workbench/npc/csrc/npc.cpp                                                        | C++      |         75 |          5 |         13 |         93 |
+| /home/xiangui/ysyx-workbench/npc/csrc/pc.cpp                                                         | C++      |         50 |          0 |         11 |         61 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen.cpp                                   | C++      |        104 |         23 |         21 |        148 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen.h                                     | C++      |         32 |         32 |         13 |         77 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen.mk                                    | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__ALL.cpp                              | C++      |          7 |          1 |          1 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Syms.cpp                             | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Syms.h                               | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Trace.cpp                            | C++      |         67 |          5 |          6 |         78 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen__Trace__Slow.cpp                      | C++      |        100 |          7 |         10 |        117 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen___024root.cpp                         | C++      |         88 |         10 |          9 |        107 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen___024root.h                           | C++      |         22 |         11 |         16 |         49 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen___024root__Slow.cpp                   | C++      |         42 |          7 |         13 |         62 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_ImmGen_classes.mk                            | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile.cpp                             | C++      |        108 |         23 |         21 |        152 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile.h                               | C++      |         36 |         32 |         13 |         81 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile.mk                              | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__ALL.cpp                        | C++      |          7 |          1 |          1 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Syms.cpp                       | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Syms.h                         | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Trace.cpp                      | C++      |         57 |          5 |          6 |         68 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile__Trace__Slow.cpp                | C++      |         98 |          7 |         10 |        115 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024root.cpp                   | C++      |        109 |         13 |         10 |        132 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024root.h                     | C++      |         30 |         12 |         17 |         59 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024root__Slow.cpp             | C++      |         54 |          8 |         13 |         75 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024unit.cpp                   | C++      |          2 |          4 |          3 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024unit.h                     | C++      |         18 |         10 |         15 |         43 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile___024unit__Slow.cpp             | C++      |         21 |          6 |          9 |         36 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_RegisterFile_classes.mk                      | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder.cpp                                    | C++      |        128 |         23 |         21 |        172 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder.h                                      | C++      |         56 |         32 |         13 |        101 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder.mk                                     | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Syms.cpp                              | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Syms.h                                | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Trace.cpp                             | C++      |        126 |          5 |          6 |        137 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder__Trace__Slow.cpp                       | C++      |        245 |          7 |         10 |        262 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder___024root.cpp                          | C++      |        243 |         18 |         14 |        275 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder___024root.h                            | C++      |         57 |         12 |         17 |         86 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder___024root__Slow.cpp                    | C++      |        141 |          9 |         13 |        163 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_adder_classes.mk                             | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc.cpp                                      | C++      |         94 |         23 |         24 |        141 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc.h                                        | C++      |         38 |         33 |         14 |         85 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc.mk                                       | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__ALL.cpp                                 | C++      |         14 |          1 |          1 |         16 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Dpi.cpp                                 | C++      |          2 |         12 |          3 |         17 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Dpi.h                                   | C++      |         11 |          8 |          8 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Syms.cpp                                | C++      |         21 |          9 |          4 |         34 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Syms.h                                  | C++      |         20 |         13 |         12 |         45 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace.cpp                               | C++      |        204 |          5 |          6 |        215 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace__0.cpp                            | C++      |        174 |          8 |          6 |        188 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace__0__Slow.cpp                      | C++      |        305 |         10 |          9 |        324 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc__Trace__Slow.cpp                         | C++      |        323 |          7 |         10 |        340 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root.cpp                            | C++      |        226 |         14 |         13 |        253 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root.h                              | C++      |         44 |          8 |         12 |         64 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_he0c52e61__0.cpp       | C++      |         96 |          6 |          9 |        111 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_he0c52e61__0__Slow.cpp | C++      |         18 |          4 |          5 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_hef1e4a62__0.cpp       | C++      |        242 |         11 |         12 |        265 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__DepSet_hef1e4a62__0__Slow.cpp | C++      |        142 |         12 |         15 |        169 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024root__Slow.cpp                      | C++      |         16 |          4 |          7 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit.cpp                            | C++      |         10 |          5 |          6 |         21 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit.h                              | C++      |         13 |          6 |         10 |         29 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit__DepSet_h4015cd21__0__Slow.cpp | C++      |          8 |          3 |          4 |         15 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit__DepSet_h503da320__0.cpp       | C++      |         11 |          4 |          5 |         20 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc___024unit__Slow.cpp                      | C++      |         16 |          4 |          7 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_npc_classes.mk                               | Makefile |         30 |         21 |         10 |         61 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc.cpp                                       | C++      |        102 |         23 |         21 |        146 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc.h                                         | C++      |         30 |         32 |         13 |         75 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc.mk                                        | Makefile |         25 |         29 |         15 |         69 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__ALL.cpp                                  | C++      |          7 |          1 |          1 |          9 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Syms.cpp                                 | C++      |         15 |          8 |          4 |         27 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Syms.h                                   | C++      |         17 |         12 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Trace.cpp                                | C++      |         31 |          5 |          6 |         42 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc__Trace__Slow.cpp                          | C++      |         55 |          7 |         10 |         72 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc___024root.cpp                             | C++      |         44 |         11 |          9 |         64 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc___024root.h                               | C++      |         20 |         11 |         16 |         47 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc___024root__Slow.cpp                       | C++      |         38 |          7 |         12 |         57 |
+| /home/xiangui/ysyx-workbench/npc/obj_dir/Vysyx_23060096_pc_classes.mk                                | Makefile |         22 |         22 |         10 |         54 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_ContrGen.v                                       | Verilog  |         74 |          0 |          2 |         76 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_ImmGen.v                                         | Verilog  |         28 |          0 |          3 |         31 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_RegisterFile.v                                   | Verilog  |         27 |          1 |          4 |         32 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_adder.v                                          | Verilog  |         15 |          0 |          3 |         18 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_alu.v                                            | Verilog  |         40 |          0 |          3 |         43 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_npc.v                                            | Verilog  |         81 |          6 |         19 |        106 |
+| /home/xiangui/ysyx-workbench/npc/vsrc/ysyx_23060096_pc.v                                             | Verilog  |         19 |          2 |          2 |         23 |
+| /home/xiangui/ysyx-workbench/npc/wave.vcd                                                            | vcd      |        322 |          0 |          4 |        326 |
+| Total                                                                                                |          |      5,634 |        985 |        868 |      7,487 |
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

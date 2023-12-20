@@ -1,0 +1,218 @@
+Date : 2023-12-20 13:29:05
+Directory : /home/xiangui/ysyx-workbench/am-kernels
+Total : 129 files,  34037 codes, 1449 comments, 1636 blanks, all 37122 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C        |         91 |     32,132 |      1,184 |      1,146 |     34,462 |
+| C++      |         20 |      1,547 |        265 |        376 |      2,188 |
+| Markdown |          2 |        236 |          0 |         65 |        301 |
+| Makefile |         16 |        122 |          0 |         49 |        171 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                 |        129 |     34,037 |      1,449 |      1,636 |     37,122 |
+| benchmarks                                                                        |         30 |      4,184 |      1,263 |        757 |      6,204 |
+| benchmarks/coremark                                                               |         10 |      1,521 |        642 |        182 |      2,345 |
+| benchmarks/coremark (Files)                                                       |          2 |        191 |          0 |         45 |        236 |
+| benchmarks/coremark/include                                                       |          2 |        186 |        133 |         45 |        364 |
+| benchmarks/coremark/src                                                           |          6 |      1,144 |        509 |         92 |      1,745 |
+| benchmarks/dhrystone                                                              |          2 |        429 |        431 |         95 |        955 |
+| benchmarks/microbench                                                             |         18 |      2,234 |        190 |        480 |      2,904 |
+| benchmarks/microbench (Files)                                                     |          2 |         51 |          0 |         22 |         73 |
+| benchmarks/microbench/include                                                     |          1 |         98 |          5 |         21 |        124 |
+| benchmarks/microbench/src                                                         |         15 |      2,085 |        185 |        437 |      2,707 |
+| benchmarks/microbench/src (Files)                                                 |          1 |        162 |          4 |         34 |        200 |
+| benchmarks/microbench/src/15pz                                                    |          3 |        557 |         79 |        165 |        801 |
+| benchmarks/microbench/src/bf                                                      |          1 |        113 |         22 |         17 |        152 |
+| benchmarks/microbench/src/dinic                                                   |          1 |        117 |          0 |         22 |        139 |
+| benchmarks/microbench/src/fib                                                     |          1 |         52 |          1 |         12 |         65 |
+| benchmarks/microbench/src/lzip                                                    |          3 |        798 |         45 |        114 |        957 |
+| benchmarks/microbench/src/md5                                                     |          1 |        108 |         22 |         30 |        160 |
+| benchmarks/microbench/src/qsort                                                   |          1 |         36 |          0 |          9 |         45 |
+| benchmarks/microbench/src/queen                                                   |          1 |         26 |          0 |          7 |         33 |
+| benchmarks/microbench/src/sieve                                                   |          1 |         35 |          0 |          8 |         43 |
+| benchmarks/microbench/src/ssort                                                   |          1 |         81 |         12 |         19 |        112 |
+| kernels                                                                           |         45 |      6,095 |        171 |        497 |      6,763 |
+| kernels/demo                                                                      |         12 |        870 |         69 |        116 |      1,055 |
+| kernels/demo (Files)                                                              |          1 |          3 |          0 |          1 |          4 |
+| kernels/demo/include                                                              |          1 |         81 |          0 |         17 |         98 |
+| kernels/demo/src                                                                  |         10 |        786 |         69 |         98 |        953 |
+| kernels/demo/src (Files)                                                          |          1 |         40 |          0 |          5 |         45 |
+| kernels/demo/src/aclock                                                           |          1 |        184 |         23 |         13 |        220 |
+| kernels/demo/src/ant                                                              |          1 |         56 |          1 |         14 |         71 |
+| kernels/demo/src/bf                                                               |          2 |        219 |         18 |          9 |        246 |
+| kernels/demo/src/cmatrix                                                          |          1 |         50 |         12 |         11 |         73 |
+| kernels/demo/src/donut                                                            |          1 |         61 |         12 |         10 |         83 |
+| kernels/demo/src/galton                                                           |          1 |         82 |          1 |         14 |         97 |
+| kernels/demo/src/hanoi                                                            |          1 |         47 |          1 |         13 |         61 |
+| kernels/demo/src/life                                                             |          1 |         47 |          1 |          9 |         57 |
+| kernels/hello                                                                     |          2 |         14 |          0 |          4 |         18 |
+| kernels/litenes                                                                   |         19 |      4,727 |         99 |        282 |      5,108 |
+| kernels/litenes (Files)                                                           |          1 |          3 |          0 |          1 |          4 |
+| kernels/litenes/src                                                               |         18 |      4,724 |         99 |        281 |      5,104 |
+| kernels/nemu                                                                      |          1 |         24 |          0 |          8 |         32 |
+| kernels/slider                                                                    |          2 |         28 |          1 |          8 |         37 |
+| kernels/snake                                                                     |          2 |        161 |          0 |         32 |        193 |
+| kernels/thread-os                                                                 |          2 |         59 |          2 |         14 |         75 |
+| kernels/typing-game                                                               |          3 |        182 |          0 |         27 |        209 |
+| kernels/yield-os                                                                  |          2 |         30 |          0 |          6 |         36 |
+| tests                                                                             |         54 |     23,758 |         15 |        382 |     24,155 |
+| tests/alu-tests                                                                   |          3 |     22,475 |          7 |         27 |     22,509 |
+| tests/alu-tests (Files)                                                           |          2 |        110 |          7 |         26 |        143 |
+| tests/alu-tests/build                                                             |          1 |     22,365 |          0 |          1 |     22,366 |
+| tests/am-tests                                                                    |         12 |        371 |          2 |         73 |        446 |
+| tests/am-tests (Files)                                                            |          1 |          3 |          0 |          1 |          4 |
+| tests/am-tests/include                                                            |          1 |         19 |          0 |          6 |         25 |
+| tests/am-tests/src                                                                |         10 |        349 |          2 |         66 |        417 |
+| tests/am-tests/src (Files)                                                        |          1 |         36 |          0 |          4 |         40 |
+| tests/am-tests/src/tests                                                          |          9 |        313 |          2 |         62 |        377 |
+| tests/cpu-tests                                                                   |         37 |        843 |          4 |        261 |      1,108 |
+| tests/cpu-tests (Files)                                                           |          1 |         26 |          0 |         11 |         37 |
+| tests/cpu-tests/include                                                           |          1 |         10 |          0 |          4 |         14 |
+| tests/cpu-tests/tests                                                             |         35 |        807 |          4 |        246 |      1,057 |
+| tests/klib-tests                                                                  |          2 |         69 |          2 |         21 |         92 |
+| tests/klib-tests (Files)                                                          |          1 |         28 |          0 |         14 |         42 |
+| tests/klib-tests/tests                                                            |          1 |         41 |          2 |          7 |         50 |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                          | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/Makefile              | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/README.md             | Markdown |        188 |          0 |         44 |        232 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/include/core_portme.h | C++      |         79 |         90 |         20 |        189 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/include/coremark.h    | C++      |        107 |         43 |         25 |        175 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/src/core_list_join.c  | C        |        270 |        195 |         32 |        497 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/src/core_main.c       | C        |        263 |         62 |         15 |        340 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/src/core_matrix.c     | C        |        184 |        108 |         17 |        309 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/src/core_portme.c     | C        |         54 |         46 |         10 |        110 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/src/core_state.c      | C        |        208 |         60 |         10 |        278 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/coremark/src/core_util.c       | C        |        165 |         38 |          8 |        211 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/dhrystone/Makefile             | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/dhrystone/dry.c                | C        |        426 |        431 |         94 |        951 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/Makefile            | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/README.md           | Markdown |         48 |          0 |         21 |         69 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/include/benchmark.h | C++      |         98 |          5 |         21 |        124 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/15pz/15pz.cc    | C++      |         73 |          1 |         23 |         97 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/15pz/heap.h     | C++      |        179 |          7 |         42 |        228 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/15pz/puzzle.h   | C++      |        305 |         71 |        100 |        476 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/bench.c         | C        |        162 |          4 |         34 |        200 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/bf/bf.c         | C        |        113 |         22 |         17 |        152 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/dinic/dinic.cc  | C++      |        117 |          0 |         22 |        139 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/fib/fib.c       | C        |         52 |          1 |         12 |         65 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/lzip/lzip.c     | C        |         23 |          0 |          7 |         30 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/lzip/quicklz.c  | C        |        669 |         14 |         79 |        762 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/lzip/quicklz.h  | C++      |        106 |         31 |         28 |        165 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/md5/md5.c       | C        |        108 |         22 |         30 |        160 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/qsort/qsort.c   | C        |         36 |          0 |          9 |         45 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/queen/queen.c   | C        |         26 |          0 |          7 |         33 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/sieve/sieve.c   | C        |         35 |          0 |          8 |         43 |
+| /home/xiangui/ysyx-workbench/am-kernels/benchmarks/microbench/src/ssort/ssort.cc  | C++      |         81 |         12 |         19 |        112 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/Makefile                     | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/include/io.h                 | C++      |         81 |          0 |         17 |         98 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/aclock/aclock.c          | C        |        184 |         23 |         13 |        220 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/ant/ant.c                | C        |         56 |          1 |         14 |         71 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/bf/bf.c                  | C        |         73 |         18 |          8 |         99 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/bf/mandelbrot.h          | C++      |        146 |          0 |          1 |        147 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/cmatrix/cmatrix.c        | C        |         50 |         12 |         11 |         73 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/donut/donut.c            | C        |         61 |         12 |         10 |         83 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/galton/galton.c          | C        |         82 |          1 |         14 |         97 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/hanoi/hanoi.c            | C        |         47 |          1 |         13 |         61 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/life/life.c              | C        |         47 |          1 |          9 |         57 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/demo/src/main.c                   | C        |         40 |          0 |          5 |         45 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/hello/Makefile                    | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/hello/hello.c                     | C        |         11 |          0 |          3 |         14 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/Makefile                  | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/common.c              | C        |         11 |          2 |          4 |         17 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/common.h              | C        |         22 |          4 |          8 |         34 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/cpu-addressing.c      | C        |         79 |          4 |         19 |        102 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/cpu-internal.h        | C++      |         51 |          2 |         11 |         64 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/cpu.c                 | C        |        506 |         27 |         74 |        607 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/cpu.h                 | C++      |         11 |          1 |          6 |         18 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/fce.c                 | C        |        109 |          3 |         29 |        141 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/fce.h                 | C++      |         23 |          0 |          6 |         29 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/main.c                | C        |         18 |          0 |          5 |         23 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/mario-rom.c           | C        |      3,418 |          0 |          1 |      3,419 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/memory.c              | C        |         36 |          1 |          5 |         42 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/memory.h              | C++      |          9 |          2 |          5 |         16 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/mmc.c                 | C        |         24 |          0 |          8 |         32 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/mmc.h                 | C++      |          6 |          0 |          3 |          9 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/ppu.c                 | C        |        310 |         51 |         72 |        433 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/ppu.h                 | C++      |         30 |          0 |         12 |         42 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/psg.c                 | C        |         45 |          2 |          8 |         55 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/litenes/src/psg.h                 | C++      |         16 |          0 |          5 |         21 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/nemu/Makefile                     | Makefile |         24 |          0 |          8 |         32 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/slider/Makefile                   | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/slider/main.c                     | C        |         25 |          1 |          7 |         33 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/snake/Makefile                    | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/snake/snake.c                     | C        |        158 |          0 |         31 |        189 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/thread-os/Makefile                | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/thread-os/thread-os.c             | C        |         56 |          2 |         13 |         71 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/typing-game/Makefile              | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/typing-game/font.c                | C        |         28 |          0 |          1 |         29 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/typing-game/game.c                | C        |        151 |          0 |         25 |        176 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/yield-os/Makefile                 | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/kernels/yield-os/yield-os.c               | C        |         27 |          0 |          5 |         32 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/alu-tests/Makefile                  | Makefile |          8 |          0 |          4 |         12 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/alu-tests/build/alu_test.c          | C        |     22,365 |          0 |          1 |     22,366 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/alu-tests/gen_alu_test.c            | C        |        102 |          7 |         22 |        131 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/Makefile                   | Makefile |          3 |          0 |          1 |          4 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/include/amtest.h           | C++      |         19 |          0 |          6 |         25 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/main.c                 | C        |         36 |          0 |          4 |         40 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/audio.c          | C        |         22 |          1 |          5 |         28 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/devscan.c        | C        |         55 |          0 |         15 |         70 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/hello.c          | C        |          6 |          0 |          2 |          8 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/intr.c           | C        |         24 |          0 |          3 |         27 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/keyboard.c       | C        |         30 |          0 |          6 |         36 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/mp.c             | C        |          6 |          0 |          2 |          8 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/rtc.c            | C        |         16 |          0 |          2 |         18 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/video.c          | C        |         76 |          1 |         14 |         91 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/am-tests/src/tests/vm.c             | C        |         78 |          0 |         13 |         91 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/Makefile                  | Makefile |         26 |          0 |         11 |         37 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/include/trap.h            | C++      |         10 |          0 |          4 |         14 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/add-longlong.c      | C        |         17 |          0 |          6 |         23 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/add.c               | C        |         19 |          0 |          7 |         26 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/bit.c               | C        |         40 |          0 |          7 |         47 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/bubble-sort.c       | C        |         29 |          0 |         11 |         40 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/crc32.c             | C        |         38 |          3 |          7 |         48 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/div.c               | C        |         17 |          0 |          5 |         22 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/dummy.c             | C        |          3 |          0 |          2 |          5 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/fact.c              | C        |         15 |          0 |          6 |         21 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/fib.c               | C        |         12 |          0 |          5 |         17 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/goldbach.c          | C        |         27 |          0 |          8 |         35 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/hello-str.c         | C        |         13 |          0 |          5 |         18 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/if-else.c           | C        |         21 |          0 |          8 |         29 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/leap-year.c         | C        |         12 |          0 |          5 |         17 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/load-store.c        | C        |         34 |          0 |         12 |         46 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/matrix-mul.c        | C        |         54 |          0 |          7 |         61 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/max.c               | C        |         21 |          0 |          7 |         28 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/mersenne.c          | C        |         31 |          1 |          3 |         35 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/min3.c              | C        |         25 |          0 |          7 |         32 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/mov-c.c             | C        |         20 |          0 |          6 |         26 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/movsx.c             | C        |         30 |          0 |          4 |         34 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/mul-longlong.c      | C        |         19 |          0 |          8 |         27 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/pascal.c            | C        |         23 |          0 |          8 |         31 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/prime.c             | C        |         21 |          0 |          5 |         26 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/quick-sort.c        | C        |         35 |          0 |         15 |         50 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/recursion.c         | C        |         37 |          0 |         10 |         47 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/select-sort.c       | C        |         31 |          0 |         12 |         43 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/shift.c             | C        |         26 |          0 |         11 |         37 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/shuixianhua.c       | C        |         20 |          0 |          7 |         27 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/string.c            | C        |         21 |          0 |          7 |         28 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/sub-longlong.c      | C        |         17 |          0 |          6 |         23 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/sum.c               | C        |         11 |          0 |          4 |         15 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/switch.c            | C        |         23 |          0 |          7 |         30 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/to-lower-case.c     | C        |         14 |          0 |          5 |         19 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/unalign.c           | C        |         12 |          0 |          7 |         19 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/cpu-tests/tests/wanshu.c            | C        |         19 |          0 |          6 |         25 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/klib-tests/Makefile                 | Makefile |         28 |          0 |         14 |         42 |
+| /home/xiangui/ysyx-workbench/am-kernels/tests/klib-tests/tests/memset.c           | C        |         41 |          2 |          7 |         50 |
+| Total                                                                             |          |     34,037 |      1,449 |      1,636 |     37,122 |
++-----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

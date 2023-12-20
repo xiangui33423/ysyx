@@ -1,0 +1,4 @@
+"filename", "language", "Makefile", "C", "comment", "blank", "total"
+"/home/xiangui/ysyx-workbench/am-kernels/tests/klib-tests/Makefile", "Makefile", 28, 0, 0, 14, 42
+"/home/xiangui/ysyx-workbench/am-kernels/tests/klib-tests/tests/memset.c", "C", 0, 41, 2, 7, 50
+"Total", "-", 28, 41, 2, 21, 92
