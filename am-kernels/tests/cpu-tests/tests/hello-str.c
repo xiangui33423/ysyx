@@ -4,7 +4,7 @@ char buf[128];
 const char*c_hello="Hello world!";
 int main() {
 	sprintf(buf,"%s\n",c_hello);
-	
+	printf("%s", "Hello world!\n");
 	check(strcmp(buf, "Hello world!\n") == 0);
 
 	sprintf(buf, "%d + %d = %d\n", 1, 1, 2);
